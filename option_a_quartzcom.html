@@ -147,7 +147,44 @@
           <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
           <span>OBN Deep-Sea</span>
         </a>
-        <a href="#applications" class="hover:text-blue-600 transition-colors">Applications</a>
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 hover:text-blue-600 py-2 transition-colors">
+            <span>Technical Papers</span>
+            <span class="px-1.5 py-0.2 rounded text-[10px] bg-blue-100 text-blue-700 font-bold">4 Briefs</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="absolute top-full -left-4 w-96 bg-white border border-slate-200 rounded-xl shadow-xl p-4 hidden group-hover:block z-50">
+            <div class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-2 px-2">Application Whitepapers</div>
+            <a href="blog_obn_timing.html" class="flex items-start gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors">
+              <span class="w-6 h-6 rounded bg-cyan-100 text-cyan-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">01</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Seabed OBN Clock Drift (&lt;60 mW)</div>
+                <div class="text-[11px] text-slate-500">60-Day blind holdover &amp; CSAC trade-offs</div>
+              </div>
+            </a>
+            <a href="blog_aerospace_gsensitivity.html" class="flex items-start gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors">
+              <span class="w-6 h-6 rounded bg-amber-100 text-amber-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">02</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Aerospace G-Sensitivity &amp; UAV</div>
+                <div class="text-[11px] text-slate-500">Q52/Q101 vibration phase noise (&lt;0.5 ppb/g)</div>
+              </div>
+            </a>
+            <a href="blog_rf_phase_noise.html" class="flex items-start gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors">
+              <span class="w-6 h-6 rounded bg-indigo-100 text-indigo-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">03</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Direct-RF Phase Noise &amp; Jitter</div>
+                <div class="text-[11px] text-slate-500">ADC SNR ceilings &amp; reciprocal mixing</div>
+              </div>
+            </a>
+            <a href="blog_smartgrid_pmu.html" class="flex items-start gap-3 p-2 rounded-lg hover:bg-slate-50 transition-colors">
+              <span class="w-6 h-6 rounded bg-emerald-100 text-emerald-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">04</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Smart Grid PMU GNSS Resilience</div>
+                <div class="text-[11px] text-slate-500">IEEE C37.118 TVE &lt; 1% adaptive DSP holdover</div>
+              </div>
+            </a>
+          </div>
+        </div>
         <a href="#technology" class="hover:text-blue-600 transition-colors">Technology &amp; IP</a>
         <a href="#matrix" class="hover:text-blue-600 transition-colors">Spec Matrix</a>
         <a href="#about" class="hover:text-blue-600 transition-colors">Company</a>
@@ -342,11 +379,16 @@
       <div class="mt-10 p-6 rounded-2xl bg-gradient-to-r from-blue-950 to-slate-800 border border-blue-800/40 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="text-sm">
           <strong class="text-white">Developing next-generation seabed sensor arrays?</strong>
-          <span class="text-slate-300 ml-2">Request our technical paper on subsea holdover modeling.</span>
+          <span class="text-slate-300 ml-2">Read our deep-dive analysis on subsea holdover modeling and battery payload reduction.</span>
         </div>
-        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs uppercase tracking-wider whitespace-nowrap transition-colors">
-          Request OBN Consultation
-        </a>
+        <div class="flex items-center gap-3">
+          <a href="blog_obn_timing.html" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs uppercase tracking-wider whitespace-nowrap transition-colors shadow">
+            Read Technical Paper &rarr;
+          </a>
+          <a href="#contact" class="px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-slate-200 font-semibold text-xs uppercase tracking-wider whitespace-nowrap transition-colors">
+            Inquire
+          </a>
+        </div>
       </div>
 
     </div>

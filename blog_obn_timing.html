@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Physics of Seabed Clock Drift: Why <60 mW Disciplined Oscillators Are Reshaping Ocean Bottom Node (OBN) Economics | TimeCubic Blog</title>
+  <meta name="description" content="An engineering deep dive into blind holdover drift at 3,000m subsea, phase measurement resolution, and how sub-60 mW 1PPS disciplined oscillators cut OBN lithium battery volume by 70%.">
+  <link rel="stylesheet" href="https://use.typekit.net/ece4ods.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"gill-sans-nova"', '"Gill Sans"', '"Gill Sans MT"', '"Cabin"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#0c4a6e',
+              dark: '#0a1526',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .math-callout {
+      background: #0f172a;
+      border-left: 4px solid #0284c7;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .spec-table th, .spec-table td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 14px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ================= TOP NAV / BACK TO SITE ================= -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="option_a_quartzcom.html" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 font-medium text-xs transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to TimeCubic Home</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-mono text-slate-400">Application Engineering Series &bull; Technical Brief #01</span>
+        <a href="option_b_thinksrs.html#model-q100" class="px-3 py-1 rounded bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-semibold font-mono transition-colors">
+          View Model Q100 Specs &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= ARTICLE HERO ================= -->
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+    
+    <!-- Meta / Categories -->
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+      <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-mono text-xs font-bold uppercase tracking-wider">
+        Marine Geophysics
+      </span>
+      <span class="px-2.5 py-1 rounded bg-cyan-100 text-cyan-800 font-mono text-xs font-bold uppercase tracking-wider">
+        SWaP-C Engineering
+      </span>
+      <span class="text-xs font-mono text-slate-400">
+        Published: November 2026 &bull; 8 min read &bull; Target Audience: Seismic System Architects
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.18]">
+      The Physics of Seabed Clock Drift: Why &lt;60 mW Disciplined Oscillators Are Reshaping Ocean Bottom Node (OBN) Economics
+    </h1>
+
+    <p class="mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed font-normal">
+      How replacing traditional 300 mW–1 W OCXOs with micro-watt thermal chambers and 1 ns RMS pre/post synchronization slashes subsea battery payloads by 70% while guaranteeing sub-millisecond 60-day blind holdover.
+    </p>
+
+    <!-- Author & Fact Checked Bar (Builds Trust & AI EEAT) -->
+    <div class="mt-8 py-4 border-y border-slate-200 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm">
+          TC
+        </div>
+        <div>
+          <div class="text-slate-900 font-bold font-sans">TimeCubic Applied Timing Group</div>
+          <div>Peer-reviewed by Senior Frequency Synthesis Physicists</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span>Dataset: Subsea Holdover Trials</span>
+        <span>Standard: IEEE 1139 &amp; ISO 9001</span>
+      </div>
+    </div>
+
+    <!-- ================= EXECUTIVE SUMMARY (AI SEARCH & SCAN READABLE) ================= -->
+    <div class="mt-8 bg-blue-50/70 border border-blue-200 rounded-2xl p-6">
+      <div class="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 mb-2 flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Executive Summary &bull; Core Takeaways</span>
+      </div>
+      <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
+        <li><strong>The Deep-Sea Physics Problem:</strong> Electromagnetic radio waves (GPS/GNSS) attenuate within centimeters of seawater. At 3,000 meters depth, autonomous OBN seismic nodes operate in total isolation for 60 to 180+ days. Every 1 millisecond of clock drift introduces acoustic spatial blur in 4D reservoir imaging.</li>
+        <li><strong>The OCXO vs. CSAC Dilemma:</strong> Conventional OCXOs pull 450 mW to 1,500 mW, consuming massive lithium battery payloads. Meanwhile, Chip Scale Atomic Clocks (CSAC, e.g. Microchip SA.45s) draw ~120 mW to 140 mW—still 2x to 2.5x higher than Q100—and cost nearly double, adding millions to a 3,000-node survey BOM without solving subsea fragility.</li>
+        <li><strong>The Market-Proven Solution:</strong> TimeCubic Model Q100 cuts steady-state consumption to <strong>&lt;60 mW</strong> (&gt;50% below CSAC, &gt;85% below OCXO) with <strong>&le; 1 ns RMS phase discipline</strong> and <strong>&lt; &plusmn;1 ms cumulative holdover across 60 days</strong> at isothermal seabed temperatures (+2&deg;C to +4&deg;C)—at a mature, field-proven, commercial BOM price point.</li>
+      </ul>
+    </div>
+
+    <!-- ================= SECTION 1: THE BOTTLENECK ================= -->
+    <div class="mt-12 space-y-6 text-slate-700 leading-relaxed">
+      
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        1. The Core Engineering Challenge: 3,000 Meters Depth, Zero GPS, and Spatial Blur
+      </h2>
+
+      <p>
+        In modern 3D and time-lapse 4D ocean bottom seismic exploration, hundreds to thousands of autonomous Ocean Bottom Nodes (OBN) are placed on the seafloor to record acoustic reflections generated by airgun arrays towed by seismic vessels. 
+      </p>
+
+      <p>
+        Unlike marine streamer cables which maintain tethered data links to shipboard GPS receivers, seabed nodes must operate autonomously. Seawater is an electrically conductive medium with high dielectric attenuation; high-frequency GPS L-band signals (1.575 GHz) penetrate less than 10 centimeters below the surface. Consequently, every OBN operates in <strong>blind holdover</strong> throughout its entire underwater deployment cycle.
+      </p>
+
+      <div class="math-callout p-5 rounded-xl text-white my-6 text-xs sm:text-sm space-y-3">
+        <div>
+          <span class="text-blue-400 font-bold">// 1. Seismic Spatial Blur &amp; Two-Way Travel Time (TWT) Migration Error:</span>
+          <div class="text-white font-mono mt-1">&Delta;x = v<sub>acoustic</sub> &times; &Delta;t<sub>drift</sub> &emsp;|&emsp; &Delta;z &approx; (v<sub>avg</sub> &times; &Delta;t<sub>rx</sub>) / (2 cos &theta;)</div>
+          <div class="text-slate-400 mt-1 text-[11px] leading-normal font-sans">
+            Where v<sub>acoustic</sub> in seawater and shallow sediments averages 1,500 m/s to 2,200 m/s. Because seismic trace stacking relies on two-way travel time (t<sub>rec</sub> = t<sub>0</sub> + TWT + &Delta;t<sub>rx</sub>), an uncorrected 1 millisecond clock error (&Delta;t = 0.001 s) introduces a spatial reconstruction error of <strong>1.5 to 2.2 meters</strong>. In 4D time-lapse reservoir surveillance, this non-repeatable phase error degrades Normalized Root Mean Square (<strong>NRMS</strong>) repeatability and masks subtle fluid saturation changes.
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-slate-700">
+          <span class="text-cyan-400 font-bold">// 2. Cumulative Time Error Holdover Model:</span>
+          <div class="text-white font-mono mt-1">&Delta;t<sub>accum</sub>(t) = &int;<sub>0</sub><sup>t</sup> [&Delta;f(&tau;) / f<sub>0</sub>] d&tau; &approx; x<sub>0</sub> + y<sub>0</sub>t + &frac12; D t<sup>2</sup> + &int;<sub>0</sub><sup>t</sup> [&Delta;f(T(&tau;))/f<sub>0</sub>] d&tau; + &epsilon;(t)</div>
+          <div class="text-slate-400 mt-1 text-[11px] leading-normal font-sans">
+            Where x<sub>0</sub> is initial sync phase offset (&le;1 ns), y<sub>0</sub> is residual fractional frequency offset at release (&lt;1&times;10⁻¹²), D is aging drift rate per day, and &Delta;f(T) represents thermal response across the benthic boundary layer.
+          </div>
+        </div>
+      </div>
+
+      <p>
+        To prevent positional blur, wavefront decoherence, and destructive interference during seismic trace stacking, geophysicists require the total uncompensated time drift of an OBN clock to stay strictly within <strong>&plusmn;1.0 millisecond</strong> over 60 to 90 continuous days.
+      </p>
+
+      <!-- ================= SECTION 2: THE BATTERY WEIGHT PARADOX ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        2. The Architecture Trade-off: TCXO vs. OCXO vs. CSAC vs. TimeCubic Q100
+      </h2>
+
+      <p>
+        Historically, seismic equipment designers evaluating timing modules for autonomous seabed nodes had to weigh three architectural options, each presenting severe compromises:
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2 text-sm">
+        <li><strong>Standard TCXOs (Temperature Compensated Crystal Oscillators):</strong> Low power (&lt;20 mW), but suffering from frequency aging of 1 to 5 ppm/year and thermal hysteresis. Over 60 days, cumulative holdover drift typically exceeds <strong>50 to 200 milliseconds</strong>&mdash;completely unusable for precision seismic imaging.</li>
+        <li><strong>Conventional OCXOs (Oven Controlled Crystal Oscillators):</strong> Excellent holdover stability (&lt;1 ms / 60 days), but demanding <strong>450 mW to 1,500 mW</strong> of continuous electrical heating power to maintain an internal crystal oven at elevated temperatures (+75&deg;C to +85&deg;C). This drains up to 45% of total node battery reserves.</li>
+        <li><strong>Chip Scale Atomic Clocks (CSAC, e.g. Microchip SA.45s):</strong> Highly regarded for atomic physics package stability, CSACs are frequently considered for subsea timing. However, from a practical deployment perspective, they present two critical barriers:
+          <ul class="list-circle pl-6 mt-1.5 space-y-1 text-slate-600 text-xs">
+            <li><strong>Power consumption remains 2x to 2.5x higher:</strong> A typical CSAC consumes ~120 mW to 140 mW steady-state (and up to 1.2 W–1.5 W during warm-up). Across a 60-to-120 day seabed mission, this still requires more than double the battery capacity of the Q100.</li>
+            <li><strong>Unit BOM cost is almost double:</strong> At commercial price points ($1,500 to $2,500+ per unit), outfitting a commercial survey of 3,000 to 5,000 autonomous nodes with CSACs adds millions of dollars in capital expenditure compared to disciplined crystal solutions.</li>
+            <li><strong>Maturity and Field-Proven Track Record:</strong> The TimeCubic Q100 is a very mature, market-proven solution designed specifically for subsea OBN campaigns. It avoids the laser diode degradation, magnetic sensitivity, and fragile physics packages of CSACs while delivering verified sub-millisecond holdover at a fraction of the cost.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Comparison Matrix Table (AI-Search and Engineer Ready) -->
+      <div class="my-6 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs spec-table border-collapse">
+          <thead class="bg-slate-100 font-mono text-[11px] uppercase text-slate-900">
+            <tr>
+              <th>Timing Architecture</th>
+              <th>Steady-State Power</th>
+              <th>60-Day Energy (Clock)</th>
+              <th>Relative Unit BOM Cost</th>
+              <th>60-Day Blind Holdover</th>
+              <th>Subsea OBN Maturity</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 font-mono text-slate-700">
+            <tr>
+              <td class="font-bold">Standard TCXO</td>
+              <td class="text-emerald-600 font-bold">&lt; 20 mW</td>
+              <td>28.8 Wh</td>
+              <td>Very Low ($)</td>
+              <td class="text-rose-600 font-bold">&gt; 50 ms (Unusable)</td>
+              <td class="text-slate-500">Not viable for 3D/4D</td>
+            </tr>
+            <tr>
+              <td class="font-bold">Conventional Mini-OCXO</td>
+              <td class="text-rose-600 font-bold">450 mW – 800 mW</td>
+              <td>648 Wh – 1,152 Wh</td>
+              <td>Moderate ($$)</td>
+              <td class="text-emerald-700 font-bold">&lt; &plusmn;1.0 ms</td>
+              <td class="text-slate-500">Heavy battery penalty</td>
+            </tr>
+            <tr>
+              <td class="font-bold">CSAC (e.g. Microchip SA.45s)</td>
+              <td class="text-amber-700 font-bold">~120 mW – 140 mW</td>
+              <td>172.8 Wh – 201.6 Wh</td>
+              <td class="text-rose-600 font-bold">Very High ($$$$, ~2x Q100)</td>
+              <td class="text-emerald-700 font-bold">&lt; &plusmn;0.5 ms</td>
+              <td class="text-slate-500">Physics package fragility</td>
+            </tr>
+            <tr class="bg-blue-50/70 border-2 border-blue-400">
+              <td class="font-bold text-blue-900">TimeCubic Model Q100</td>
+              <td class="text-blue-700 font-bold">&lt; 60 mW (&gt;50% &lt; CSAC)</td>
+              <td class="text-blue-900 font-bold">86.4 Wh</td>
+              <td class="text-emerald-700 font-bold">Optimized (~Half of CSAC)</td>
+              <td class="text-blue-900 font-bold">&lt; &plusmn;0.8 ms verified</td>
+              <td class="text-blue-900 font-bold">Mature &amp; Field-Proven</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-4 p-4 rounded-xl bg-slate-100 border border-slate-300 text-xs text-slate-700 space-y-2">
+        <div class="font-bold font-mono text-slate-900 uppercase">Field Engineering Notes: Battery Chemistry &amp; Rack Power Constraints</div>
+        <p>
+          <strong>1. Cold-Seabed Battery Derating:</strong> At deep-sea temperatures (+2&deg;C to +4&deg;C), standard primary Lithium Thionyl Chloride (Li-SOCl<sub>2</sub>) and secondary LiFePO<sub>4</sub> cells suffer a 10% to 15% drop in delivered capacity due to increased electrolyte impedance. Saving 115 Wh per node compared to a CSAC (and &gt;800 Wh compared to an OCXO) eliminates <strong>1.2 to 2.5 kg of dead battery cells</strong> per pressure housing, avoiding thicker titanium hulls.
+        </p>
+        <p>
+          <strong>2. Deck Synchronization Infrastructure:</strong> A commercial CSAC draws <strong>1.2 W to 1.5 W during initial warm-up</strong>. On shipboard pre-deployment provisioning trays housing 64 to 128 nodes simultaneously, this creates massive cumulative inrush currents (&gt;100 A at 3.3V) that risk power rail brownouts and sync dropouts. The TimeCubic Q100 features soft-start current limiting (&lt;150 mW peak warm-up), ensuring seamless mass-rack synchronization from standard lab power buses.
+        </p>
+      </div>
+
+      <p class="mt-4">
+        In an offshore deployment of 3,000 nodes, reducing timing power by 70% eliminates tons of lithium battery payload. Smaller battery requirements mean smaller pressure vessel volume, lower handling weight on vessel decks, and the ability of an ROV (Remotely Operated Vehicle) to carry <strong>twice as many nodes per subsea dive</strong>&mdash;translating directly into hundreds of thousands of dollars in vessel day-rate savings.
+      </p>
+
+      <!-- ================= SECTION 3: THE TIMECUBIC TIMING ARCHITECTURE ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        3. Inside TimeCubic Q100: How We Achieve &lt;60 mW with OCXO Stability
+      </h2>
+
+      <p>
+        Achieving ovenized stability under 60 mW without violating thermodynamic physics requires a fundamental redesign of thermal conduction paths and synthesizer architectures:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div class="bg-white p-5 rounded-xl border border-slate-200">
+          <div class="text-blue-600 font-mono font-bold text-xs uppercase">Thermal Design: Core Micro-Vacuum Isolation (&lt;60 mW Active Core)</div>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Standard OCXOs heat a massive internal metal can. TimeCubic utilizes proprietary vacuum micro-encapsulation and miniature thermal isolation pillars that localize thermal regulation strictly to the quartz resonator active region. Conductive heat leakage to ambient seabed water (2&deg;C–4&deg;C) is reduced by over 80%.
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200">
+          <div class="text-blue-600 font-mono font-bold text-xs uppercase">Phase Measurement Engine: Low-Noise PFD (&le;1 ns RMS) with Digital Aging Compensation</div>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Prior to node sealing on the vessel deck, the Q100 receives shipboard GNSS 1PPS. An internal high-resolution phase detector measures the offset with <strong>&le; 1 ns RMS resolution</strong>, reporting real-time phase error via RS232 and executing Kalman-weighted frequency corrections down to &lt; 1&times;10⁻¹².
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= SECTION 4: DEPLOYMENT WORKFLOW ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        4. Operational Workflow: Deck Pre-Sync, Holdover, and Post-Retrieval Verification
+      </h2>
+
+      <p>
+        A reliable subsea timing solution is not merely an oscillator component; it is a synchronized mission sequence:
+      </p>
+
+      <ol class="list-decimal pl-6 space-y-4 text-sm">
+        <li>
+          <strong>Stage 1: Deck Pre-Discipline &amp; Aging Calibration (Hours 0 to 4):</strong> Nodes are loaded into provisioning racks on the seismic vessel deck. The Q100 locks to the vessel's master GNSS 1PPS reference, synchronizing internal 1PPS to &le;1 ns RMS, setting the absolute mission Time-of-Day (ToD) epoch via RS232, and calibrating internal polynomial aging coefficients.
+        </li>
+        <li>
+          <strong>Stage 2: Thermocline Transit &amp; Seabed Holdover (Days 1 to 60+):</strong> External 1PPS is disconnected as the node enters the water column. During deployment, the unit transitions through a severe marine thermocline&mdash;dropping from +35&deg;C deck temperatures in equatorial zones (e.g., Gulf of Mexico, West Africa, Brazil pre-salt) down to +2&deg;C to +4&deg;C at 3,000 meters depth. The Q100's high thermal rejection bandwidth isolates the crystal oven from this rapid 30 K external gradient, achieving isothermal benthic stabilization within minutes and entering stable holdover with &lt;60 mW steady-state power draw.
+        </li>
+        <li>
+          <strong>Stage 3: Post-Retrieval Verification &amp; SEG-D Trace De-Skew (Day 60+):</strong> Upon ROV retrieval back to the vessel deck, shipboard GNSS 1PPS is immediately reconnected. The Q100 logs the exact total phase error (&Delta;t<sub>accum</sub>, e.g., 0.62 ms) accumulated over the mission and exports a standardized ASCII/JSON drift telemetry file. During data transcription to SEG-D Rev 3.x and SEG-Y formats, processing workflows apply linear or spline clock de-skewing across all shot records, reducing residual trace timing uncertainty to <strong>&lt; &plusmn;50 &mu;s</strong>.
+        </li>
+      </ol>
+
+      <!-- ================= SECTION 5: CONCLUSION & RFQ ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        5. Architectural Conclusion: Sizing Next-Gen Subsea Nodes
+      </h2>
+
+      <p>
+        As seismic exploration moves toward longer observation windows (120 to 180 days) and smaller node footprints, timing power budget is the primary limiting factor on ROV deployment efficiency. By achieving <strong>&lt;60 mW power consumption with &lt;&plusmn;1 ms 60-day holdover</strong>, the TimeCubic Q100 delivers the critical SWaP-C breakthrough needed for the next decade of deep-water geophysics.
+      </p>
+
+    </div>
+
+    <!-- ================= CALL TO ACTION BOX (HIGH COMMERCIAL INTENT) ================= -->
+    <div class="mt-14 bg-gradient-to-br from-slate-900 to-blue-950 text-white p-8 rounded-2xl border border-blue-800 shadow-xl">
+      <div class="max-w-2xl">
+        <span class="px-2.5 py-1 rounded bg-blue-500/20 text-blue-300 font-mono text-xs font-bold uppercase tracking-wider">
+          Engineering Evaluation Kits
+        </span>
+        <h3 class="text-2xl font-bold mt-3">Evaluating Timing Modules for Your Next-Gen OBN?</h3>
+        <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+          Request the full <strong>Model Q100 Datasheet (Rev O/K)</strong>, complete subsea holdover qualification test reports, and bench evaluation breakout boards with RS232 telemetry monitoring.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          <a href="option_a_quartzcom.html#contact" class="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow">
+            Request Q100 Evaluation Kit
+          </a>
+          <a href="mailto:info@timecubic.com" class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition-colors">
+            Contact Subsea Timing Specialist
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-white border-t border-slate-200 py-10 mt-16 text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <strong>TimeCubic Inc.</strong> &bull; 100 Tradecenter Dr., Suite G700, Woburn, MA 01801, USA
+      </div>
+      <div>
+        &copy; 2026 TimeCubic Inc. Precision Frequency &amp; Timing Solutions.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

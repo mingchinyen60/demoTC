@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G-Sensitivity in Tactical UAV & Avionics: Mitigating Vibration-Induced Phase Noise with Q52 & Q101 | TimeCubic Technical Brief</title>
+  <meta name="description" content="Technical analysis of acceleration sensitivity (Gamma) in tactical UAVs and avionics, vibration phase noise degradation equations, and low-power (<125 mW) frequency solutions.">
+  <link rel="stylesheet" href="https://use.typekit.net/ece4ods.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"gill-sans-nova"', '"Gill Sans"', '"Gill Sans MT"', '"Cabin"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              dark: '#0a1526',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .math-callout {
+      background: #0f172a;
+      border-left: 4px solid #0284c7;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .spec-table th, .spec-table td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 14px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ================= TOP NAV / BACK TO SITE ================= -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="option_a_quartzcom.html" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 font-medium text-xs transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Back to TimeCubic Home</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <span class="text-xs font-mono text-slate-400">Application Engineering Series &bull; Technical Brief #02</span>
+        <a href="option_b_thinksrs.html#model-q101" class="px-3 py-1 rounded bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-semibold font-mono transition-colors">
+          View Model Q101 / Q52 Specs &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= ARTICLE HERO ================= -->
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
+    
+    <!-- Meta / Categories -->
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+      <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-800 font-mono text-xs font-bold uppercase tracking-wider">
+        Tactical Avionics &amp; UAV
+      </span>
+      <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-mono text-xs font-bold uppercase tracking-wider">
+        Dynamic G-Sensitivity
+      </span>
+      <span class="text-xs font-mono text-slate-400">
+        Published: November 2026 &bull; 9 min read &bull; Target Audience: Avionics &amp; Radar System Architects
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.18]">
+      G-Sensitivity in Tactical GPSDOs: Mitigating Vibration-Induced Phase Noise and Jitter in High-Dynamics Airborne Payloads
+    </h1>
+
+    <p class="mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed font-normal">
+      How low acceleration sensitivity (&Gamma; &lt; 0.5 ppb/g) in TimeCubic's Q52 oscillator core and Q101 GPSDO eliminates phase noise skirts, prevents telemetry loss in high-G banking turns, and slashes power budgets to &lt;125 mW across -40&deg;C to +85&deg;C.
+    </p>
+
+    <!-- Author & Fact Checked Bar -->
+    <div class="mt-8 py-4 border-y border-slate-200 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm">
+          TC
+        </div>
+        <div>
+          <div class="text-slate-900 font-bold font-sans">TimeCubic Aerospace Timing Division</div>
+          <div>Peer-reviewed by Senior Frequency Control &amp; Avionics Engineers</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <span>Standards: MIL-STD-810H &amp; IEEE 1193</span>
+        <span>Environment: Tactical Drone Dynamics</span>
+      </div>
+    </div>
+
+    <!-- ================= EXECUTIVE SUMMARY ================= -->
+    <div class="mt-8 bg-amber-50/70 border border-amber-200 rounded-2xl p-6">
+      <div class="text-xs font-mono font-bold uppercase tracking-wider text-amber-900 mb-2 flex items-center gap-1.5">
+        <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Executive Summary &bull; Key Takeaways</span>
+      </div>
+      <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
+        <li><strong>The Airborne Vibration Problem:</strong> In UAV airframes and gimbal sensor pods, piston engine harmonics, rotor blade pass frequencies, and aerodynamic turbulence generate intense random vibration (10 Hz to 2 kHz, 5–15 g RMS). Standard quartz oscillators exhibit acceleration sensitivity (&Gamma; &asymp; 1.5 to 3.0 ppb/g), transforming mechanical vibrations into severe phase noise sidebands.</li>
+        <li><strong>Payload System Degradation:</strong> Acceleration-induced phase jitter directly degrades Bit Error Rates (BER) in 64/256-QAM tactical datalinks, reduces the Doppler azimuth resolution in Synthetic Aperture Radar (SAR), and induces cycle slips in GNSS carrier-phase tracking during high-G flight maneuvers.</li>
+        <li><strong>The TimeCubic Solution (Q52 &amp; Q101):</strong> Utilizing specialized crystal resonator cut geometry and balanced mounting architectures, TimeCubic achieves <strong>&Gamma; &lt; 0.5 ppb/g (down to 0.2 ppb/g in targeted orientations)</strong>. Operating under <strong>&lt;125 mW steady-state</strong> across <strong>-40&deg;C to +85&deg;C</strong>, Model Q52 and the Q101 GPSDO provide mission-grade timing without the 3W–5W thermal penalty of legacy military OCXOs.</li>
+      </ul>
+    </div>
+
+    <!-- ================= SECTION 1: THE ACCELERATION MECHANISM ================= -->
+    <div class="mt-12 space-y-6 text-slate-700 leading-relaxed">
+      
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        1. The Acceleration Mechanism: How Mechanical Stress Translates to Phase Noise
+      </h2>
+
+      <p>
+        In stationary laboratory environments, high-grade crystal oscillators deliver pristine phase noise profiles characterized solely by thermal noise, flicker frequency modulation, and white phase floor. However, when mounted in tactical UAV airframes, loitering munitions, or masthead surveillance gimbals, mechanical acceleration exerts physical stress on the quartz lattice, modulating the resonator's elastic constants and shifting resonant frequency.
+      </p>
+
+      <p>
+        The total fractional frequency shift under acceleration is modeled as a 3-dimensional sensitivity vector $\vec{\Gamma}$ interacting with the applied acceleration vector $\vec{a}$:
+      </p>
+
+      <div class="math-callout p-5 rounded-xl text-white my-6 text-xs sm:text-sm space-y-3">
+        <div>
+          <span class="text-blue-400 font-bold">// 1. Static Acceleration Frequency Shift:</span>
+          <div class="text-white font-mono mt-1">&Delta;f / f<sub>0</sub> = &vec;&Gamma; &bull; &vec;a = |&Gamma;| &bull; |a| &bull; cos &theta;</div>
+          <div class="text-slate-400 mt-1 text-[11px] leading-normal font-sans">
+            Where &Gamma; is the acceleration sensitivity vector (typically expressed in ppb/g or 10⁻⁹/g). A standard 2.0 ppb/g oscillator undergoing a 5-g sustained turn shifts carrier frequency by 10 ppb&mdash;instantly pulling receiver PLL tracking loops out of lock.
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-slate-700">
+          <span class="text-cyan-400 font-bold">// 2. Sinusoidal Vibration-Induced Phase Noise (Discrete Tones):</span>
+          <div class="text-white font-mono mt-1">&Lscr;(f<sub>v</sub>) = 20 &times; log<sub>10</sub> [ (|&Gamma;| &bull; f<sub>0</sub> &bull; A<sub>v</sub>) / (2 &bull; f<sub>v</sub>) ] &emsp;[dBc/Hz]</div>
+          <div class="text-slate-400 mt-1 text-[11px] leading-normal font-sans">
+            Where f<sub>0</sub> is carrier frequency (e.g., 10 MHz or 100 MHz), f<sub>v</sub> is vibration offset frequency, and A<sub>v</sub> is peak acceleration amplitude in g. Note that induced phase noise degrades by 20 dB per decade of acceleration!
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-slate-700">
+          <span class="text-amber-400 font-bold">// 3. Random Vibration Power Spectral Density (MIL-STD-810H Broadband):</span>
+          <div class="text-white font-mono mt-1">&Lscr;(f<sub>v</sub>) = 10 &times; log<sub>10</sub> [ ( |&Gamma;|<sup>2</sup> &bull; f<sub>0</sub><sup>2</sup> &bull; S<sub>g</sub>(f<sub>v</sub>) ) / ( 4 &bull; f<sub>v</sub><sup>2</sup> ) ] &emsp;[dBc/Hz]</div>
+          <div class="text-slate-400 mt-1 text-[11px] leading-normal font-sans">
+            Where S<sub>g</sub>(f<sub>v</sub>) is the acceleration spectral density in g<sup>2</sup>/Hz per MIL-STD-810H Method 514.8 Category 24. A standard 2.0 ppb/g oscillator under 0.04 g<sup>2</sup>/Hz random vibration suffers catastrophic phase skirt spreading across the entire 10 Hz to 2 kHz band!
+          </div>
+        </div>
+      </div>
+
+      <p>
+        When random vibration (such as MIL-STD-810H Method 514.8 Category 24) is integrated over the 10 Hz to 2 kHz bandwidth, the induced phase noise sidebands dominate the oscillator spectrum, swamping the native quiescent phase noise curve.
+      </p>
+
+      <!-- ================= SECTION 2: APPLICATION CONSEQUENCES ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        2. Mission Critical Impacts: Why High-G Phase Noise Breaks Tactical Subsystems
+      </h2>
+
+      <p>
+        Vibration-induced phase degradation is not an abstract laboratory nuance; it directly impairs airborne mission performance:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
+        <div class="bg-white p-5 rounded-xl border border-slate-200">
+          <div class="text-blue-600 font-mono font-bold text-xs uppercase">Tactical Datalinks (QAM)</div>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            High-order modulation schemes (64-QAM, 256-QAM) require Error Vector Magnitude (EVM) &lt; 2%. Elevated close-in phase noise skirts rotate constellation symbols, causing sudden packet dropouts and Bit Error Rate (BER) cliffs during UAV motor throttles.
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200">
+          <div class="text-blue-600 font-mono font-bold text-xs uppercase">Synthetic Aperture Radar (SAR)</div>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            SAR image reconstruction depends on coherent phase comparison across sequential radar pulses along the flight track. Acceleration phase jitter induces phase errors across the synthetic aperture, blurring cross-range azimuth resolution and masking stationary ground targets.
+          </p>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200">
+          <div class="text-blue-600 font-mono font-bold text-xs uppercase">Anti-Jam GNSS Tracking</div>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Under electronic warfare (EW) GPS jamming, receiver tracking loops must narrow their loop bandwidth (&lt;2 Hz) to extract weak signals. High vibration-induced phase jitter breaks the narrow loop filter, forcing the receiver into catastrophic loss-of-lock.
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= SECTION 3: ARCHITECTURAL COMPARISON ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        3. Architectural Trade-off: Legacy Mil-OCXOs vs. TimeCubic Q52 &amp; Q101
+      </h2>
+
+      <p>
+        Avionics engineers previously relied on heavy military-grade OCXOs suspended on elastomeric mechanical isolators. While vibration isolators attenuate high-frequency vibration (&gt;150 Hz), they create violent resonant amplification at lower frequencies (15 Hz to 45 Hz)&mdash;exactly where airframe structural modes coincide.
+      </p>
+
+      <!-- Parametric Comparison Table -->
+      <div class="my-6 overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left text-xs spec-table border-collapse">
+          <thead class="bg-slate-100 font-mono text-[11px] uppercase text-slate-900">
+            <tr>
+              <th>Timing Architecture</th>
+              <th>Acceleration Sensitivity (&Gamma;)</th>
+              <th>Steady-State Power</th>
+              <th>Operating Temperature</th>
+              <th>Package Size &amp; Mass</th>
+              <th>Dynamic Vulnerability</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 font-mono text-slate-700">
+            <tr>
+              <td class="font-bold">Standard Avionics TCXO</td>
+              <td class="text-rose-600 font-bold">1.5 – 3.0 ppb/g</td>
+              <td class="text-emerald-600 font-bold">&lt; 30 mW</td>
+              <td>-40&deg;C to +85&deg;C</td>
+              <td>Small (7&times;5 mm, 0.5g)</td>
+              <td class="text-rose-600">Severe phase noise degradation</td>
+            </tr>
+            <tr>
+              <td class="font-bold">Legacy Mil-Spec OCXO</td>
+              <td class="text-emerald-700 font-bold">0.5 – 1.0 ppb/g</td>
+              <td class="text-rose-600 font-bold">3,000 – 5,000 mW (3–5 W)</td>
+              <td>-40&deg;C to +75&deg;C</td>
+              <td class="text-rose-600">Bulky (50&times;50 mm, ~120g)</td>
+              <td class="text-amber-700">Heavy thermal dissipation load</td>
+            </tr>
+            <tr class="bg-blue-50/70 border-2 border-blue-400">
+              <td class="font-bold text-blue-900">TimeCubic Q52 / Q101 GPSDO</td>
+              <td class="text-blue-700 font-bold">&lt; 0.5 ppb/g (0.2 ppb/g opt)</td>
+              <td class="text-blue-900 font-bold">&lt; 125 mW (&gt;90% savings)</td>
+              <td class="text-blue-900 font-bold">-40&deg;C to +85&deg;C</td>
+              <td class="text-blue-900 font-bold">Compact (25.4&times;25.4 mm, ~15g)</td>
+              <td class="text-emerald-700">Resilient without dampers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ================= SECTION 4: HOW TIMECUBIC Q52/Q101 ACHIEVES LOW-G ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        4. Engineering the Q52 &amp; Q101: Crystal Physics &amp; Thermal Balance
+      </h2>
+
+      <p>
+        To eliminate the need for fragile mechanical isolators and achieve sub-0.5 ppb/g sensitivity at under 125 mW, TimeCubic integrates three proprietary design disciplines:
+      </p>
+
+      <div class="space-y-4 my-6">
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <div class="font-bold font-mono text-xs text-blue-700 uppercase">1. Stress-Compensated (SC-Cut) Resonator Symmetry</div>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+            By precisely aligning quartz crystalline axis angles and implementing balanced multi-point peripheral ribbon mounts, mechanical stress tensors cancel out symmetrically across the resonator plate. This suppresses the primary acceleration vector by more than 75% compared to conventional AT-cut crystals.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <div class="font-bold font-mono text-xs text-blue-700 uppercase">2. Micro-Thermal Enclosure with Zero Elastic Coupling</div>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+            Legacy OCXOs suffer from thermal-mechanical expansion mismatch: as the oven heats up, differential expansion between the chassis and crystal mount introduces mechanical strain. TimeCubic utilizes a free-floating micro-vacuum isolation structure that decouples thermal expansion from physical crystal mounting pins.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <div class="font-bold font-mono text-xs text-blue-700 uppercase">3. Q101 GPSDO Tactical Holdover Engine</div>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+            In Model Q101, the low-G Q52 oscillator core is paired with an autonomous digital phase synthesizer. During GPS availability, it disciplines to 1PPS with sub-nanosecond precision. When entering contested GPS-denied environments (electronic jamming or underground canyons), Q101 maintains holdover drift &lt;&plusmn;1.5 &mu;s over 24 hours at +25&deg;C, sustaining tactical synchronization throughout the mission.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-white border border-slate-200">
+          <div class="font-bold font-mono text-xs text-blue-700 uppercase">4. Launch Shock Survivability (MIL-STD-202 Method 213 Condition D)</div>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+            For tube-launched UAVs, catapult releases, and loitering munitions, components must endure extreme launch g-shocks. The Q52 and Q101 are qualified to <strong>500 g, 1.0 ms half-sine mechanical shock</strong> with zero quartz lattice fracture and permanent frequency offset shifts constrained to &lt; 5 &times; 10⁻¹⁰ post-recovery.
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= SECTION 5: CONCLUSION ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        5. Architectural Conclusion: Sizing SWaP-C for Next-Gen Avionics
+      </h2>
+
+      <p>
+        As tactical unmanned platforms move toward smaller form factors, longer loiter endurances, and higher-frequency RF datalinks, the legacy paradigm of consuming 5 Watts of prime power to heat a bulky oscillator is obsolete. 
+      </p>
+      <p>
+        By delivering <strong>&Gamma; &lt; 0.5 ppb/g acceleration immunity, &lt;125 mW operating power, and -40&deg;C to +85&deg;C thermal compliance</strong>, the TimeCubic Q52 oscillator and Q101 GPSDO provide avionics architects with the optimal balance of dynamic phase stability, mission longevity, and payload SWaP-C savings.
+      </p>
+
+    </div>
+
+    <!-- ================= CALL TO ACTION BOX ================= -->
+    <div class="mt-14 bg-gradient-to-br from-slate-900 to-amber-950 text-white p-8 rounded-2xl border border-amber-800 shadow-xl">
+      <div class="max-w-2xl">
+        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 font-mono text-xs font-bold uppercase tracking-wider">
+          Avionics Evaluation Kits
+        </span>
+        <h3 class="text-2xl font-bold mt-3">Designing Tactical UAV Payloads or Dynamic Avionics?</h3>
+        <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+          Request the full <strong>Model Q52 and Q101 Datasheet package</strong>, including random vibration phase noise test reports (MIL-STD-810H) and bench evaluation kits with RS232 telemetry monitoring.
+        </p>
+
+        <div class="mt-6 flex flex-wrap items-center gap-4">
+          <a href="option_a_quartzcom.html#contact" class="px-6 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow">
+            Request Q52 / Q101 Evaluation Kit
+          </a>
+          <a href="mailto:info@timecubic.com" class="px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold text-xs transition-colors">
+            Consult Aerospace FAE
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-white border-t border-slate-200 py-10 mt-16 text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <strong>TimeCubic Inc.</strong> &bull; 100 Tradecenter Dr., Suite G700, Woburn, MA 01801, USA
+      </div>
+      <div>
+        &copy; 2026 TimeCubic Inc. Aerospace &amp; Precision Frequency Control Division.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
