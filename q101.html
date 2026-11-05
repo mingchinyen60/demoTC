@@ -7,19 +7,18 @@
   <meta name="description" content="Model Q101 GPS disciplined oscillator with wide temperature range (-40°C to +85°C) and RS232 telemetry.">
   <link rel="icon" type="image/png" href="assest/brand/timecubic_logo.png">
   
-  <!-- Fonts -->
+    <!-- Fonts: Gill Sans Nova Typekit + Fallback -->
+  <link rel="stylesheet" href="https://use.typekit.net/ece4ods.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Cabin"', 'sans-serif'],
+            sans: ['"gill-sans-nova"', '"Gill Sans"', '"Gill Sans MT"', '"Cabin"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
@@ -81,15 +80,60 @@
         </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-8">
-        <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Home</a>
-<a href="products.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1 text-sm">Products</a>
-<a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">About Us</a>
-<a href="partners.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Partners</a>
-<a href="contact.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Contact &amp; RFQ</a>
+      <!-- Desktop Nav: Home | About Us | Products | Application & Blog | Partners | Contact -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm">
+        <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+        <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
+        <a href="products.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Products</a>
+        
+        <!-- Application & Blog Dropdown -->
+        <div class="relative group">
+          <a href="index.html#applications-blog" class="text-slate-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-1.5 py-1">
+            <span>Application &amp; Blog</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <div class="absolute top-full -left-6 w-96 bg-white border border-slate-200 rounded-xl shadow-2xl p-3 hidden group-hover:block z-50">
+            <div class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 px-2 py-1">Technical Whitepapers &amp; Briefs</div>
+            <a href="blog_obn_timing.html" class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-blue-50/70 transition-colors">
+              <span class="w-6 h-6 rounded bg-cyan-100 text-cyan-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">01</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Seabed OBN Clock Drift (&lt;60 mW)</div>
+                <div class="text-[11px] text-slate-500">60-Day blind holdover &amp; CSAC comparison</div>
+              </div>
+            </a>
+            <a href="blog_aerospace_gsensitivity.html" class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-blue-50/70 transition-colors">
+              <span class="w-6 h-6 rounded bg-amber-100 text-amber-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">02</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Tactical UAV G-Sensitivity (Q52 / Q101)</div>
+                <div class="text-[11px] text-slate-500">Vibration phase noise &amp; 500g launch shock</div>
+              </div>
+            </a>
+            <a href="blog_rf_phase_noise.html" class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-blue-50/70 transition-colors">
+              <span class="w-6 h-6 rounded bg-indigo-100 text-indigo-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">03</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Direct-RF Phase Noise &amp; Jitter (Q50)</div>
+                <div class="text-[11px] text-slate-500">ADC SNR ceilings &amp; reciprocal mixing</div>
+              </div>
+            </a>
+            <a href="blog_smartgrid_pmu.html" class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-blue-50/70 transition-colors">
+              <span class="w-6 h-6 rounded bg-emerald-100 text-emerald-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">04</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Smart Grid PMU GNSS Resilience (Q200)</div>
+                <div class="text-[11px] text-slate-500">IEEE C37.118 TVE &lt; 1% adaptive holdover</div>
+              </div>
+            </a>
+            <div class="pt-2 border-t border-slate-100 px-2 mt-1">
+              <a href="index.html#applications-blog" class="text-xs font-mono font-bold text-blue-600 hover:underline flex items-center justify-between">
+                <span>View Full Briefs Section</span> &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
 
-        <a href="contact.html" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors shadow-sm shadow-blue-500/20">
+        <a href="partners.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Partners</a>
+        <a href="contact.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+
+        <a href="contact.html" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors shadow-sm shadow-blue-500/20">
           Request Quote
         </a>
       </nav>
@@ -105,11 +149,12 @@
     <!-- Mobile Dropdown -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-3 shadow-lg">
       <a href="index.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Home</a>
-      <a href="products.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Products Catalog</a>
       <a href="about.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">About Us</a>
+      <a href="products.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Products</a>
+      <a href="index.html#applications-blog" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Application &amp; Blog</a>
       <a href="partners.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Partners</a>
-      <a href="contact.html" class="block py-2 text-blue-600 font-semibold hover:underline">Contact &amp; RFQ</a>
-      <a href="compare.html" class="block py-2 text-slate-500 font-mono text-xs">Design Comparison Portal</a>
+      <a href="contact.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Contact</a>
+      <a href="contact.html" class="block w-full py-2.5 rounded-lg bg-blue-600 text-white text-center font-semibold mt-2">Request Quote</a>
     </div>
   </header>
 
