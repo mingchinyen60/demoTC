@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; RFQ | TimeCubic Inc.</title>
+  <meta name="description" content="Contact TimeCubic Inc. in Woburn, MA for product quotes, evaluation units, and custom frequency timing modules.">
+  <link rel="icon" type="image/png" href="assest/brand/timecubic_logo.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Cabin"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .blueprint-grid {
+      background-size: 24px 24px;
+      background-image: 
+        linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Top Spec Bar -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-mono text-[11px] font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+          SWaP-C PRECISION TIMING
+        </span>
+        <span class="text-slate-300">Ultra-Low Power Oscillators (&lt;60 mW) &amp; Atomic Standards</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 font-mono text-[11px]">
+        <span>Woburn, MA USA</span>
+        <span class="hidden md:inline">|</span>
+        <a href="tel:781-521-5862" class="hover:text-white transition-colors">Tel: +1 (781) 521-5862</a>
+        <span class="hidden md:inline">|</span>
+        <a href="mailto:info@timecubic.com" class="hover:text-white transition-colors">info@timecubic.com</a>
+        <span class="hidden md:inline">|</span>
+        <a href="compare.html" class="px-2 py-0.5 rounded bg-blue-600/30 text-blue-300 hover:bg-blue-600 hover:text-white transition-colors font-sans">Design Review &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assest/brand/timecubic_logo.png" alt="TimeCubic Inc." class="h-10 w-auto object-contain">
+        <div class="hidden sm:block border-l border-slate-300 pl-3">
+          <span class="block text-xs uppercase font-mono tracking-wider font-semibold text-slate-500">Precision Timing Systems</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Home</a>
+<a href="products.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Products</a>
+<a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">About Us</a>
+<a href="partners.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Partners</a>
+<a href="contact.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1 text-sm">Contact &amp; RFQ</a>
+
+        <a href="contact.html" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors shadow-sm shadow-blue-500/20">
+          Request Quote
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-3 shadow-lg">
+      <a href="index.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Home</a>
+      <a href="products.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Products Catalog</a>
+      <a href="about.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">About Us</a>
+      <a href="partners.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Partners</a>
+      <a href="contact.html" class="block py-2 text-blue-600 font-semibold hover:underline">Contact &amp; RFQ</a>
+      <a href="compare.html" class="block py-2 text-slate-500 font-mono text-xs">Design Comparison Portal</a>
+    </div>
+  </header>
+
+  <div class="bg-slate-900 text-white py-12 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">Engineering Inquiry</span>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Contact &amp; Request For Quotation (RFQ)</h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-2">
+          Connect directly with TimeCubic engineering specialists in Woburn, Massachusetts for product availability, custom pinouts, or evaluation units.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Contact Info & Banner -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h3 class="text-lg font-bold text-slate-900 mb-4">Corporate Headquarters</h3>
+          <address class="not-italic text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
+            <div>
+              <strong class="text-slate-900 block font-sans">TimeCubic Inc.</strong>
+              <span>100 Tradecenter Drive, Suite G700</span><br>
+              <span>Woburn, MA 01801, USA</span>
+            </div>
+            
+            <div class="pt-2 border-t border-slate-100 space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-slate-400 text-xs w-16">PHONE:</span>
+                <a href="tel:781-521-5862" class="font-mono font-bold text-blue-600 hover:underline">+1 (781) 521-5862</a>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="font-mono text-slate-400 text-xs w-16">EMAIL:</span>
+                <a href="mailto:info@timecubic.com" class="font-mono font-bold text-blue-600 hover:underline">info@timecubic.com</a>
+              </div>
+            </div>
+          </address>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm overflow-hidden">
+          <img src="assest/brand/contact_banner.png" alt="TimeCubic Facility" class="w-full h-auto object-cover rounded-xl">
+          <p class="text-[11px] font-mono text-slate-500 text-center mt-3">Woburn, Massachusetts Engineering &amp; Operations Center</p>
+        </div>
+      </div>
+
+      <!-- RFQ Form -->
+      <div class="lg:col-span-7">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h3 class="text-xl font-bold text-slate-900">Request Specification / Quotation</h3>
+          <p class="text-xs text-slate-500 mt-1 mb-6">Complete the engineering inquiry form below. Our technical team responds within 1 business day.</p>
+          
+          <form id="rfq-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-700 mb-1">First &amp; Last Name *</label>
+                <input type="text" required placeholder="Dr. John Doe" class="w-full text-xs p-3 rounded-lg border border-slate-300 focus:outline-none focus:border-blue-500">
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-700 mb-1">Company / Organization *</label>
+                <input type="text" required placeholder="Company Inc. / University" class="w-full text-xs p-3 rounded-lg border border-slate-300 focus:outline-none focus:border-blue-500">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-700 mb-1">Work Email *</label>
+                <input type="email" required placeholder="john@domain.com" class="w-full text-xs p-3 rounded-lg border border-slate-300 focus:outline-none focus:border-blue-500">
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-700 mb-1">Phone Number</label>
+                <input type="tel" placeholder="+1 (555) 000-0000" class="w-full text-xs p-3 rounded-lg border border-slate-300 focus:outline-none focus:border-blue-500">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-700 mb-1">Target Product Model</label>
+                <select id="product-select" class="w-full text-xs p-3 rounded-lg border border-slate-300 focus:outline-none focus:border-blue-500 bg-white">
+                  <option value="General">General Technical Inquiry</option>
+                  <option value="Q50">Model Q50 / Q52 (&lt;60 mW Oscillator)</option>
+                  <option value="Q100">Model Q100 (1PPS Disciplined Module)</option>
+                  <option value="Q101">Model Q101 (GPS Disciplined Module)</option>
+                  <option value="Q200">Model Q200 (Satellite Disciplined)</option>
+                  <option value="A100">Model A100 (&lt;150 mW Atomic Standard)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-mono font-semibold text-slate-700 mb-1">Application Sector</label>
+                <select class="w-full text-xs p-3 rounded-lg border border-slate-300 focus:outline-none focus:border-blue-500 bg-white">
+                  <option>Ocean Bottom Nodes (OBN) / Subsea</option>
+                  <option>Aerospace / Avionics / UAV</option>
+                  <option>Seismic &amp; Oil/Gas Exploration</option>
+                  <option>Telecom &amp; Smart Grid Synchronization</option>
+                  <option>Defense / Government</option>
+                  <option>Other / Academic Research</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-mono font-semibold text-slate-700 mb-1">Project Specification &amp; Quantities</label>
+              <textarea rows="4" placeholder="Please specify target frequency (e.g. 10 MHz), supply voltage, expected deployment duration, temperature requirements, or evaluation unit request..." class="w-full text-xs p-3 rounded-lg border border-slate-300 focus:outline-none focus:border-blue-500"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md">
+              Submit Engineering Inquiry
+            </button>
+            <div id="form-msg" class="hidden text-xs text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200 text-center font-mono">
+              &check; Thank you for your inquiry. A TimeCubic application engineer will contact you shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    // Prefill product from URL query
+    const params = new URLSearchParams(window.location.search);
+    const prod = params.get('product');
+    if (prod) {
+      const select = document.getElementById('product-select');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value === prod) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+
+    const form = document.getElementById('rfq-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.getElementById('form-msg').classList.remove('hidden');
+        form.reset();
+      });
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 text-sm border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <!-- Col 1 -->
+        <div class="lg:col-span-2">
+          <img src="assest/brand/timecubic_logo.png" alt="TimeCubic Inc." class="h-9 w-auto object-contain brightness-200 contrast-200 mb-4">
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            TimeCubic Inc. designs and manufactures industry-leading ultra-low power frequency oscillators, disciplined timing modules, and atomic frequency standards engineered for the most demanding SWaP-C applications worldwide.
+          </p>
+          <div class="mt-4 text-xs font-mono text-slate-500">
+            Founded 2017 &bull; Woburn, Massachusetts, USA
+          </div>
+        </div>
+
+        <!-- Col 2: Products -->
+        <div>
+          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Products</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="q050.html" class="hover:text-blue-400 transition-colors">Model Q50 / Q52 (&lt;60 mW)</a></li>
+            <li><a href="q100.html" class="hover:text-blue-400 transition-colors">Model Q100 1PPS Disciplined</a></li>
+            <li><a href="q101.html" class="hover:text-blue-400 transition-colors">Model Q101 GPS Disciplined</a></li>
+            <li><a href="q200.html" class="hover:text-blue-400 transition-colors">Model Q200 Satellite Disciplined</a></li>
+            <li><a href="a100.html" class="hover:text-blue-400 transition-colors">Model A100 Atomic Oscillator</a></li>
+            <li><a href="products.html" class="text-blue-400 hover:underline">All Products &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Datasheets -->
+        <div>
+          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Official Datasheets</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="assest/pdf/q050_datasheet_rev_b.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q50 Datasheet (PDF)</span></a></li>
+            <li><a href="assest/pdf/q052_datasheet_rev_c.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q52 Datasheet (PDF)</span></a></li>
+            <li><a href="assest/pdf/q100_datasheet_rev_o.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q100 Datasheet (PDF)</span></a></li>
+            <li><a href="assest/pdf/q101_datasheet_rev_c.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q101 Datasheet (PDF)</span></a></li>
+            <li><a href="assest/pdf/q200_datasheet_rev_j.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q200 Datasheet (PDF)</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div>
+          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Headquarters</h4>
+          <address class="not-italic text-xs space-y-1 text-slate-400">
+            <p class="font-semibold text-slate-300">TimeCubic Inc.</p>
+            <p>100 Tradecenter Drive</p>
+            <p>Suite G700</p>
+            <p>Woburn, MA 01801, USA</p>
+            <p class="pt-2"><a href="tel:781-521-5862" class="hover:text-white font-mono">+1 (781) 521-5862</a></p>
+            <p><a href="mailto:info@timecubic.com" class="hover:text-white font-mono">info@timecubic.com</a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-900 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>&copy; 2017&ndash;2026 TimeCubic Inc. All rights reserved. Precision Timing Systems.</div>
+        <div class="flex items-center gap-4">
+          <a href="compare.html" class="hover:text-slate-300 text-blue-400">Design Comparison Portal</a>
+          <span>&bull;</span>
+          <a href="about.html" class="hover:text-slate-300">About</a>
+          <span>&bull;</span>
+          <a href="partners.html" class="hover:text-slate-300">Partners</a>
+          <span>&bull;</span>
+          <a href="contact.html" class="hover:text-slate-300">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mBtn = document.getElementById('mobile-menu-btn');
+    const mMenu = document.getElementById('mobile-menu');
+    if (mBtn && mMenu) {
+      mBtn.addEventListener('click', () => {
+        mMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

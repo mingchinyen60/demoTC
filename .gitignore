@@ -1,0 +1,13 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Windows Junction mirror
+assets/
+
+# Editor & Temp
+.vscode/
+.idea/
+*.tmp
+*.log

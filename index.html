@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeCubic | Ultra-Low Power Frequency &amp; Timing Solutions</title>
+  <meta name="description" content="TimeCubic Inc. designs industry-leading ultra-low power frequency oscillators, disciplined timing modules, and atomic standards for OBN, aerospace, and smart grids.">
+  <link rel="icon" type="image/png" href="assest/brand/timecubic_logo.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Cabin"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .blueprint-grid {
+      background-size: 24px 24px;
+      background-image: 
+        linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen">
+
+  <!-- Top Spec Bar -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-mono text-[11px] font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+          SWaP-C PRECISION TIMING
+        </span>
+        <span class="text-slate-300">Ultra-Low Power Oscillators (&lt;60 mW) &amp; Atomic Standards</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 font-mono text-[11px]">
+        <span>Woburn, MA USA</span>
+        <span class="hidden md:inline">|</span>
+        <a href="tel:781-521-5862" class="hover:text-white transition-colors">Tel: +1 (781) 521-5862</a>
+        <span class="hidden md:inline">|</span>
+        <a href="mailto:info@timecubic.com" class="hover:text-white transition-colors">info@timecubic.com</a>
+        <span class="hidden md:inline">|</span>
+        <a href="compare.html" class="px-2 py-0.5 rounded bg-blue-600/30 text-blue-300 hover:bg-blue-600 hover:text-white transition-colors font-sans">Design Review &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="assest/brand/timecubic_logo.png" alt="TimeCubic Inc." class="h-10 w-auto object-contain">
+        <div class="hidden sm:block border-l border-slate-300 pl-3">
+          <span class="block text-xs uppercase font-mono tracking-wider font-semibold text-slate-500">Precision Timing Systems</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="index.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1 text-sm">Home</a>
+<a href="products.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Products</a>
+<a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">About Us</a>
+<a href="partners.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Partners</a>
+<a href="contact.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Contact &amp; RFQ</a>
+
+        <a href="contact.html" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors shadow-sm shadow-blue-500/20">
+          Request Quote
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-3 shadow-lg">
+      <a href="index.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Home</a>
+      <a href="products.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Products Catalog</a>
+      <a href="about.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">About Us</a>
+      <a href="partners.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Partners</a>
+      <a href="contact.html" class="block py-2 text-blue-600 font-semibold hover:underline">Contact &amp; RFQ</a>
+      <a href="compare.html" class="block py-2 text-slate-500 font-mono text-xs">Design Comparison Portal</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-900 text-white overflow-hidden blueprint-grid border-b border-slate-800">
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-blue-950/40 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-400 font-mono text-xs">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            SWaP-C Benchmark &bull; Subsea Ocean Bottom Nodes (OBN) &bull; Avionics
+          </div>
+          
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Ultra-Low Power <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-sky-200">
+              Frequency &amp; Timing Solutions
+            </span>
+          </h1>
+          
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+            TimeCubic Inc. engineers ultra-low power oscillators (&lt;60 mW), 1PPS disciplined timing modules, and atomic standards with proprietary thermal design and advanced signal processing—built for mission-critical deployments where every milliwatt matters.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            <a href="products.html" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/30 transition-all flex items-center gap-2 group">
+              <span>Explore Products</span>
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="contact.html" class="px-6 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-200 font-semibold text-sm transition-all">
+              Request Engineering Quote
+            </a>
+            <a href="compare.html" class="px-4 py-3.5 rounded-xl text-blue-400 hover:text-white font-mono text-xs transition-colors">
+              &rarr; View Design Comparison
+            </a>
+          </div>
+
+          <!-- Quick Metrics -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-800/80">
+            <div>
+              <div class="text-2xl font-mono font-bold text-cyan-400">&lt;60 mW</div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">Power Consumption</div>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-blue-400">&le;1 ns</div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">Phase Resolution</div>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-sky-400">&lt;10<sup>-12</sup></div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">Freq Accuracy</div>
+            </div>
+            <div>
+              <div class="text-2xl font-mono font-bold text-indigo-400">30+ Yrs</div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">R&amp;D Heritage</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Graphic / Featured Module Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-gradient-to-b from-slate-800/90 to-slate-900/90 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-sm relative">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-700">
+              <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">Featured Hardware Module</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-mono text-[10px]">IN PRODUCTION</span>
+            </div>
+            
+            <div class="py-8 flex justify-center items-center">
+              <img src="assest/products/product_q100_q101.png" alt="TimeCubic Model Q100" class="max-h-52 w-auto object-contain filter drop-shadow-2xl hover:scale-105 transition-transform">
+            </div>
+
+            <div class="space-y-3">
+              <div class="flex justify-between items-baseline">
+                <h3 class="text-xl font-bold text-white">Model Q100 / Q101</h3>
+                <span class="font-mono text-xs text-blue-400">&lt;60 mW &bull; 10 MHz</span>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Ultra-low power 1PPS disciplined oscillator module with sub-nanosecond phase measurement and RS232 time-of-day telemetry.
+              </p>
+              <div class="flex items-center gap-3 pt-2">
+                <a href="q100.html" class="flex-1 text-center py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-colors">
+                  View Specifications
+                </a>
+                <a href="assest/pdf/q100_datasheet_rev_o.pdf" target="_blank" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-xs font-mono transition-colors">
+                  Datasheet PDF &darr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Lineup Grid -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue-600">Precision Product Catalog</span>
+        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Engineered for Harsh SWaP-C Environments</h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-3">
+          From deep subsea ocean bottom nodes to aerospace payloads, our modular oscillators deliver unmatched battery endurance and holdover precision.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Q050 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="h-44 bg-white rounded-xl p-4 border border-slate-200 flex items-center justify-center mb-6">
+              <img src="assest/products/product_q050_transparent.png" alt="Model Q050" class="max-h-36 w-auto object-contain group-hover:scale-105 transition-transform">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono mb-2">
+              <span class="text-blue-600 font-bold">MODEL Q50 / Q52</span>
+              <span class="text-slate-500">&lt;60 mW</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Ultra-Low Power Oscillator</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Designed for seabed seismic nodes (OBN) and battery systems. Low phase noise, optional aging grade, HCMOS output up to 100 MHz.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+            <a href="q050.html" class="text-xs font-bold text-blue-600 hover:text-blue-800">Learn More &rarr;</a>
+            <a href="assest/pdf/q050_datasheet_rev_b.pdf" target="_blank" class="text-xs font-mono text-slate-500 hover:text-slate-800 flex items-center gap-1">
+              <span>PDF</span> &darr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Q100 / Q101 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="h-44 bg-white rounded-xl p-4 border border-slate-200 flex items-center justify-center mb-6">
+              <img src="assest/products/product_q100_q101.png" alt="Model Q100" class="max-h-36 w-auto object-contain group-hover:scale-105 transition-transform">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono mb-2">
+              <span class="text-blue-600 font-bold">MODEL Q100 / Q101</span>
+              <span class="text-slate-500">&lt;60 mW &bull; 1PPS</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">1PPS Disciplined Oscillator</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Disciplined to 1 ns RMS phase and &lt;10<sup>-12</sup> in frequency. Continuous 1-second phase reporting and RS232 time-of-day interface.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+            <a href="q100.html" class="text-xs font-bold text-blue-600 hover:text-blue-800">Learn More &rarr;</a>
+            <a href="assest/pdf/q100_datasheet_rev_o.pdf" target="_blank" class="text-xs font-mono text-slate-500 hover:text-slate-800 flex items-center gap-1">
+              <span>PDF</span> &darr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Q200 -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl hover:border-blue-400 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="h-44 bg-white rounded-xl p-4 border border-slate-200 flex items-center justify-center mb-6">
+              <img src="assest/products/product_q200.png" alt="Model Q200" class="max-h-36 w-auto object-contain group-hover:scale-105 transition-transform">
+            </div>
+            <div class="flex items-center justify-between text-xs font-mono mb-2">
+              <span class="text-blue-600 font-bold">MODEL Q200</span>
+              <span class="text-slate-500">Multi-Output</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">Satellite Disciplined Oscillator</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              High-stability 1PPS GPS/satellite synchronization module with RS232 telemetry, low phase noise, and multiple frequency outputs (5 MHz, 8.192 MHz, 10 MHz).
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+            <a href="q200.html" class="text-xs font-bold text-blue-600 hover:text-blue-800">Learn More &rarr;</a>
+            <a href="assest/pdf/q200_datasheet_rev_j.pdf" target="_blank" class="text-xs font-mono text-slate-500 hover:text-slate-800 flex items-center gap-1">
+              <span>PDF</span> &darr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="products.html" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 hover:underline">
+          <span>View All 5 Models in Comprehensive Comparison Matrix</span> &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Competence & IP Section -->
+  <section class="py-20 bg-slate-100 border-t border-slate-200 blueprint-grid">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-blue-600">Core Engineering IP</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Proprietary Thermal Design &amp; Precision Algorithms</h2>
+          <p class="text-sm text-slate-600 mt-4 leading-relaxed">
+            TimeCubic was founded in 2017 by an accomplished team of physicists and electronic engineers with over 30 years in frequency control. We hold proprietary patents and design secrets addressing the fundamental trade-off between power consumption and thermal stability.
+          </p>
+
+          <div class="space-y-4 mt-6">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-600/10 text-blue-600 flex items-center justify-center font-bold text-xs mt-0.5">&check;</div>
+              <div>
+                <strong class="text-sm text-slate-900 font-bold">Patented Micro-Oven Thermal Isolation</strong>
+                <p class="text-xs text-slate-600">Achieves TCXO/OCXO-grade temperature stability while consuming only 10% to 20% of typical ovenized oscillator power.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-600/10 text-blue-600 flex items-center justify-center font-bold text-xs mt-0.5">&check;</div>
+              <div>
+                <strong class="text-sm text-slate-900 font-bold">Sub-Nanosecond Real-Time Telemetry</strong>
+                <p class="text-xs text-slate-600">Continuous 1-second phase measurement reports drift in real-time over standard RS232, enabling predictive drift compensation.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-blue-600/10 text-blue-600 flex items-center justify-center font-bold text-xs mt-0.5">&check;</div>
+              <div>
+                <strong class="text-sm text-slate-900 font-bold">Deep Seabed &amp; Space Hardened Reliability</strong>
+                <p class="text-xs text-slate-600">Qualified for continuous 60-day to 120-day ocean bottom deployment up to 6,000 meters depth under isothermal conditions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="bg-white border border-slate-300 rounded-2xl p-4 shadow-lg">
+            <img src="assest/charts/products_comparison_overview.png" alt="TimeCubic Product Overview Chart" class="w-full h-auto rounded-lg object-contain">
+            <div class="text-[11px] font-mono text-slate-500 text-center mt-3">
+              Official TimeCubic Product Architecture &amp; Selection Overview
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategic Partners Section -->
+  <section class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">Industry &amp; Manufacturing Ecosystem</span>
+      <h3 class="text-xl font-bold text-slate-900 mt-2 mb-8">Trusted Strategic Partners</h3>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center max-w-4xl mx-auto">
+        <a href="http://www.taitien.com" target="_blank" rel="noopener noreferrer" class="p-6 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex items-center justify-center bg-slate-50/50">
+          <img src="assest/partners/partner_taitien.png" alt="Taitien Electronics" class="max-h-12 w-auto object-contain">
+        </a>
+        <a href="http://coloradocrystal.com" target="_blank" rel="noopener noreferrer" class="p-6 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex items-center justify-center bg-slate-50/50">
+          <img src="assest/partners/partner_colorado_crystal.png" alt="Colorado Crystal Corporation" class="max-h-12 w-auto object-contain">
+        </a>
+        <a href="https://micropt.com/index.htm" target="_blank" rel="noopener noreferrer" class="p-6 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex items-center justify-center bg-slate-50/50">
+          <img src="assest/partners/partner_micropt.png" alt="MicroPt" class="max-h-12 w-auto object-contain">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-slate-900 text-white border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
+      <h2 class="text-2xl sm:text-4xl font-extrabold">Need Custom Frequency or Custom Pinout Specifications?</h2>
+      <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        TimeCubic specializes in custom engineered timing solutions for defense, subsea, and telecom systems. Contact our application engineering team in Woburn, MA for custom test data and evaluation units.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a href="contact.html" class="px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-lg shadow-blue-500/20 transition-all">
+          Request Evaluation Unit / RFQ
+        </a>
+        <a href="tel:781-521-5862" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-mono text-sm border border-slate-700 transition-all">
+          Call: +1 (781) 521-5862
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 text-sm border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <!-- Col 1 -->
+        <div class="lg:col-span-2">
+          <img src="assest/brand/timecubic_logo.png" alt="TimeCubic Inc." class="h-9 w-auto object-contain brightness-200 contrast-200 mb-4">
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            TimeCubic Inc. designs and manufactures industry-leading ultra-low power frequency oscillators, disciplined timing modules, and atomic frequency standards engineered for the most demanding SWaP-C applications worldwide.
+          </p>
+          <div class="mt-4 text-xs font-mono text-slate-500">
+            Founded 2017 &bull; Woburn, Massachusetts, USA
+          </div>
+        </div>
+
+        <!-- Col 2: Products -->
+        <div>
+          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Products</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="q050.html" class="hover:text-blue-400 transition-colors">Model Q50 / Q52 (&lt;60 mW)</a></li>
+            <li><a href="q100.html" class="hover:text-blue-400 transition-colors">Model Q100 1PPS Disciplined</a></li>
+            <li><a href="q101.html" class="hover:text-blue-400 transition-colors">Model Q101 GPS Disciplined</a></li>
+            <li><a href="q200.html" class="hover:text-blue-400 transition-colors">Model Q200 Satellite Disciplined</a></li>
+            <li><a href="a100.html" class="hover:text-blue-400 transition-colors">Model A100 Atomic Oscillator</a></li>
+            <li><a href="products.html" class="text-blue-400 hover:underline">All Products &rarr;</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Datasheets -->
+        <div>
+          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Official Datasheets</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="assest/pdf/q050_datasheet_rev_b.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q50 Datasheet (PDF)</span></a></li>
+            <li><a href="assest/pdf/q052_datasheet_rev_c.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q52 Datasheet (PDF)</span></a></li>
+            <li><a href="assest/pdf/q100_datasheet_rev_o.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q100 Datasheet (PDF)</span></a></li>
+            <li><a href="assest/pdf/q101_datasheet_rev_c.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q101 Datasheet (PDF)</span></a></li>
+            <li><a href="assest/pdf/q200_datasheet_rev_j.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q200 Datasheet (PDF)</span></a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div>
+          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Headquarters</h4>
+          <address class="not-italic text-xs space-y-1 text-slate-400">
+            <p class="font-semibold text-slate-300">TimeCubic Inc.</p>
+            <p>100 Tradecenter Drive</p>
+            <p>Suite G700</p>
+            <p>Woburn, MA 01801, USA</p>
+            <p class="pt-2"><a href="tel:781-521-5862" class="hover:text-white font-mono">+1 (781) 521-5862</a></p>
+            <p><a href="mailto:info@timecubic.com" class="hover:text-white font-mono">info@timecubic.com</a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-900 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>&copy; 2017&ndash;2026 TimeCubic Inc. All rights reserved. Precision Timing Systems.</div>
+        <div class="flex items-center gap-4">
+          <a href="compare.html" class="hover:text-slate-300 text-blue-400">Design Comparison Portal</a>
+          <span>&bull;</span>
+          <a href="about.html" class="hover:text-slate-300">About</a>
+          <span>&bull;</span>
+          <a href="partners.html" class="hover:text-slate-300">Partners</a>
+          <span>&bull;</span>
+          <a href="contact.html" class="hover:text-slate-300">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mBtn = document.getElementById('mobile-menu-btn');
+    const mMenu = document.getElementById('mobile-menu');
+    if (mBtn && mMenu) {
+      mBtn.addEventListener('click', () => {
+        mMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+</body>
+</html>

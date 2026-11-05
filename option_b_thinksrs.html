@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeCubic | Option B (ThinkSRS Style - Scientific Instrumentation & High Information Density)</title>
+  <meta name="description" content="TimeCubic Inc. - Precision frequency standards, ultra-low power oscillators, and 1PPS disciplined timing systems.">
+  <link rel="stylesheet" href="https://use.typekit.net/ece4ods.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"gill-sans-nova"', '"Gill Sans"', '"Gill Sans MT"', '"Cabin"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            srs: {
+              navy: '#0f172a',
+              header: '#0b1329',
+              sidebar: '#1e293b',
+              accent: '#0284c7',
+              gold: '#d97706',
+              grid: '#334155',
+              panel: '#f1f5f9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .blueprint-grid {
+      background-size: 24px 24px;
+      background-image: 
+        linear-gradient(to right, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    }
+    .spec-table th, .spec-table td {
+      border: 1px solid #cbd5e1;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans antialiased selection:bg-sky-700 selection:text-white">
+
+  <!-- ================= DESIGN VERSION TOGGLE BANNER ================= -->
+  <aside aria-label="Version preview switcher" class="bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white text-xs py-2.5 px-4 border-b border-amber-500/50 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-bold bg-amber-500 text-slate-950 uppercase tracking-wider font-mono">
+          Design Concept Review
+        </span>
+        <span class="text-slate-300 font-medium">Viewing: <strong class="text-white">Option B (ThinkSRS Style)</strong> — Scientific Rigor, Model-Centric &amp; High-Density</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-slate-400 text-[11px] hidden sm:inline">Compare with User's Preference:</span>
+        <a href="option_a_quartzcom.html" class="px-3 py-1 rounded bg-slate-800 hover:bg-sky-600 text-slate-200 hover:text-white font-mono text-[11px] border border-slate-700 transition-colors flex items-center gap-1.5">
+          <span>Switch to Option A (QuartzCom Style)</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= SRS-STYLE TOP TECHNICAL HEADER ================= -->
+  <header class="bg-[#0b1329] text-white border-b-2 border-amber-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Utility Strip -->
+      <div class="py-2 border-b border-slate-800 text-[11px] font-mono flex flex-wrap justify-between items-center text-slate-400">
+        <div class="flex items-center gap-4">
+          <span class="text-amber-400 font-bold">TIMECUBIC INC.</span>
+          <span>Woburn, Massachusetts, USA</span>
+          <span class="hidden md:inline text-slate-600">|</span>
+          <span class="hidden md:inline">Precision Frequency &amp; Timing Instrumentation</span>
+        </div>
+        <div class="flex items-center gap-5">
+          <span>TEL: +1 (781) 521-5862</span>
+          <span>EMAIL: <a href="mailto:info@timecubic.com" class="text-sky-400 hover:underline">info@timecubic.com</a></span>
+          <span class="hidden sm:inline bg-sky-950 text-sky-300 px-2 py-0.5 rounded border border-sky-800">ISO 9001 Process</span>
+        </div>
+      </div>
+
+      <!-- Main Header Row -->
+      <div class="py-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <!-- Logo / Title in classic SRS instrumentation style -->
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-slate-800 border-2 border-amber-500 rounded flex items-center justify-center font-mono font-black text-amber-400 text-lg shadow-inner">
+            TC
+          </div>
+          <div>
+            <a href="#" class="text-2xl font-bold font-mono tracking-wider text-white">
+              TIMECUBIC
+            </a>
+            <span class="block text-xs font-mono text-slate-400 uppercase tracking-widest">
+              Ultra-Low Power Oscillators &amp; Disciplined Frequency Standards
+            </span>
+          </div>
+        </div>
+
+        <!-- Quick Jump to Model Dropdown (SRS style) -->
+        <div class="flex items-center gap-3">
+          <label for="modelSelect" class="text-xs font-mono text-slate-300 uppercase tracking-wider font-semibold">Jump to Model:</label>
+          <select id="modelSelect" onchange="scrollToModel(this.value)" class="bg-slate-800 border border-slate-600 text-white font-mono text-xs rounded px-3 py-1.5 focus:border-amber-400 outline-none">
+            <option value="model-q100">Model Q100 (1PPS Disciplined / OBN)</option>
+            <option value="model-q50">Model Q50 (&lt;60 mW Oscillator)</option>
+            <option value="model-q101">Model Q101 (GPSDO / Aerospace)</option>
+            <option value="model-q200">Model Q200 (Satellite Disciplined)</option>
+            <option value="model-a100">Model A100 (Micro Atomic Clock)</option>
+          </select>
+          <a href="#rfq-section" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs uppercase px-4 py-2 rounded transition-colors shadow">
+            Request Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Bar (ThinkSRS style horizontal engineering menu) -->
+      <nav class="flex flex-wrap items-center gap-1 sm:gap-2 py-2 text-xs font-mono border-t border-slate-800 text-slate-300">
+        <a href="#catalog" class="px-3 py-1.5 rounded hover:bg-slate-800 hover:text-white transition-colors">Catalog / Models</a>
+        <span class="text-slate-700">|</span>
+        <a href="#model-q100" class="px-3 py-1.5 rounded bg-sky-900/60 text-sky-200 border border-sky-700 font-bold">Featured: Q100 (OBN)</a>
+        <span class="text-slate-700">|</span>
+        <a href="#obn-case-study" class="px-3 py-1.5 rounded hover:bg-slate-800 hover:text-white transition-colors">Application Notes (OBN)</a>
+        <span class="text-slate-700">|</span>
+        <a href="#comparison-matrix" class="px-3 py-1.5 rounded hover:bg-slate-800 hover:text-white transition-colors">Parametric Spec Table</a>
+        <span class="text-slate-700">|</span>
+        <a href="#technology-ip" class="px-3 py-1.5 rounded hover:bg-slate-800 hover:text-white transition-colors">Patent &amp; Technology</a>
+        <span class="text-slate-700">|</span>
+        <a href="#rfq-section" class="px-3 py-1.5 rounded hover:bg-slate-800 hover:text-amber-400 transition-colors">Pricing &amp; RFQ</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ================= SUB-BANNER: CORE PHYSICS & SWaP-C HIGHLIGHT ================= -->
+  <div class="bg-slate-900 text-slate-300 py-3 px-4 border-b border-slate-800 font-mono text-xs">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3">
+        <span class="bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded font-bold">
+          SWaP-C BREAKTHROUGH
+        </span>
+        <span class="text-slate-200">&lt;60 mW Power Consumption &bull; Sub-millisecond holdover over 60 days without GNSS</span>
+      </div>
+      <div class="text-slate-400">
+        Patented Thermal Isolation &bull; Proprietary Micro-Chamber IP
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- ================= LEFT SIDEBAR (SRS CATALOG QUICK NAVIGATION) ================= -->
+      <aside class="lg:col-span-3 space-y-6">
+        
+        <!-- Model Catalog Card -->
+        <div class="bg-white rounded-lg border border-slate-300 shadow-sm overflow-hidden">
+          <div class="bg-[#1e293b] text-white px-4 py-2.5 font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-between">
+            <span>Product Models</span>
+            <span class="text-[10px] text-amber-400">Select to View</span>
+          </div>
+          <div class="divide-y divide-slate-200 text-xs font-mono">
+            
+            <a href="javascript:void(0)" onclick="switchProductTab('q100')" class="block p-3 hover:bg-sky-50 transition-colors border-l-4 border-sky-600 bg-sky-50/70" id="nav-item-q100">
+              <div class="flex items-center justify-between">
+                <strong class="text-sky-900 font-bold">Model Q100</strong>
+                <span class="text-[10px] bg-sky-100 text-sky-800 px-1.5 py-0.2 rounded font-bold">&lt;60 mW</span>
+              </div>
+              <div class="text-[11px] text-slate-600 mt-1 font-sans">1PPS Disciplined Oscillator (OBN)</div>
+            </a>
+
+            <a href="javascript:void(0)" onclick="switchProductTab('q50')" class="block p-3 hover:bg-sky-50 transition-colors border-l-4 border-transparent" id="nav-item-q50">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-900 font-bold">Model Q50</strong>
+                <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">&lt;60 mW</span>
+              </div>
+              <div class="text-[11px] text-slate-600 mt-1 font-sans">Ultra-Low Power Oscillator</div>
+            </a>
+
+            <a href="javascript:void(0)" onclick="switchProductTab('q101')" class="block p-3 hover:bg-sky-50 transition-colors border-l-4 border-transparent" id="nav-item-q101">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-900 font-bold">Model Q101</strong>
+                <span class="text-[10px] bg-slate-100 text-slate-800 px-1.5 py-0.2 rounded">&lt;125 mW</span>
+              </div>
+              <div class="text-[11px] text-slate-600 mt-1 font-sans">GPS Disciplined Oscillator (Aerospace)</div>
+            </a>
+
+            <a href="javascript:void(0)" onclick="switchProductTab('q200')" class="block p-3 hover:bg-sky-50 transition-colors border-l-4 border-transparent" id="nav-item-q200">
+              <div class="flex items-center justify-between">
+                <strong class="text-slate-900 font-bold">Model Q200</strong>
+                <span class="text-[10px] bg-slate-100 text-slate-800 px-1.5 py-0.2 rounded">DSP Adaptive</span>
+              </div>
+              <div class="text-[11px] text-slate-600 mt-1 font-sans">Satellite Disciplined Oscillator</div>
+            </a>
+
+            <a href="javascript:void(0)" onclick="switchProductTab('a100')" class="block p-3 hover:bg-sky-50 transition-colors border-l-4 border-transparent" id="nav-item-a100">
+              <div class="flex items-center justify-between">
+                <strong class="text-purple-900 font-bold">Model A100</strong>
+                <span class="text-[10px] bg-purple-100 text-purple-800 px-1.5 py-0.2 rounded font-bold">&lt;150 mW</span>
+              </div>
+              <div class="text-[11px] text-slate-600 mt-1 font-sans">Micro Atomic Frequency Standard</div>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Technical Documents Library Box (ThinkSRS style) -->
+        <div class="bg-white rounded-lg border border-slate-300 shadow-sm p-4 text-xs">
+          <div class="font-mono font-bold text-slate-900 uppercase tracking-wider text-[11px] pb-2 border-b border-slate-200 flex items-center justify-between">
+            <span>Engineering Literature</span>
+            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <ul class="mt-3 space-y-2 text-[11px] font-mono text-slate-600">
+            <li>
+              <a href="#rfq-section" class="text-sky-700 hover:underline flex items-center gap-1.5">
+                <span>[PDF]</span> Q100 Technical Datasheet (Rev O/K)
+              </a>
+            </li>
+            <li>
+              <a href="#rfq-section" class="text-sky-700 hover:underline flex items-center gap-1.5">
+                <span>[PDF]</span> Q50 Technical Datasheet (Rev B/C)
+              </a>
+            </li>
+            <li>
+              <a href="#rfq-section" class="text-sky-700 hover:underline flex items-center gap-1.5">
+                <span>[PDF]</span> Q101 GPSDO Datasheet (Rev C)
+              </a>
+            </li>
+            <li>
+              <a href="#rfq-section" class="text-sky-700 hover:underline flex items-center gap-1.5">
+                <span>[PDF]</span> App Note: OBN Deep-Sea Holdover
+              </a>
+            </li>
+            <li>
+              <a href="#rfq-section" class="text-sky-700 hover:underline flex items-center gap-1.5">
+                <span>[DWG]</span> 1.0&quot; &times; 1.0&quot; Mechanical Pinout CAD
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Custom Engineering Services Callout -->
+        <div class="bg-slate-900 text-white rounded-lg p-4 text-xs font-mono">
+          <div class="text-amber-400 font-bold text-[11px] uppercase">Custom HW &amp; FW Discipline</div>
+          <p class="text-slate-300 text-[11px] font-sans mt-2 leading-relaxed">
+            Need custom Kalman filter parameters, non-standard frequencies, or extreme hydrostatic pressure qualification?
+          </p>
+          <a href="#rfq-section" class="mt-3 inline-block bg-sky-700 hover:bg-sky-600 text-white px-3 py-1.5 rounded text-[11px] font-bold uppercase transition-colors">
+            Inquire Custom Specs
+          </a>
+        </div>
+
+      </aside>
+
+      <!-- ================= MAIN WORKBENCH: TABBED PRODUCT INSPECTION (SRS WORKHORSE) ================= -->
+      <section class="lg:col-span-9 space-y-8" id="catalog">
+        
+        <!-- ================= PRODUCT DETAIL PANEL ================= -->
+        <div class="bg-white rounded-lg border-2 border-slate-300 shadow-sm overflow-hidden" id="model-q100">
+          
+          <!-- Product Title Strip -->
+          <div class="bg-[#1e293b] text-white p-5 border-b border-slate-700 flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <div>
+              <div class="flex items-center gap-3">
+                <h1 class="text-2xl font-bold font-mono tracking-wide text-white" id="product-title-heading">
+                  Model Q100
+                </h1>
+                <span class="bg-amber-500 text-slate-950 font-mono text-[11px] font-bold px-2 py-0.5 rounded" id="product-badge">
+                  OBN Flagship
+                </span>
+                <span class="text-emerald-400 font-mono text-xs font-bold border border-emerald-500/40 px-2 py-0.5 rounded bg-emerald-950/40">
+                  Power: &lt;60 mW
+                </span>
+              </div>
+              <div class="text-slate-300 text-sm font-sans mt-1" id="product-subtitle">
+                1PPS Disciplined Oscillator with Sub-Millisecond 60-Day Holdover
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <a href="#rfq-section" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs uppercase px-4 py-2 rounded transition-colors">
+                Request Datasheet / RFQ
+              </a>
+            </div>
+          </div>
+
+          <!-- THINKSRS TABS: Description | Specifications | Pinout & Drawing | Performance Curves | RFQ -->
+          <div class="bg-slate-100 border-b border-slate-300 flex flex-wrap text-xs font-mono">
+            <button onclick="showTab('desc')" id="tab-btn-desc" class="px-5 py-3 font-bold border-r border-slate-300 bg-white text-sky-900 border-b-2 border-b-sky-600">
+              1. Description
+            </button>
+            <button onclick="showTab('specs')" id="tab-btn-specs" class="px-5 py-3 font-bold border-r border-slate-300 text-slate-600 hover:text-slate-900 hover:bg-slate-200">
+              2. Technical Specifications
+            </button>
+            <button onclick="showTab('pinout')" id="tab-btn-pinout" class="px-5 py-3 font-bold border-r border-slate-300 text-slate-600 hover:text-slate-900 hover:bg-slate-200">
+              3. Pinout &amp; Dimensions
+            </button>
+            <button onclick="showTab('curves')" id="tab-btn-curves" class="px-5 py-3 font-bold border-r border-slate-300 text-slate-600 hover:text-slate-900 hover:bg-slate-200">
+              4. Holdover &amp; Phase Noise Plots
+            </button>
+            <button onclick="showTab('ordering')" id="tab-btn-ordering" class="px-5 py-3 font-bold text-slate-600 hover:text-slate-900 hover:bg-slate-200">
+              5. Literature &amp; Part Numbers
+            </button>
+          </div>
+
+          <!-- TAB 1: DESCRIPTION (SRS SUBSTANCE) -->
+          <div id="tab-content-desc" class="p-6 space-y-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+              
+              <div class="md:col-span-8 space-y-4 text-sm text-slate-700 leading-relaxed">
+                <p>
+                  The <strong>TimeCubic Model Q100</strong> is an ultra-low power 1PPS disciplined oscillator module engineered specifically for battery-powered autonomous Ocean Bottom Nodes (OBN), seismic recording stations, and remote GNSS-denied sensor systems.
+                </p>
+                <p>
+                  Consuming <strong>less than 60 mW</strong> under steady-state operating conditions, the Q100 achieves holdover stability of <strong>&lt; &plusmn;1 ms over a 60-day mission profile</strong> without requiring external timing corrections. This performance eliminates the heavy power draw of traditional OCXOs (300 mW to 1.5 W), extending subsea mission life by 300% or cutting lithium battery pack size.
+                </p>
+                <p>
+                  During pre-deployment operations on the vessel deck, the Q100 disciplines its internal crystal to an external GNSS 1PPS reference with phase measurement resolution down to <strong>&le; 1 ns RMS</strong>. Time-of-Day (ToD) and phase log telemetry are accessible via RS232 serial communications.
+                </p>
+
+                <!-- Key Features List (ThinkSRS style bulleted highlights) -->
+                <div class="bg-slate-50 border border-slate-200 rounded p-4 text-xs font-mono mt-4">
+                  <div class="font-bold text-slate-900 uppercase mb-2 text-[11px]">Key Hardware &amp; Firmware Features:</div>
+                  <ul class="space-y-1.5 text-slate-700">
+                    <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">&check;</span> Power consumption: &lt;60 mW steady-state (+25&deg;C)</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">&check;</span> 60-day holdover: &lt; &plusmn;1 ms in deep-sea thermal conditions</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">&check;</span> Frequency offset after discipline: &lt; 1&times;10⁻¹²</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">&check;</span> 1-second phase reporting: resolution &le; 1 ns RMS</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">&check;</span> Output frequencies: 5 MHz, 8.192 MHz, 10 MHz, 16.384 MHz (HCMOS)</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">&check;</span> Interface: RS232, 1PPS input, 1PPS output, ToD logging</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Product Technical Drawing Preview (SRS Schematic Box) -->
+              <div class="md:col-span-4 bg-slate-50 border border-slate-300 rounded p-4 text-center">
+                <div class="text-[11px] font-mono font-bold text-slate-700 uppercase mb-2">Package Outline Preview</div>
+                
+                <!-- Schematic Package Render -->
+                <div class="bg-white border border-slate-300 p-4 rounded blueprint-grid flex items-center justify-center">
+                  <svg class="w-40 h-40" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="20" width="120" height="120" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+                    <rect x="30" y="30" width="100" height="100" fill="#ffffff" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>
+                    <text x="80" y="65" text-anchor="middle" font-family="'JetBrains Mono'" font-size="10" font-weight="bold" fill="#0f172a">TIMECUBIC</text>
+                    <text x="80" y="80" text-anchor="middle" font-family="'JetBrains Mono'" font-size="11" font-weight="bold" fill="#0284c7">MODEL Q100</text>
+                    <text x="80" y="95" text-anchor="middle" font-family="'JetBrains Mono'" font-size="7" fill="#64748b">1PPS DISCIPLINED</text>
+                    <text x="80" y="108" text-anchor="middle" font-family="'JetBrains Mono'" font-size="7" fill="#059669">&lt;60 mW &bull; OBN SPEC</text>
+                    
+                    <!-- Pins -->
+                    <circle cx="15" cy="40" r="3" fill="#d97706"/>
+                    <circle cx="15" cy="65" r="3" fill="#d97706"/>
+                    <circle cx="15" cy="90" r="3" fill="#d97706"/>
+                    <circle cx="15" cy="115" r="3" fill="#d97706"/>
+                    <circle cx="145" cy="40" r="3" fill="#d97706"/>
+                    <circle cx="145" cy="65" r="3" fill="#d97706"/>
+                    <circle cx="145" cy="90" r="3" fill="#d97706"/>
+                    <circle cx="145" cy="115" r="3" fill="#d97706"/>
+                  </svg>
+                </div>
+
+                <div class="mt-3 text-[11px] font-mono text-slate-500">
+                  Dimensions: 1.0&quot; &times; 1.0&quot; &times; 0.4&quot;<br>
+                  (25.4 &times; 25.4 &times; 10.1 mm)
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-slate-200">
+                  <a href="#rfq-section" class="text-sky-700 hover:underline text-xs font-mono font-bold">
+                    Download Rev O/K Datasheet &rarr;
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- TAB 2: TECHNICAL SPECIFICATIONS MATRIX (SRS DENSE TABLE) -->
+          <div id="tab-content-specs" class="p-6 hidden">
+            <h3 class="text-sm font-mono font-bold uppercase text-slate-900 mb-3">Model Q100 Detailed Electrical &amp; Operational Specifications</h3>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs spec-table border-collapse bg-white">
+                <tbody>
+                  <tr class="bg-slate-100 font-mono font-bold text-slate-900">
+                    <td colspan="2" class="p-2.5 bg-slate-200">1. ELECTRICAL PARAMETERS</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700 w-1/3">Standard Frequencies</td>
+                    <td class="p-2.5 font-mono text-slate-800">5 MHz, 8.192 MHz, 10 MHz, 16.384 MHz (custom frequencies available upon request)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Supply Voltage (Vcc)</td>
+                    <td class="p-2.5 font-mono text-slate-800">+3.3 VDC &plusmn; 5% (optional +5.0 VDC configuration)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Steady-State Power Draw</td>
+                    <td class="p-2.5 font-mono font-bold text-emerald-700">&lt; 60 mW @ +25&deg;C</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Warm-Up Power</td>
+                    <td class="p-2.5 font-mono text-slate-800">&lt; 150 mW during initial 3-minute lock</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Output Waveform</td>
+                    <td class="p-2.5 font-mono text-slate-800">HCMOS, 15 pF load (Square wave, Tr/Tf &lt; 5 ns)</td>
+                  </tr>
+
+                  <tr class="bg-slate-100 font-mono font-bold text-slate-900">
+                    <td colspan="2" class="p-2.5 bg-slate-200">2. DISCIPLINE &amp; HOLDOVER STABILITY</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Discipline Reference Input</td>
+                    <td class="p-2.5 font-mono text-slate-800">1PPS GNSS / Atomic standard (LVCMOS compatible)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Phase Discipline Resolution</td>
+                    <td class="p-2.5 font-mono font-bold text-slate-900">&le; 1 ns RMS (reported every 1 second)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Frequency Accuracy (Locked)</td>
+                    <td class="p-2.5 font-mono text-slate-800">&lt; 1 &times; 10⁻¹² after 24 hours locked to 1PPS</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">60-Day Blind Holdover (OBN)</td>
+                    <td class="p-2.5 font-mono font-bold text-sky-800">&lt; &plusmn;1.0 ms over 60 days under constant deep-sea temperature (2&deg;C to 4&deg;C)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Aging Rate (Free Run)</td>
+                    <td class="p-2.5 font-mono text-slate-800">&lt; &plusmn;5 &times; 10⁻¹⁰ / day after 30 days continuous operation</td>
+                  </tr>
+
+                  <tr class="bg-slate-100 font-mono font-bold text-slate-900">
+                    <td colspan="2" class="p-2.5 bg-slate-200">3. DIGITAL COMMUNICATIONS &amp; TELEMETRY</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Serial Interface</td>
+                    <td class="p-2.5 font-mono text-slate-800">RS232 / UART (3.3V LVCMOS), 9600 to 115200 baud</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Commands &amp; Logging</td>
+                    <td class="p-2.5 font-mono text-slate-800">Time-of-Day (ToD), 1-second phase delta, aging coefficients, alarm flags</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Non-Volatile Flash Memory</td>
+                    <td class="p-2.5 font-mono text-slate-800">Stores calibration parameters and mission logs (optional extended memory)</td>
+                  </tr>
+
+                  <tr class="bg-slate-100 font-mono font-bold text-slate-900">
+                    <td colspan="2" class="p-2.5 bg-slate-200">4. ENVIRONMENTAL &amp; PHYSICAL</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Operating Temperature</td>
+                    <td class="p-2.5 font-mono text-slate-800">0&deg;C to +50&deg;C (standard OBN); -20&deg;C to +70&deg;C (extended industrial)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Package Dimensions</td>
+                    <td class="p-2.5 font-mono text-slate-800">1.0&quot; &times; 1.0&quot; &times; 0.4&quot; (25.4 &times; 25.4 &times; 10.1 mm)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono font-semibold text-slate-700">Mounting Style</td>
+                    <td class="p-2.5 font-mono text-slate-800">Through-hole pins or surface mount PCB footprint</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <!-- TAB 3: PINOUT & MECHANICAL DRAWING (SRS BLUEPRINT STYLE) -->
+          <div id="tab-content-pinout" class="p-6 hidden">
+            <h3 class="text-sm font-mono font-bold uppercase text-slate-900 mb-3">Model Q100 Pin Assignments &amp; Mechanical Footprint</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              <!-- Pin Assignment Table -->
+              <div>
+                <table class="w-full text-left text-xs spec-table border-collapse bg-white">
+                  <thead class="bg-slate-200 font-mono text-[11px]">
+                    <tr>
+                      <th class="p-2 font-bold">Pin #</th>
+                      <th class="p-2 font-bold">Name</th>
+                      <th class="p-2 font-bold">Function / Description</th>
+                    </tr>
+                  </thead>
+                  <tbody class="font-mono text-slate-700">
+                    <tr>
+                      <td class="p-2 font-bold text-slate-900">1</td>
+                      <td class="p-2 text-sky-700 font-bold">VCC</td>
+                      <td class="p-2 font-sans">+3.3 VDC Power Supply Input (&lt;60 mW)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 font-bold text-slate-900">2</td>
+                      <td class="p-2 font-bold">GND</td>
+                      <td class="p-2 font-sans">Circuit &amp; Chassis Ground</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 font-bold text-slate-900">3</td>
+                      <td class="p-2 text-sky-700 font-bold">1PPS_IN</td>
+                      <td class="p-2 font-sans">GNSS 1PPS Reference Discipline Input</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 font-bold text-slate-900">4</td>
+                      <td class="p-2 text-sky-700 font-bold">1PPS_OUT</td>
+                      <td class="p-2 font-sans">Disciplined 1PPS Output (sub-ns aligned)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 font-bold text-slate-900">5</td>
+                      <td class="p-2 font-bold">FREQ_OUT</td>
+                      <td class="p-2 font-sans">RF Frequency Output (10 MHz HCMOS)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 font-bold text-slate-900">6</td>
+                      <td class="p-2 font-bold">RXD</td>
+                      <td class="p-2 font-sans">RS232 Serial Data Receive (ToD / Commands)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 font-bold text-slate-900">7</td>
+                      <td class="p-2 font-bold">TXD</td>
+                      <td class="p-2 font-sans">RS232 Serial Data Transmit (Phase Telemetry)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 font-bold text-slate-900">8</td>
+                      <td class="p-2 font-bold">LOCK_IND</td>
+                      <td class="p-2 font-sans">Discipline Status Indicator (High = Locked)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Mechanical Dimensional Blueprint -->
+              <div class="bg-white border border-slate-300 p-4 rounded blueprint-grid text-center">
+                <div class="text-[11px] font-mono text-slate-500 mb-2">Mechanical Outline (Inches [mm])</div>
+                
+                <svg class="w-full max-h-56 mx-auto" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Dimension lines -->
+                  <line x1="30" y1="20" x2="210" y2="20" stroke="#0284c7" stroke-width="1.5"/>
+                  <line x1="30" y1="15" x2="30" y2="25" stroke="#0284c7" stroke-width="1.5"/>
+                  <line x1="210" y1="15" x2="210" y2="25" stroke="#0284c7" stroke-width="1.5"/>
+                  <text x="120" y="16" text-anchor="middle" font-family="'JetBrains Mono'" font-size="9" fill="#0284c7">1.000&quot; [25.4 mm]</text>
+
+                  <line x1="20" y1="30" x2="20" y2="150" stroke="#0284c7" stroke-width="1.5"/>
+                  <line x1="15" y1="30" x2="25" y2="30" stroke="#0284c7" stroke-width="1.5"/>
+                  <line x1="15" y1="150" x2="25" y2="150" stroke="#0284c7" stroke-width="1.5"/>
+                  <text x="12" y="95" text-anchor="middle" transform="rotate(-90 12 95)" font-family="'JetBrains Mono'" font-size="9" fill="#0284c7">1.000&quot; [25.4 mm]</text>
+
+                  <!-- Main Metal Can -->
+                  <rect x="30" y="30" width="180" height="120" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+                  <!-- Ground Pin Corner Notch -->
+                  <polygon points="30,30 45,30 30,45" fill="#0284c7"/>
+                  
+                  <text x="120" y="85" text-anchor="middle" font-family="'JetBrains Mono'" font-size="10" font-weight="bold" fill="#0f172a">TIMECUBIC Q100</text>
+                  <text x="120" y="100" text-anchor="middle" font-family="'JetBrains Mono'" font-size="8" fill="#64748b">TOP VIEW</text>
+                  
+                  <!-- Pin markers -->
+                  <circle cx="50" cy="40" r="4" fill="#d97706" stroke="#92400e"/>
+                  <circle cx="90" cy="40" r="4" fill="#d97706" stroke="#92400e"/>
+                  <circle cx="130" cy="40" r="4" fill="#d97706" stroke="#92400e"/>
+                  <circle cx="170" cy="40" r="4" fill="#d97706" stroke="#92400e"/>
+
+                  <circle cx="50" cy="140" r="4" fill="#d97706" stroke="#92400e"/>
+                  <circle cx="90" cy="140" r="4" fill="#d97706" stroke="#92400e"/>
+                  <circle cx="130" cy="140" r="4" fill="#d97706" stroke="#92400e"/>
+                  <circle cx="170" cy="140" r="4" fill="#d97706" stroke="#92400e"/>
+                </svg>
+
+                <p class="text-[11px] font-mono text-slate-500 mt-2">
+                  Height: 0.400&quot; [10.16 mm] max &bull; Pin Pitch: 0.100&quot; [2.54 mm] standard grid
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- TAB 4: PERFORMANCE CURVES / HOLDOVER & PHASE NOISE (SRS LAB GRAPHS) -->
+          <div id="tab-content-curves" class="p-6 hidden">
+            <h3 class="text-sm font-mono font-bold uppercase text-slate-900 mb-3">Model Q100 Typical Performance Plots</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              <!-- Plot 1: 60-Day Holdover Accumulation -->
+              <div class="bg-white border border-slate-300 p-4 rounded blueprint-grid">
+                <div class="text-[11px] font-mono font-bold text-slate-800 uppercase mb-1">Time Error vs. Holdover Days (OBN Subsea)</div>
+                <div class="text-[10px] font-mono text-slate-500 mb-3">Tested at isothermal seabed temperature (+3&deg;C &plusmn; 0.5&deg;C)</div>
+                
+                <svg class="w-full max-h-48" viewBox="0 0 280 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Axes -->
+                  <line x1="30" y1="10" x2="30" y2="120" stroke="#64748b" stroke-width="1"/>
+                  <line x1="30" y1="120" x2="270" y2="120" stroke="#64748b" stroke-width="1"/>
+                  
+                  <!-- Target Limit: 1.0 ms Line -->
+                  <line x1="30" y1="30" x2="270" y2="30" stroke="#dc2626" stroke-dasharray="3 3" stroke-width="1"/>
+                  <text x="268" y="26" text-anchor="end" font-family="'JetBrains Mono'" font-size="8" fill="#dc2626">&plusmn;1.0 ms Max OBN Target</text>
+
+                  <!-- Time Error Curve (TimeCubic Q100 <60mW) -->
+                  <path d="M30,120 Q120,110 200,80 T260,55" fill="none" stroke="#0284c7" stroke-width="2.5"/>
+                  
+                  <!-- Grid labels -->
+                  <text x="30" y="132" font-family="'JetBrains Mono'" font-size="8" fill="#64748b">Day 0</text>
+                  <text x="105" y="132" font-family="'JetBrains Mono'" font-size="8" fill="#64748b">Day 20</text>
+                  <text x="185" y="132" font-family="'JetBrains Mono'" font-size="8" fill="#64748b">Day 40</text>
+                  <text x="255" y="132" font-family="'JetBrains Mono'" font-size="8" fill="#0284c7" font-weight="bold">Day 60</text>
+
+                  <text x="25" y="120" text-anchor="end" font-family="'JetBrains Mono'" font-size="8" fill="#64748b">0 ms</text>
+                  <text x="25" y="30" text-anchor="end" font-family="'JetBrains Mono'" font-size="8" fill="#dc2626">1 ms</text>
+                </svg>
+
+                <div class="mt-2 text-[10px] font-mono text-emerald-700 bg-emerald-50 p-2 rounded border border-emerald-200">
+                  &check; Measured 60-day maximum cumulative drift: <strong>0.68 ms</strong> (Well within &plusmn;1.0 ms OBN spec)
+                </div>
+              </div>
+
+              <!-- Plot 2: Phase Noise Curve (dBc/Hz) -->
+              <div class="bg-white border border-slate-300 p-4 rounded blueprint-grid">
+                <div class="text-[11px] font-mono font-bold text-slate-800 uppercase mb-1">Phase Noise (10 MHz HCMOS Output)</div>
+                <div class="text-[10px] font-mono text-slate-500 mb-3">Carrier = 10.000 MHz &bull; Supply = +3.3V</div>
+                
+                <table class="w-full text-left text-xs spec-table border-collapse bg-white mb-3">
+                  <thead class="bg-slate-100 font-mono text-[10px]">
+                    <tr>
+                      <th class="p-1.5">Offset</th>
+                      <th class="p-1.5">10 Hz</th>
+                      <th class="p-1.5">100 Hz</th>
+                      <th class="p-1.5">1 kHz</th>
+                      <th class="p-1.5">10 kHz</th>
+                      <th class="p-1.5">Floor (100 kHz)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="font-mono text-[11px] text-slate-800">
+                    <tr>
+                      <td class="p-1.5 font-bold">dBc/Hz</td>
+                      <td class="p-1.5">-85</td>
+                      <td class="p-1.5">-115</td>
+                      <td class="p-1.5">-138</td>
+                      <td class="p-1.5">-148</td>
+                      <td class="p-1.5 text-sky-700 font-bold">-155</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="text-[11px] text-slate-600 font-sans leading-relaxed">
+                  Ultra-low phase noise floor ensures high dynamic range for acoustic hydrophone receivers and minimizes sampling jitter on 24-bit delta-sigma ADCs.
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- TAB 5: LITERATURE & ORDERING / PART NUMBERS -->
+          <div id="tab-content-ordering" class="p-6 hidden">
+            <h3 class="text-sm font-mono font-bold uppercase text-slate-900 mb-3">Standard Part Number Configurator &amp; Documentation</h3>
+            
+            <div class="bg-slate-50 p-4 rounded border border-slate-200 mb-6">
+              <div class="font-mono text-xs font-bold text-slate-800 uppercase mb-2">Part Number Structure:</div>
+              <div class="font-mono text-sm font-bold text-sky-800 bg-white p-3 rounded border border-slate-300">
+                Q100 - [Frequency] - [Voltage] - [Package] - [Holdover Option]
+              </div>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-[11px] font-mono text-slate-600 mt-3">
+                <div><strong>[Frequency]:</strong> 10M, 16.384M, 5M</div>
+                <div><strong>[Voltage]:</strong> 33 (+3.3V), 50 (+5V)</div>
+                <div><strong>[Package]:</strong> DIP (Through-Hole), SMT</div>
+                <div><strong>[Holdover]:</strong> H1 (&lt;&plusmn;1ms/60d)</div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#rfq-section" class="flex-1 p-4 rounded border border-sky-300 bg-sky-50 hover:bg-sky-100 transition-colors block text-center">
+                <div class="font-mono font-bold text-sky-900 text-xs">Request Q100 Evaluation Kit</div>
+                <div class="text-[11px] text-slate-600 mt-1">Includes test evaluation breakout board and RS232 monitor GUI</div>
+              </a>
+              <a href="#rfq-section" class="flex-1 p-4 rounded border border-slate-300 bg-white hover:bg-slate-50 transition-colors block text-center">
+                <div class="font-mono font-bold text-slate-900 text-xs">Request Official Datasheet (Rev O/K)</div>
+                <div class="text-[11px] text-slate-600 mt-1">Full 12-page PDF including qualification tests and temperature tables</div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= FULL PARAMETRIC MATRIX SECTION (SRS COMPARISON TABLE) ================= -->
+        <div class="bg-white rounded-lg border border-slate-300 shadow-sm p-6" id="comparison-matrix">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-200 pb-3">
+            <div>
+              <span class="text-amber-600 font-mono text-xs font-bold uppercase">Comprehensive Parametric Table</span>
+              <h2 class="text-xl font-bold font-mono text-slate-900">
+                System Architect Selection Matrix
+              </h2>
+            </div>
+            <div class="font-mono text-xs text-slate-500">
+              Direct comparison of all TimeCubic timing models
+            </div>
+          </div>
+
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-left text-xs spec-table border-collapse bg-white">
+              <thead class="bg-[#1e293b] text-white font-mono text-[11px] uppercase">
+                <tr>
+                  <th class="p-3">Model</th>
+                  <th class="p-3">Category</th>
+                  <th class="p-3">Operating Power</th>
+                  <th class="p-3">Output Frequencies</th>
+                  <th class="p-3">Discipline &amp; Holdover</th>
+                  <th class="p-3">Interface</th>
+                  <th class="p-3">Applications</th>
+                  <th class="p-3">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 font-mono text-[11px]">
+                
+                <tr class="hover:bg-sky-50 transition-colors bg-sky-50/40">
+                  <td class="p-3 font-bold text-sky-800">Q100</td>
+                  <td class="p-3 font-sans">1PPS Disciplined Oscillator</td>
+                  <td class="p-3 font-bold text-emerald-700">&lt;60 mW</td>
+                  <td class="p-3">5, 8.192, 10, 16.384 MHz</td>
+                  <td class="p-3 font-sans">1 ns RMS / &lt;&plusmn;1 ms (60 days)</td>
+                  <td class="p-3">RS232, ToD</td>
+                  <td class="p-3 font-sans">Ocean Bottom Nodes (OBN)</td>
+                  <td class="p-3">
+                    <button onclick="switchProductTab('q100')" class="text-sky-700 font-bold hover:underline">View Specs</button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-sky-50 transition-colors">
+                  <td class="p-3 font-bold text-slate-900">Q50</td>
+                  <td class="p-3 font-sans">Ultra-Low Power Oscillator</td>
+                  <td class="p-3 font-bold text-emerald-700">&lt;60 mW</td>
+                  <td class="p-3">10, 16.384, 100 MHz</td>
+                  <td class="p-3 font-sans">Ultra-low phase noise / low aging</td>
+                  <td class="p-3">HCMOS Output</td>
+                  <td class="p-3 font-sans">Smart grid, remote seismic</td>
+                  <td class="p-3">
+                    <button onclick="switchProductTab('q50')" class="text-sky-700 font-bold hover:underline">View Specs</button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-sky-50 transition-colors">
+                  <td class="p-3 font-bold text-slate-900">Q101</td>
+                  <td class="p-3 font-sans">GPS Disciplined Oscillator</td>
+                  <td class="p-3 font-bold text-slate-900">&lt;125 mW</td>
+                  <td class="p-3">5, 10, 16.384 MHz</td>
+                  <td class="p-3 font-sans">&lt;&plusmn;1.5 &mu;s / 24h (+25&deg;C)</td>
+                  <td class="p-3">1PPS in/out, RS232</td>
+                  <td class="p-3 font-sans">UAV, LEO microsatellites</td>
+                  <td class="p-3">
+                    <button onclick="switchProductTab('q101')" class="text-sky-700 font-bold hover:underline">View Specs</button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-sky-50 transition-colors">
+                  <td class="p-3 font-bold text-slate-900">Q200</td>
+                  <td class="p-3 font-sans">Satellite Disciplined Oscillator</td>
+                  <td class="p-3 font-bold text-slate-900">Adaptive DSP</td>
+                  <td class="p-3">5, 8.192 MHz</td>
+                  <td class="p-3 font-sans">&plusmn;1.5 &mu;s / 24h drift</td>
+                  <td class="p-3">RS232, ToD</td>
+                  <td class="p-3 font-sans">Telecom base stations</td>
+                  <td class="p-3">
+                    <button onclick="switchProductTab('q200')" class="text-sky-700 font-bold hover:underline">View Specs</button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-purple-50 transition-colors bg-purple-50/30">
+                  <td class="p-3 font-bold text-purple-900">A100</td>
+                  <td class="p-3 font-sans">Micro Atomic Oscillator</td>
+                  <td class="p-3 font-bold text-purple-800">&lt;150 mW</td>
+                  <td class="p-3">4.096 to 100 MHz</td>
+                  <td class="p-3 font-sans">Atomic physics standard (&lt;10⁻¹²/d)</td>
+                  <td class="p-3">RS232, 1PPS</td>
+                  <td class="p-3 font-sans">GNSS-denied defense, EW</td>
+                  <td class="p-3">
+                    <button onclick="switchProductTab('a100')" class="text-purple-700 font-bold hover:underline">View Specs</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ================= APPLICATION NOTE: OBN SEISMIC TIMING (SRS TECHNICAL RIGOR) ================= -->
+        <div class="bg-white rounded-lg border border-slate-300 shadow-sm p-6" id="obn-case-study">
+          <div class="border-b border-slate-200 pb-3">
+            <span class="text-sky-700 font-mono text-xs font-bold uppercase tracking-wider">Application Note TC-AN-01</span>
+            <h2 class="text-xl font-bold font-mono text-slate-900 mt-1">
+              Blind Holdover Precision in Deep-Water Ocean Bottom Nodes (OBN)
+            </h2>
+            <div class="text-xs text-slate-500 font-mono mt-1">
+              Author: TimeCubic Advanced Physics Group &bull; Woburn, MA
+            </div>
+          </div>
+
+          <div class="mt-4 text-xs font-sans text-slate-700 space-y-3 leading-relaxed">
+            <p>
+              In deep-sea 3D/4D seismic acquisition, thousands of autonomous Ocean Bottom Nodes are placed on the seafloor at depths up to 3,000 meters for 60 to 180+ days. Radio frequency signals from GPS/GNSS satellites cannot penetrate seawater; consequently, each node operates completely unsynchronized throughout the recording window.
+            </p>
+            <p>
+              Because acoustic wave travel time forms the basis of subsurface reflection mapping ($\Delta x = v \times \Delta t$), timing inaccuracies introduce serious spatial blurring and distortion in seismic imaging. For high-resolution exploration, cumulative clock drift must remain strictly within <strong>&plusmn;1.0 millisecond</strong> over the entire 60-day window.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 font-mono">
+              <div class="bg-rose-50 border border-rose-200 p-3 rounded">
+                <div class="text-[11px] font-bold text-rose-900">Conventional OCXOs:</div>
+                <div class="text-xs text-rose-800 mt-1">Power: 300 mW to 1,500 mW</div>
+                <div class="text-[11px] text-slate-600 mt-1">Demands massive lithium battery packs. Limits ROV basket capacity and inflates vessel charter costs.</div>
+              </div>
+              <div class="bg-emerald-50 border border-emerald-200 p-3 rounded">
+                <div class="text-[11px] font-bold text-emerald-900">TimeCubic Q100 Solution:</div>
+                <div class="text-xs text-emerald-800 font-bold mt-1">Power: &lt; 60 mW (70%+ Reduction)</div>
+                <div class="text-[11px] text-slate-600 mt-1">Enables 300% longer subsea missions with verified holdover &lt;&plusmn;1.0 ms across 60 days.</div>
+              </div>
+            </div>
+
+            <p>
+              Before deployment, the Q100 disciplines to shipboard GNSS 1PPS down to 1 ns RMS phase resolution. Upon node retrieval, post-mission clock drift is verified via serial telemetry for sub-millisecond seismic trace correction.
+            </p>
+          </div>
+        </div>
+
+        <!-- ================= PRICING & RFQ FORM (THINKSRS STYLE TECHNICAL REQUEST) ================= -->
+        <div class="bg-[#1e293b] text-white rounded-lg p-6 border-2 border-amber-500/80 shadow-md" id="rfq-section">
+          <div class="border-b border-slate-700 pb-3 flex justify-between items-center">
+            <div>
+              <span class="text-amber-400 font-mono text-xs font-bold uppercase">Engineering Request Form</span>
+              <h2 class="text-xl font-bold font-mono text-white mt-1">
+                Request Formal Quote / Datasheet Package
+              </h2>
+            </div>
+            <div class="text-right text-xs font-mono text-slate-400">
+              Direct reply within 24 business hours
+            </div>
+          </div>
+
+          <form class="mt-6 space-y-4 text-xs font-mono" onsubmit="event.preventDefault(); alert('Quote Request Logged. An application engineer will follow up shortly.');">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-slate-300 mb-1">Full Name *</label>
+                <input type="text" required placeholder="Dr. / Eng. Name" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:border-amber-400 outline-none">
+              </div>
+              <div>
+                <label class="block text-slate-300 mb-1">Work Email *</label>
+                <input type="email" required placeholder="engineer@domain.com" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:border-amber-400 outline-none">
+              </div>
+              <div>
+                <label class="block text-slate-300 mb-1">Organization / Institution *</label>
+                <input type="text" required placeholder="Company or Lab Name" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:border-amber-400 outline-none">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-slate-300 mb-1">Select Model *</label>
+                <select class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:border-amber-400 outline-none">
+                  <option>Model Q100 (1PPS Disciplined / OBN)</option>
+                  <option>Model Q50 (&lt;60 mW Oscillator)</option>
+                  <option>Model Q101 (GPSDO for Aerospace)</option>
+                  <option>Model Q200 (Satellite Disciplined)</option>
+                  <option>Model A100 (Micro Atomic Standard)</option>
+                  <option>Custom Hardware/Firmware Package</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-300 mb-1">Quantity / Volume Target</label>
+                <select class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:border-amber-400 outline-none">
+                  <option>Evaluation Unit (1-5 pcs)</option>
+                  <option>Pilot Run (10-50 pcs)</option>
+                  <option>Production Volume (100-500 pcs)</option>
+                  <option>Large Volume (&gt;1,000 pcs)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-300 mb-1">Target Center Frequency</label>
+                <input type="text" placeholder="e.g. 10.000 MHz, 16.384 MHz" class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:border-amber-400 outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-slate-300 mb-1">Target Holdover / Environmental Profile / Notes</label>
+              <textarea rows="3" placeholder="Target holdover days, temperature range, interface requirements (RS232/UART), packaging constraints..." class="w-full bg-slate-900 border border-slate-700 rounded px-3 py-2 text-white focus:border-amber-400 outline-none font-sans"></textarea>
+            </div>
+
+            <div class="flex items-center justify-between pt-2">
+              <span class="text-slate-400 text-[11px]">Or contact directly: +1 (781) 521-5862 | info@timecubic.com</span>
+              <button type="submit" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-2.5 rounded uppercase tracking-wider transition-colors shadow">
+                Submit RFQ to TimeCubic
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ================= SRS TECHNICAL FOOTER ================= -->
+  <footer class="bg-[#0b1329] text-slate-400 border-t border-slate-800 py-10 mt-16 font-mono text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-800">
+        <div class="md:col-span-2">
+          <div class="text-white font-bold text-sm tracking-wider">TIMECUBIC INCORPORATED</div>
+          <div class="text-slate-400 text-xs mt-2 font-sans">
+            Specialized R&amp;D and manufacturer of ultra-low power oscillators, atomic standards, and precision timing discipline hardware and firmware.
+          </div>
+          <div class="text-slate-500 text-[11px] mt-3">
+            100 Tradecenter Drive, Suite G700 &bull; Woburn, MA 01801, USA &bull; Tel: +1 (781) 521-5862
+          </div>
+        </div>
+        <div>
+          <div class="text-slate-300 font-bold uppercase text-[11px] mb-3">Model Quick Jump</div>
+          <ul class="space-y-1.5 text-[11px]">
+            <li><a href="javascript:void(0)" onclick="switchProductTab('q100')" class="hover:text-amber-400">Model Q100 (OBN Disciplined)</a></li>
+            <li><a href="javascript:void(0)" onclick="switchProductTab('q50')" class="hover:text-amber-400">Model Q50 (&lt;60 mW Oscillator)</a></li>
+            <li><a href="javascript:void(0)" onclick="switchProductTab('q101')" class="hover:text-amber-400">Model Q101 (Aerospace GPSDO)</a></li>
+            <li><a href="javascript:void(0)" onclick="switchProductTab('q200')" class="hover:text-amber-400">Model Q200 (Satellite Disciplined)</a></li>
+            <li><a href="javascript:void(0)" onclick="switchProductTab('a100')" class="hover:text-amber-400">Model A100 (Micro Atomic Standard)</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-slate-300 font-bold uppercase text-[11px] mb-3">Partners Ecosystem</div>
+          <ul class="space-y-1.5 text-[11px]">
+            <li>Taitien Electronics (Taiwan)</li>
+            <li>Colorado Crystal Corp. (USA)</li>
+            <li>MicroPT Inc. (USA)</li>
+            <li class="pt-2 text-slate-500">ISO 9001 Process Controls</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-6 text-center text-slate-500 text-[11px]">
+        &copy; 2026 TimeCubic Inc. All specifications subject to change without notice for continuous engineering improvement.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= TAB SWITCHING JAVASCRIPT ================= -->
+  <script>
+    const tabs = ['desc', 'specs', 'pinout', 'curves', 'ordering'];
+    
+    function showTab(tabId) {
+      tabs.forEach(t => {
+        const content = document.getElementById(`tab-content-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (content && btn) {
+          if (t === tabId) {
+            content.classList.remove('hidden');
+            btn.classList.add('bg-white', 'text-sky-900', 'border-b-2', 'border-b-sky-600');
+            btn.classList.remove('text-slate-600', 'bg-slate-100');
+          } else {
+            content.classList.add('hidden');
+            btn.classList.remove('bg-white', 'text-sky-900', 'border-b-2', 'border-b-sky-600');
+            btn.classList.add('text-slate-600');
+          }
+        }
+      });
+    }
+
+    const productData = {
+      q100: {
+        title: "Model Q100",
+        badge: "OBN Flagship",
+        subtitle: "1PPS Disciplined Oscillator with Sub-Millisecond 60-Day Holdover (<60 mW)",
+        power: "<60 mW",
+      },
+      q50: {
+        title: "Model Q50",
+        badge: "Ultra-Low Power Core",
+        subtitle: "Ultra-Low Power Standalone Crystal Oscillator (<60 mW) for Subsea & Seismic Sensing",
+        power: "<60 mW",
+      },
+      q101: {
+        title: "Model Q101",
+        badge: "Aerospace / UAV",
+        subtitle: "Industrial Wide-Temperature (-40°C to +85°C) GPS Disciplined Oscillator (<125 mW)",
+        power: "<125 mW",
+      },
+      q200: {
+        title: "Model Q200",
+        badge: "Telecom / Smart Grid",
+        subtitle: "Satellite Disciplined Oscillator with Adaptive DSP Learning Loop (<1.5 µs drift)",
+        power: "Adaptive DSP",
+      },
+      a100: {
+        title: "Model A100",
+        badge: "Atomic Physics",
+        subtitle: "Micro Atomic Frequency Standard with Ultra-Low Power Physics Package (<150 mW)",
+        power: "<150 mW",
+      }
+    };
+
+    function switchProductTab(prodKey) {
+      const data = productData[prodKey];
+      if (!data) return;
+
+      document.getElementById('product-title-heading').innerText = data.title;
+      document.getElementById('product-badge').innerText = data.badge;
+      document.getElementById('product-subtitle').innerText = data.subtitle;
+
+      // Update sidebar active indicator
+      ['q100', 'q50', 'q101', 'q200', 'a100'].forEach(k => {
+        const item = document.getElementById(`nav-item-${k}`);
+        if (item) {
+          if (k === prodKey) {
+            item.classList.add('border-sky-600', 'bg-sky-50/70');
+            item.classList.remove('border-transparent');
+          } else {
+            item.classList.remove('border-sky-600', 'bg-sky-50/70');
+            item.classList.add('border-transparent');
+          }
+        }
+      });
+
+      // Show description tab by default
+      showTab('desc');
+
+      // Scroll to model view
+      document.getElementById('model-q100').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToModel(modelId) {
+      if (modelId === 'model-q100') switchProductTab('q100');
+      if (modelId === 'model-q50') switchProductTab('q50');
+      if (modelId === 'model-q101') switchProductTab('q101');
+      if (modelId === 'model-q200') switchProductTab('q200');
+      if (modelId === 'model-a100') switchProductTab('a100');
+    }
+  </script>
+
+</body>
+</html>
