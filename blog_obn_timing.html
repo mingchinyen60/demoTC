@@ -34,23 +34,29 @@
       }
     }
   </script>
-  <style>
-    .math-callout {
-      background: #0f172a;
-      border-left: 4px solid #0284c7;
-      font-family: 'JetBrains Mono', monospace;
+    <style>
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
-    .spec-table th, .spec-table td {
-      border: 1px solid #e2e8f0;
-      padding: 10px 14px;
+    body {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
     }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
   <!-- ================= TOP NAV / BACK TO SITE ================= -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-3 min-h-16 flex flex-wrap items-center justify-between gap-3">
       <a href="index.html#applications-blog" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 font-medium text-xs transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         <span>Back to TimeCubic Home</span>
@@ -112,7 +118,7 @@
         <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         <span>Executive Summary &bull; Core Takeaways</span>
       </div>
-      <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
+      <ul class="space-y-2.5 text-base sm:text-lg text-slate-800 leading-relaxed">
         <li><strong>The Deep-Sea Physics Problem:</strong> Electromagnetic radio waves (GPS/GNSS) attenuate within centimeters of seawater. At 3,000 meters depth, autonomous OBN seismic nodes operate in total isolation for 60 to 180+ days. Every 1 millisecond of clock drift introduces acoustic spatial blur in 4D reservoir imaging.</li>
         <li><strong>The OCXO vs. CSAC Dilemma:</strong> Conventional OCXOs pull 450 mW to 1,500 mW, consuming massive lithium battery payloads. Meanwhile, Chip Scale Atomic Clocks (CSAC, e.g. Microchip SA.45s) draw ~120 mW to 140 mW—still 2x to 2.5x higher than Q100—and cost nearly double, adding millions to a 3,000-node survey BOM without solving subsea fragility.</li>
         <li><strong>The Market-Proven Solution:</strong> TimeCubic Model Q100 cuts steady-state consumption to <strong>&lt;60 mW</strong> (&gt;50% below CSAC, &gt;85% below OCXO) with <strong>&le; 1 ns RMS phase discipline</strong> and <strong>&lt; &plusmn;1 ms cumulative holdover across 60 days</strong> at isothermal seabed temperatures (+2&deg;C to +4&deg;C)—at a mature, field-proven, commercial BOM price point.</li>
@@ -256,14 +262,14 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div class="bg-white p-5 rounded-xl border border-slate-200">
           <div class="text-blue-600 font-mono font-bold text-xs uppercase">Thermal Design: Core Micro-Vacuum Isolation (&lt;60 mW Active Core)</div>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-700 mt-2.5 leading-relaxed">
             Standard OCXOs heat a massive internal metal can. TimeCubic utilizes proprietary vacuum micro-encapsulation and miniature thermal isolation pillars that localize thermal regulation strictly to the quartz resonator active region. Conductive heat leakage to ambient seabed water (2&deg;C–4&deg;C) is reduced by over 80%.
           </p>
         </div>
 
         <div class="bg-white p-5 rounded-xl border border-slate-200">
           <div class="text-blue-600 font-mono font-bold text-xs uppercase">Phase Measurement Engine: Low-Noise PFD (&le;1 ns RMS) with Digital Aging Compensation</div>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-700 mt-2.5 leading-relaxed">
             Prior to node sealing on the vessel deck, the Q100 receives shipboard GNSS 1PPS. An internal high-resolution phase detector measures the offset with <strong>&le; 1 ns RMS resolution</strong>, reporting real-time phase error via RS232 and executing Kalman-weighted frequency corrections down to &lt; 1&times;10⁻¹².
           </p>
         </div>

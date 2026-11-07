@@ -38,11 +38,21 @@
     }
   </script>
   <style>
-    .blueprint-grid {
-      background-size: 24px 24px;
-      background-image: 
-        linear-gradient(to right, rgba(226, 232, 240, 0.5) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 1024px) {
+      .mobile-nav-item {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -81,7 +91,7 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm">
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-[15px] font-semibold">
         <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
         <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
         <a href="products.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Products</a>
@@ -147,14 +157,14 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-3 shadow-lg">
-      <a href="index.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Home</a>
-      <a href="about.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">About Us</a>
-      <a href="products.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Products</a>
-      <a href="index.html#applications-blog" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Application &amp; Blog</a>
-      <a href="partners.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Partners</a>
-      <a href="contact.html" class="block py-2 text-slate-700 font-semibold hover:text-blue-600">Contact</a>
-      <a href="contact.html" class="block w-full py-2.5 rounded-lg bg-blue-600 text-white text-center font-semibold mt-2">Request Quote</a>
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-2 shadow-xl">
+      <a href="index.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Home</a>
+      <a href="about.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">About Us</a>
+      <a href="products.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-blue-600 font-bold bg-blue-50/60 text-base">Products</a>
+      <a href="index.html#applications-blog" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Application &amp; Blog</a>
+      <a href="partners.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Partners</a>
+      <a href="contact.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Contact</a>
+      <a href="contact.html" class="block w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-center font-bold text-base mt-3 shadow-md shadow-blue-500/20 transition-colors">Request Quote</a>
     </div>
   </header>
 
@@ -170,8 +180,8 @@
             6 Released Product Series: <strong>Q40 &bull; Q50 &bull; Q52 &bull; Q69 &bull; Q100 &bull; Q200</strong>
           </span>
         </div>
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Frequency &amp; Precision Timing Solutions</h1>
-        <p class="text-slate-300 text-sm sm:text-base mt-2 leading-relaxed">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-2 leading-tight">Frequency &amp; Precision Timing Solutions</h1>
+        <p class="text-slate-300 text-base sm:text-lg lg:text-xl mt-3 leading-relaxed">
           Engineered for SWaP-C constrained applications requiring ultra-low power consumption, high-frequency spectral purity (-175 dBc/Hz), sub-ppb thermal stability, and nanosecond-grade 1PPS holdover across marine, aerospace, telecom, and defense systems.
         </p>
 
@@ -206,7 +216,7 @@
 
       <div class="overflow-x-auto">
         <table class="w-full text-left text-xs sm:text-sm">
-          <thead class="bg-slate-100/80 font-mono text-[11px] text-slate-600 uppercase border-b border-slate-200">
+          <thead class="bg-slate-100/90 font-mono text-xs sm:text-sm text-slate-700 uppercase border-b border-slate-200 font-bold">
             <tr>
               <th class="p-4">Model &amp; Series</th>
               <th class="p-4">Category</th>
@@ -222,18 +232,18 @@
             
             <!-- Q40 Series (Q40L) -->
             <tr id="row-q40" class="hover:bg-blue-50/50 transition-colors bg-blue-50/10">
-              <td class="p-4 font-bold text-blue-600">
+              <td class="p-4 font-bold text-sm sm:text-base text-blue-600">
                 <a href="#model-q40" class="hover:underline flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-violet-600"></span>
-                  <span>Model Q40 <span class="text-xs font-mono text-slate-500 font-normal">(Q40L)</span></span>
+                  <span>Model Q40 <span class="text-xs sm:text-sm font-mono text-slate-500 font-normal">(Q40L)</span></span>
                 </a>
               </td>
-              <td class="p-4 text-slate-700">Miniature Low-Noise RF Oscillator</td>
-              <td class="p-4 font-mono text-xs text-slate-600">12.5 &times; 12.5 &times; 5.6</td>
-              <td class="p-4 font-mono font-bold text-emerald-600">&lt;350 mW <span class="text-[11px] font-normal text-slate-500">@ 100M</span></td>
-              <td class="p-4 font-mono text-xs text-slate-600">&plusmn;150 ppb &bull; <strong class="text-slate-800">-175 dBc/Hz</strong></td>
-              <td class="p-4 font-mono text-xs text-slate-600">100 MHz</td>
-              <td class="p-4 text-xs text-slate-600">Analog Vc (0&ndash;2.8V)</td>
+              <td class="p-4 text-sm text-slate-800 font-medium">Miniature Low-Noise RF Oscillator</td>
+              <td class="p-4 font-mono text-sm text-slate-700">12.5 &times; 12.5 &times; 5.6</td>
+              <td class="p-4 font-mono font-bold text-sm text-emerald-600">&lt;350 mW <span class="text-[11px] font-normal text-slate-500">@ 100M</span></td>
+              <td class="p-4 font-mono text-sm text-slate-700">&plusmn;150 ppb &bull; <strong class="text-slate-800">-175 dBc/Hz</strong></td>
+              <td class="p-4 font-mono text-sm text-slate-700">100 MHz</td>
+              <td class="p-4 text-sm text-slate-700">Analog Vc (0&ndash;2.8V)</td>
               <td class="p-4 text-right">
                 <a href="assest/pdf/Q40L-100M-Rev_C.pdf" target="_blank" class="px-2.5 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs inline-flex items-center gap-1 font-semibold">
                   <span>Rev C</span> &darr;
@@ -243,18 +253,18 @@
 
             <!-- Q50 Series -->
             <tr id="row-q50" class="hover:bg-blue-50/50 transition-colors">
-              <td class="p-4 font-bold text-blue-600">
+              <td class="p-4 font-bold text-sm sm:text-base text-blue-600">
                 <a href="q050.html" class="hover:underline flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
                   <span>Model Q50</span>
                 </a>
               </td>
-              <td class="p-4 text-slate-700">Ultra-Low Power Oscillator</td>
-              <td class="p-4 font-mono text-xs text-slate-600">21.6 &times; 15.3 &times; 10.0</td>
-              <td class="p-4 font-mono font-bold text-emerald-600">&lt;60 mW <span class="text-[11px] font-normal text-slate-500">(55&ndash;205 mW)</span></td>
-              <td class="p-4 font-mono text-xs text-slate-600">&plusmn;10 ppb &bull; Aging opt.</td>
-              <td class="p-4 font-mono text-xs text-slate-600">10, 16.384, 100 MHz</td>
-              <td class="p-4 text-xs text-slate-600">Analog VCON (0&ndash;2.8V)</td>
+              <td class="p-4 text-sm text-slate-800 font-medium">Ultra-Low Power Oscillator</td>
+              <td class="p-4 font-mono text-sm text-slate-700">21.6 &times; 15.3 &times; 10.0</td>
+              <td class="p-4 font-mono font-bold text-sm text-emerald-600">&lt;60 mW <span class="text-[11px] font-normal text-slate-500">(55&ndash;205 mW)</span></td>
+              <td class="p-4 font-mono text-sm text-slate-700">&plusmn;10 ppb &bull; Aging opt.</td>
+              <td class="p-4 font-mono text-sm text-slate-700">10, 16.384, 100 MHz</td>
+              <td class="p-4 text-sm text-slate-700">Analog VCON (0&ndash;2.8V)</td>
               <td class="p-4 text-right">
                 <a href="assest/pdf/q50_datasheet_rev_b.pdf" target="_blank" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-mono text-xs inline-flex items-center gap-1">
                   <span>Rev B</span> &darr;
@@ -264,18 +274,18 @@
 
             <!-- Q52 Series (Q52 / Q52L) -->
             <tr id="row-q52" class="hover:bg-blue-50/50 transition-colors">
-              <td class="p-4 font-bold text-blue-600">
+              <td class="p-4 font-bold text-sm sm:text-base text-blue-600">
                 <a href="#model-q52" class="hover:underline flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
                   <span>Model Q52 / Q52L</span>
                 </a>
               </td>
-              <td class="p-4 text-slate-700">High-Stability Low-G Oscillator</td>
-              <td class="p-4 font-mono text-xs text-slate-600">20.5 &times; 14.0 &times; 10.0</td>
-              <td class="p-4 font-mono font-bold text-emerald-600">75&ndash;109 mW</td>
-              <td class="p-4 font-mono text-xs text-slate-600"><strong class="text-slate-800">&plusmn;2 ppb</strong> &bull; &plusmn;0.3 ppb/g</td>
-              <td class="p-4 font-mono text-xs text-slate-600">16.384 MHz</td>
-              <td class="p-4 text-xs text-slate-600">VCON / 1500G Shock opt.</td>
+              <td class="p-4 text-sm text-slate-800 font-medium">High-Stability Low-G Oscillator</td>
+              <td class="p-4 font-mono text-sm text-slate-700">20.5 &times; 14.0 &times; 10.0</td>
+              <td class="p-4 font-mono font-bold text-sm text-emerald-600">75&ndash;109 mW</td>
+              <td class="p-4 font-mono text-sm text-slate-700"><strong class="text-slate-800">&plusmn;2 ppb</strong> &bull; &plusmn;0.3 ppb/g</td>
+              <td class="p-4 font-mono text-sm text-slate-700">16.384 MHz</td>
+              <td class="p-4 text-sm text-slate-700">VCON / 1500G Shock opt.</td>
               <td class="p-4 text-right space-x-1">
                 <a href="assest/pdf/q52_datasheet_rev_c.pdf" target="_blank" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-mono text-xs inline-flex items-center gap-0.5">
                   <span>Q52</span> &darr;
@@ -288,18 +298,18 @@
 
             <!-- Q69 Series (Q69 / Q69-100M) -->
             <tr id="row-q69" class="hover:bg-blue-50/50 transition-colors bg-amber-50/20">
-              <td class="p-4 font-bold text-blue-600">
+              <td class="p-4 font-bold text-sm sm:text-base text-blue-600">
                 <a href="#model-q69" class="hover:underline flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
                   <span>Model Q69 / Q69-100M</span>
                 </a>
               </td>
-              <td class="p-4 text-slate-700">Rapid Warm-Up 1PPS Disciplined Osc.</td>
-              <td class="p-4 font-mono text-xs text-slate-600">39.1 &times; 34.0 &times; 13.7</td>
-              <td class="p-4 font-mono font-bold text-emerald-600">135&ndash;250 mW <span class="text-[11px] font-normal text-slate-500">(30s warmup)</span></td>
-              <td class="p-4 font-mono text-xs text-slate-600">1 ns RMS &bull; 1000G shock</td>
-              <td class="p-4 font-mono text-xs text-slate-600">5 to 100 MHz</td>
-              <td class="p-4 text-xs text-slate-600">RS232 ToD + Hitless 1PPS</td>
+              <td class="p-4 text-sm text-slate-800 font-medium">Rapid Warm-Up 1PPS Disciplined Osc.</td>
+              <td class="p-4 font-mono text-sm text-slate-700">39.1 &times; 34.0 &times; 13.7</td>
+              <td class="p-4 font-mono font-bold text-sm text-emerald-600">135&ndash;250 mW <span class="text-[11px] font-normal text-slate-500">(30s warmup)</span></td>
+              <td class="p-4 font-mono text-sm text-slate-700">1 ns RMS &bull; 1000G shock</td>
+              <td class="p-4 font-mono text-sm text-slate-700">5 to 100 MHz</td>
+              <td class="p-4 text-sm text-slate-700">RS232 ToD + Hitless 1PPS</td>
               <td class="p-4 text-right space-x-1">
                 <a href="assest/pdf/Q69_Rev_c.pdf" target="_blank" class="px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-mono text-xs inline-flex items-center gap-0.5">
                   <span>Q69</span> &darr;
@@ -312,18 +322,18 @@
 
             <!-- Q100 Series -->
             <tr id="row-q100" class="hover:bg-blue-50/50 transition-colors bg-blue-50/20">
-              <td class="p-4 font-bold text-blue-600">
+              <td class="p-4 font-bold text-sm sm:text-base text-blue-600">
                 <a href="q100.html" class="hover:underline flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-cyan-500"></span>
                   <span>Model Q100</span>
                 </a>
               </td>
-              <td class="p-4 text-slate-700">Flagship OBN 1PPS Disciplined Module</td>
-              <td class="p-4 font-mono text-xs text-slate-600">39.1 &times; 34.0 &times; 13.7</td>
-              <td class="p-4 font-mono font-bold text-emerald-600">&lt;65 mW <span class="text-[11px] font-normal text-slate-500">(220 mW warmup)</span></td>
-              <td class="p-4 font-mono text-xs text-slate-600">1 ns RMS &bull; <strong class="text-slate-800">&plusmn;1 ms/60d</strong></td>
-              <td class="p-4 font-mono text-xs text-slate-600">5, 8.192, 10, 16.384M</td>
-              <td class="p-4 text-xs text-slate-600">RS232 ToD Telemetry + 1PPS</td>
+              <td class="p-4 text-sm text-slate-800 font-medium">Flagship OBN 1PPS Disciplined Module</td>
+              <td class="p-4 font-mono text-sm text-slate-700">39.1 &times; 34.0 &times; 13.7</td>
+              <td class="p-4 font-mono font-bold text-sm text-emerald-600">&lt;65 mW <span class="text-[11px] font-normal text-slate-500">(220 mW warmup)</span></td>
+              <td class="p-4 font-mono text-sm text-slate-700">1 ns RMS &bull; <strong class="text-slate-800">&plusmn;1 ms/60d</strong></td>
+              <td class="p-4 font-mono text-sm text-slate-700">5, 8.192, 10, 16.384M</td>
+              <td class="p-4 text-sm text-slate-700">RS232 ToD Telemetry + 1PPS</td>
               <td class="p-4 text-right">
                 <a href="assest/pdf/q100_datasheet_rev_o.pdf" target="_blank" class="px-2.5 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs inline-flex items-center gap-1 font-bold">
                   <span>Rev O</span> &darr;
@@ -333,18 +343,18 @@
 
             <!-- Q200 Series -->
             <tr id="row-q200" class="hover:bg-blue-50/50 transition-colors">
-              <td class="p-4 font-bold text-blue-600">
+              <td class="p-4 font-bold text-sm sm:text-base text-blue-600">
                 <a href="q200.html" class="hover:underline flex items-center gap-2">
                   <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
                   <span>Model Q200</span>
                 </a>
               </td>
-              <td class="p-4 text-slate-700">Satellite Disciplined Timing Receiver</td>
-              <td class="p-4 font-mono text-xs text-slate-600">65.0 &times; 65.0 &times; 23.0</td>
+              <td class="p-4 text-sm text-slate-800 font-medium">Satellite Disciplined Timing Receiver</td>
+              <td class="p-4 font-mono text-sm text-slate-700">65.0 &times; 65.0 &times; 23.0</td>
               <td class="p-4 font-mono font-bold text-slate-700">3.0 W <span class="text-[11px] font-normal text-slate-500">(@ 5V)</span></td>
-              <td class="p-4 font-mono text-xs text-slate-600">1 ns RMS &bull; <strong class="text-slate-800">&plusmn;1.0 &mu;s/24h (@&plusmn;5&deg;C)</strong></td>
-              <td class="p-4 font-mono text-xs text-slate-600">5, 8.192, 10 MHz</td>
-              <td class="p-4 text-xs text-slate-600">RS232 ToD + Lock/Enable</td>
+              <td class="p-4 font-mono text-sm text-slate-700">1 ns RMS &bull; <strong class="text-slate-800">&plusmn;1.0 &mu;s/24h (@&plusmn;5&deg;C)</strong></td>
+              <td class="p-4 font-mono text-sm text-slate-700">5, 8.192, 10 MHz</td>
+              <td class="p-4 text-sm text-slate-700">RS232 ToD + Lock/Enable</td>
               <td class="p-4 text-right">
                 <a href="assest/pdf/q200_datasheet_rev_j.pdf" target="_blank" class="px-2.5 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-mono text-xs inline-flex items-center gap-1">
                   <span>Rev J</span> &darr;
@@ -379,7 +389,7 @@
             <span class="text-xs font-mono text-purple-700 font-bold bg-purple-50 px-2 py-0.5 rounded border border-purple-200">-175 dBc/Hz FLOOR</span>
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Q40L-100 Miniature Low Phase Noise Oscillator</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
             Engineered for high-frequency RF applications requiring extreme spectral purity in an ultra-miniature footprint. The Q40 series packs a state-of-the-art 100 MHz oscillator core into a tiny <strong>12.5 &times; 12.5 mm</strong> package, achieving an exceptional phase noise floor of <strong>-175 dBc/Hz</strong> at 1 MHz offset while consuming less than 350 mW.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -411,7 +421,7 @@
             <span class="text-xs font-mono text-emerald-600 font-bold">&lt;60 mW ULTRA-LOW POWER</span>
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Q50 Ultra-Low Power Precision Oscillator</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
             Engineered specifically for subsea Ocean Bottom Nodes (OBN), seismic surveys, oil &amp; gas exploration, and battery-constrained field instrumentation. Consumes less than 60 mW while maintaining exceptional frequency stability and low phase noise (-165 dBc/Hz floor) across wide temperatures.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -443,7 +453,7 @@
             <span class="text-xs font-mono text-emerald-700 font-bold">&plusmn;0.3 ppb/g LOW-G</span>
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Q52 / Q52L High-Stability Low-G Precision Oscillator</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
             The Q52 series provides mission-critical stability for maritime beacons, search-and-rescue systems, mobile test &amp; measurement, and high-shock seismic deployments. The new <strong>Q52L (Rev A, 2026)</strong> features 5&times; tighter temperature stability (<strong>&plusmn;2 ppb</strong>), native low acceleration sensitivity (<strong>&plusmn;0.3 ppb/g</strong>), and optional <strong>1500G, 1ms</strong> mechanical shock survival.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -476,7 +486,7 @@
             <span class="text-xs font-mono text-blue-700 font-bold">1000G SHOCK &bull; ADAS &amp; LEO</span>
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Q69 Wide-Temperature Rapid Warm-Up 1PPS Disciplined Oscillator</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
             The next-generation ruggedized 1PPS disciplined oscillator built for automotive ADAS master clocks, LEO smallsats, and defense payloads. Operates reliably across <strong>-40&deg;C to +85&deg;C</strong> with rapid <strong>30-second warm-up</strong>, hitless 1PPS re-steering, <strong>1000G, 1ms</strong> shock survivability, and ultra-low phase noise up to 100 MHz (-175 dBc/Hz floor on Q69-100M).
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -509,7 +519,7 @@
             <span class="text-xs font-mono text-slate-600 font-bold bg-slate-100 px-2 py-0.5 rounded">&plusmn;1.0 ms / 60-DAY HOLDOVER</span>
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Q100 Flagship 1PPS Disciplined Timing Module</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
             The world's leading timing module for seabed Ocean Bottom Nodes (OBN). Features continuous 1PPS input and 1PPS output disciplining down to <strong>1 ns RMS phase</strong> and <strong>&lt;10<sup>-12</sup> in frequency</strong>. The updated Rev O lowers warm-up power by 60% (220 mW) and steady power to &lt;65 mW, with continuous 1-second phase telemetry via RS232 and 64-byte non-volatile user memory.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -541,7 +551,7 @@
             <span class="text-xs font-mono text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">&plusmn;1.0 &mu;s / 24h ADAPTIVE HOLDOVER</span>
           </div>
           <h3 class="text-2xl font-bold text-slate-900">Q200 Satellite Disciplined Timing Receiver</h3>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
             Engineered for mission-critical infrastructure including 5G base stations and Smart Grid Substation Phasor Measurement Units (PMU). Employs TimeCubic's proprietary machine learning adaptive holdover algorithm to maintain <strong>&plusmn;1.0 to &plusmn;1.5 &mu;s over 24 hours</strong> during GPS loss even across &plusmn;5&deg;C ambient temperature fluctuations.
           </p>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono bg-slate-50 p-4 rounded-xl border border-slate-200">
@@ -571,7 +581,7 @@
         <!-- Col 1 -->
         <div class="lg:col-span-2">
           <img src="assest/brand/timecubic_logo.png" alt="TimeCubic Inc." class="h-9 w-auto object-contain brightness-200 contrast-200 mb-4">
-          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-sm">
             TimeCubic Inc. designs and manufactures industry-leading ultra-low power frequency oscillators and disciplined timing modules engineered for the most demanding SWaP-C applications worldwide.
           </p>
           <div class="mt-4 text-xs font-mono text-slate-500">
@@ -581,8 +591,8 @@
 
         <!-- Col 2: Products -->
         <div>
-          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Product Lineup</h4>
-          <ul class="space-y-2 text-xs">
+          <h4 class="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Product Lineup</h4>
+          <ul class="space-y-2.5 text-sm">
             <li><a href="products.html#model-q40" class="hover:text-blue-400 transition-colors">Model Q40 Low-Noise (12.5mm)</a></li>
             <li><a href="q050.html" class="hover:text-blue-400 transition-colors">Model Q50 Ultra-Low Power (&lt;60 mW)</a></li>
             <li><a href="products.html#model-q52" class="hover:text-blue-400 transition-colors">Model Q52 / Q52L Low-G</a></li>
@@ -594,8 +604,8 @@
 
         <!-- Col 3: Datasheets -->
         <div>
-          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Official Datasheets</h4>
-          <ul class="space-y-2 text-xs">
+          <h4 class="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Official Datasheets</h4>
+          <ul class="space-y-2.5 text-sm">
             <li><a href="assest/pdf/Q40L-100M-Rev_C.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q40L Datasheet (PDF)</span></a></li>
             <li><a href="assest/pdf/q50_datasheet_rev_b.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q50 Datasheet (PDF)</span></a></li>
             <li><a href="assest/pdf/Q52L-16M384_Rev_A.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q52 / Q52L Datasheet (PDF)</span></a></li>
@@ -607,8 +617,8 @@
 
         <!-- Col 4: Contact -->
         <div>
-          <h4 class="text-xs font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Headquarters</h4>
-          <address class="not-italic text-xs space-y-1 text-slate-400">
+          <h4 class="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Headquarters</h4>
+          <address class="not-italic text-sm space-y-1 text-slate-400">
             <p class="font-semibold text-slate-300">TimeCubic Inc.</p>
             <p>800 Turnpike Street</p>
             <p>Suite 300</p>

@@ -33,23 +33,29 @@
       }
     }
   </script>
-  <style>
-    .math-callout {
-      background: #0f172a;
-      border-left: 4px solid #0284c7;
-      font-family: 'JetBrains Mono', monospace;
+    <style>
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
-    .spec-table th, .spec-table td {
-      border: 1px solid #e2e8f0;
-      padding: 10px 14px;
+    body {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
     }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
   <!-- ================= TOP NAV / BACK TO SITE ================= -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-3 min-h-16 flex flex-wrap items-center justify-between gap-3">
       <a href="index.html#applications-blog" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 font-medium text-xs transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         <span>Back to TimeCubic Home</span>
@@ -111,7 +117,7 @@
         <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         <span>Executive Summary &bull; Key Takeaways</span>
       </div>
-      <ul class="space-y-2 text-sm text-slate-700 leading-relaxed">
+      <ul class="space-y-2.5 text-base sm:text-lg text-slate-800 leading-relaxed">
         <li><strong>The Grid Vulnerability:</strong> Modern electrical power grids rely on Phasor Measurement Units (PMUs) to measure voltage and current synchrophasors across vast transmission corridors. Under IEEE C37.118, Total Vector Error (TVE) must remain under 1%, which limits absolute phase timing error to strictly <strong>&plusmn;26.5 &mu;s at 60 Hz</strong> (or &plusmn;31.8 &mu;s at 50 Hz).</li>
         <li><strong>The Threat of GNSS Denial:</strong> Electronic jamming, solar space weather, and malicious GPS spoofing are increasingly causing loss-of-sync at substation antennas. Standard un-adaptive TCXOs and basic OCXOs drift beyond &plusmn;26.5 &mu;s within 1 to 3 hours, corrupting State Estimation algorithms and risking false protective relay trips.</li>
         <li><strong>The TimeCubic Solution (Model Q200):</strong> Equipped with a proprietary <strong>Adaptive DSP Learning Algorithm</strong>, the Q200 continuously models the crystal's aging trajectory and temperature polynomial coefficients while GNSS is healthy. Upon loss of satellite signal, the Q200 executes real-time predictive corrections, maintaining <strong>&plusmn;1.5 &mu;s holdover across 24 hours (&plusmn;5&deg;C variation)</strong> and preserving TVE &lt; 1% compliance across 72+ hours.</li>
@@ -220,14 +226,14 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div class="bg-white p-5 rounded-xl border border-slate-200">
           <div class="text-emerald-700 font-mono font-bold text-xs uppercase">Phase 1: Online Behavioral Modeling</div>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-700 mt-2.5 leading-relaxed">
             While GNSS 1PPS is healthy, the Q200 measures incoming phase with <strong>&le; 1 ns RMS resolution</strong> every second. Simultaneously, an internal high-resolution temperature sensor samples local ambient fluctuations. A recursive least-squares algorithm fits aging polynomials and thermal-coefficient matrices in non-volatile memory.
           </p>
         </div>
 
         <div class="bg-white p-5 rounded-xl border border-slate-200">
           <div class="text-emerald-700 font-mono font-bold text-xs uppercase">Phase 2: Predictive Holdover Synthesis</div>
-          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+          <p class="text-sm sm:text-base text-slate-700 mt-2.5 leading-relaxed">
             When GNSS jamming occurs (or anti-spoofing heuristics detect phase trajectory tampering), the Q200 seamlessly switches to predictive mode. It applies dynamic fractional frequency adjustments based on the real-time temperature curve and historical aging model, curbing cumulative phase error to <strong>&lt; &plusmn;1.5 &mu;s per 24 hours</strong>.
           </p>
         </div>
