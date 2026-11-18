@@ -22,14 +22,14 @@
 > TimeCubic business communications (`info@timecubic.com`, executive inboxes) depend on existing DNS records. The migration plan explicitly isolates web routing (`A` / `CNAME` records for `timecubic.com` and `www`) from all mail exchange (`MX`, `TXT/SPF`, `DKIM`, `DMARC`) records.
 
 > **Preservation of Datasheets & Legacy URLs (301 Redirect Rules):**
-> Many subsea exploration, avionics, and defense clients have bookmarked direct PDF datasheet links. We will maintain exact path aliases for legacy paths (`/uploads/1/3/8/8/138843707/*`) directly mapping to `/assest/pdf/*`.
+> Many subsea exploration, avionics, and defense clients have bookmarked direct PDF datasheet links. We will maintain exact path aliases for legacy paths (`/uploads/1/3/8/8/138843707/*`) directly mapping to `/assets/pdf/*`.
 
 ---
 
 ## 3. Step-by-Step Migration Execution Plan
 
 ### Phase 1: Local Prototype Assembly & Asset Integration (Current Phase)
-* [x] **Step 1.1 — Asset Harvesting:** All official PDFs, product photographs, performance curves, diagrams, and brand assets downloaded to local `assest/` folder.
+* [x] **Step 1.1 — Asset Harvesting:** All official PDFs, product photographs, performance curves, diagrams, and brand assets downloaded to local `assets/` folder.
 * [x] **Step 1.2 — Server Runtime Audit:** Verified current Weebly constraints and established client-side architecture requirements in `SERVER_CAPABILITIES_AND_TECH_STACK.md`.
 * [ ] **Step 1.3 — Component Integration:** Replace temporary SVG placeholders in design options (`example_index.html`, `option_b_thinksrs.html`) with real downloaded assets:
   - Embed official product images (`product_q050_transparent.png`, `product_q100_q101.png`, etc.).
@@ -85,12 +85,12 @@ Required Credentials Checklist:
   /contact.html     /contact     301
 
   # Legacy PDF upload links
-  /uploads/1/3/8/8/138843707/q050.rev_b.pdf    /assest/pdf/q050_datasheet_rev_b.pdf    301
-  /uploads/1/3/8/8/138843707/q052_rev._c.pdf   /assest/pdf/q052_datasheet_rev_c.pdf   301
-  /uploads/1/3/8/8/138843707/q100.rev_o.pdf    /assest/pdf/q100_datasheet_rev_o.pdf    301
-  /uploads/1/3/8/8/138843707/q100.rev_k.pdf    /assest/pdf/q100_datasheet_rev_k.pdf    301
-  /uploads/1/3/8/8/138843707/q101rev_c.pdf     /assest/pdf/q101_datasheet_rev_c.pdf    301
-  /uploads/1/3/8/8/138843707/q200.rev_j.pdf    /assest/pdf/q200_datasheet_rev_j.pdf    301
+  /uploads/1/3/8/8/138843707/q050.rev_b.pdf    /assets/pdf/q050_datasheet_rev_b.pdf    301
+  /uploads/1/3/8/8/138843707/q052_rev._c.pdf   /assets/pdf/q052_datasheet_rev_c.pdf   301
+  /uploads/1/3/8/8/138843707/q100.rev_o.pdf    /assets/pdf/q100_datasheet_rev_o.pdf    301
+  /uploads/1/3/8/8/138843707/q100.rev_k.pdf    /assets/pdf/q100_datasheet_rev_k.pdf    301
+  /uploads/1/3/8/8/138843707/q101rev_c.pdf     /assets/pdf/q101_datasheet_rev_c.pdf    301
+  /uploads/1/3/8/8/138843707/q200.rev_j.pdf    /assets/pdf/q200_datasheet_rev_j.pdf    301
   ```
 * [ ] **Step 4.4 — Instantaneous DNS Switch:**
   - Update `CNAME` for `www` and apex `@` to point to `timecubic.pages.dev`.
