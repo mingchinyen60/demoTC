@@ -99,7 +99,7 @@
         </div>
       </a>
 
-      <!-- Desktop Nav: Home | About Us | Products | Application & Blog | Partners | Contact -->
+      <!-- Desktop Nav: Home | About Us | Products | Application & Blog | Contact -->
       <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-[15px] font-semibold">
         <a href="index.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Home</a>
         <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
@@ -113,6 +113,13 @@
           </a>
           <div class="absolute top-full -left-6 w-96 bg-white border border-slate-200 rounded-xl shadow-2xl p-3 hidden group-hover:block z-50">
             <div class="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 px-2 py-1">Technical Whitepapers &amp; Briefs</div>
+            <a href="case_study_obn_q100.html" class="flex items-start gap-3 p-2.5 rounded-lg bg-emerald-50/50 hover:bg-emerald-50 transition-colors border-b border-slate-100">
+              <span class="w-6 h-6 rounded bg-emerald-100 text-emerald-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">CS</span>
+              <div>
+                <div class="text-xs font-bold text-slate-900">Field Case Study: 60+ Day OBN Holdover</div>
+                <div class="text-[11px] text-slate-500">645 units @ 49.3 mW &bull; Q50 Power &amp; Q100 Field Data</div>
+              </div>
+            </a>
             <a href="blog_obn_timing.html" class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-blue-50/70 transition-colors">
               <span class="w-6 h-6 rounded bg-cyan-100 text-cyan-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">01</span>
               <div>
@@ -148,8 +155,6 @@
             </div>
           </div>
         </div>
-
-        <a href="partners.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Partners</a>
         <a href="contact.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
 
         <a href="contact.html" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-colors shadow-sm shadow-blue-500/20">
@@ -171,7 +176,6 @@
       <a href="about.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">About Us</a>
       <a href="products.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Products</a>
       <a href="#applications-blog" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Application &amp; Blog</a>
-      <a href="partners.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Partners</a>
       <a href="contact.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Contact</a>
       <a href="contact.html" class="block w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-center font-bold text-base mt-3 shadow-md shadow-blue-500/20 transition-colors">Request Quote</a>
     </div>
@@ -603,26 +607,6 @@
     </div>
   </section>
 
-  <!-- Strategic Partners Section -->
-  <section class="py-16 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">Industry &amp; Manufacturing Ecosystem</span>
-      <h3 class="text-xl font-bold text-slate-900 mt-2 mb-8">Trusted Strategic Partners</h3>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center max-w-4xl mx-auto">
-        <a href="http://www.taitien.com" target="_blank" rel="noopener noreferrer" class="p-6 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex items-center justify-center bg-slate-50/50">
-          <img src="assest/partners/partner_taitien.png" alt="Taitien Electronics" class="max-h-12 w-auto object-contain">
-        </a>
-        <a href="http://coloradocrystal.com" target="_blank" rel="noopener noreferrer" class="p-6 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex items-center justify-center bg-slate-50/50">
-          <img src="assest/partners/partner_colorado_crystal.png" alt="Colorado Crystal Corporation" class="max-h-12 w-auto object-contain">
-        </a>
-        <a href="https://micropt.com/index.htm" target="_blank" rel="noopener noreferrer" class="p-6 rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition-all flex items-center justify-center bg-slate-50/50">
-          <img src="assest/partners/partner_micropt.png" alt="MicroPt" class="max-h-12 w-auto object-contain">
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA Section -->
   <section class="py-16 bg-slate-900 text-white border-t border-slate-800">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center space-y-6">
@@ -674,6 +658,7 @@
         <div>
           <h4 class="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Application &amp; Blog</h4>
           <ul class="space-y-2.5 text-sm">
+            <li><a href="case_study_obn_q100.html" class="hover:text-emerald-400 text-emerald-400 font-semibold transition-colors flex items-center gap-1.5"><span>OBN 60+ Day Field Case Study</span> <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded font-mono">True Data</span></a></li>
             <li><a href="blog_obn_timing.html" class="hover:text-cyan-400 transition-colors">Seabed OBN Clock Drift</a></li>
             <li><a href="blog_aerospace_gsensitivity.html" class="hover:text-amber-400 transition-colors">Aerospace G-Sensitivity</a></li>
             <li><a href="blog_rf_phase_noise.html" class="hover:text-indigo-400 transition-colors">Direct-RF Phase Noise</a></li>
@@ -716,7 +701,6 @@
           <span>&bull;</span>
           <a href="about.html" class="hover:text-slate-300">About</a>
           <span>&bull;</span>
-          <a href="partners.html" class="hover:text-slate-300">Partners</a>
           <span>&bull;</span>
           <a href="contact.html" class="hover:text-slate-300">Contact</a>
         </div>
