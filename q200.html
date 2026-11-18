@@ -195,14 +195,58 @@
           <img src="assest/products/product_q200.png" alt="TimeCubic Model Q200" class="max-h-64 w-auto object-contain">
         </div>
 
-        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-          <h3 class="text-sm sm:text-base font-mono font-bold uppercase text-slate-800 mb-2">Phase Noise &amp; Stability Plots</h3>
-          <div class="space-y-4">
-            <img src="assest/charts/q200_performance_curve_1.png" alt="Q200 Curve 1" class="w-full h-auto object-contain rounded border border-slate-100">
-            <img src="assest/charts/q200_performance_curve_2.png" alt="Q200 Curve 2" class="w-full h-auto object-contain rounded border border-slate-100">
-            <img src="assest/charts/q200_performance_curve_3.png" alt="Q200 Curve 3" class="w-full h-auto object-contain rounded border border-slate-100">
+        <div class="space-y-6">
+          <div class="border-b border-slate-200 pb-2">
+            <h3 class="text-sm sm:text-base font-mono font-bold uppercase tracking-wider text-slate-800">
+              Technical Plots &amp; Mechanical Drawings
+            </h3>
+            <p class="text-xs text-slate-500 font-mono mt-0.5">Laboratory Characterization &amp; Engineering Dimensions</p>
           </div>
-          <p class="text-xs sm:text-sm font-mono text-slate-500 mt-2 text-center">Laboratory Characterization &amp; Holdover Accumulation Curves</p>
+
+          <!-- Box 1: Package Dimension (Upper) -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-blue-400 transition-all group">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
+                <h4 class="text-sm font-mono font-bold text-slate-900">Package Dimension</h4>
+              </div>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-semibold">65.0 &times; 65.0 &times; 23.0 mm</span>
+            </div>
+            <div class="bg-slate-50/60 rounded-xl p-3 border border-slate-100 flex items-center justify-center">
+              <img src="assest/charts/q200_performance_curve_1.png" alt="Model Q200 Package Dimension" class="w-full h-auto object-contain rounded">
+            </div>
+            <p class="text-[11px] text-slate-500 font-mono mt-2 text-center">Bottom and side view mechanical outline &amp; pin assignments</p>
+          </div>
+
+          <!-- Box 2: Short Term Hold Over (Middle) -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-blue-400 transition-all group">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-600"></span>
+                <h4 class="text-sm font-mono font-bold text-slate-900">Short Term Hold Over</h4>
+              </div>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 font-semibold border border-cyan-200">&plusmn;1.0 &mu;s / 24h</span>
+            </div>
+            <div class="bg-slate-50/60 rounded-xl p-3 border border-slate-100 flex items-center justify-center">
+              <img src="assest/charts/q200_performance_curve_2.png" alt="Model Q200 Short Term Hold Over" class="w-full h-auto object-contain rounded">
+            </div>
+            <p class="text-[11px] text-slate-500 font-mono mt-2 text-center">Short-term holdover &amp; temperature excursion characterization</p>
+          </div>
+
+          <!-- Box 3: 5 Day Holdover Accumulation Curves (Lower) -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:border-blue-400 transition-all group">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+                <h4 class="text-sm font-mono font-bold text-slate-900">5 Day Holdover Accumulation Curves</h4>
+              </div>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 font-semibold border border-indigo-200">5-Day Drift Plot</span>
+            </div>
+            <div class="bg-slate-50/60 rounded-xl p-3 border border-slate-100 flex items-center justify-center">
+              <img src="assest/charts/q200_performance_curve_3.png" alt="Model Q200 5 Day Holdover Accumulation Curves" class="w-full h-auto object-contain rounded">
+            </div>
+            <p class="text-[11px] text-slate-500 font-mono mt-2 text-center">Extended 5-day cumulative holdover phase error trajectory</p>
+          </div>
         </div>
       </div>
 
