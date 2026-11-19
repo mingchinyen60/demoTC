@@ -12,12 +12,15 @@ assest/ (also mirrored via Windows junction to assets/)
 │   └── contact_banner.png             # Contact page banner / graphic
 │
 ├── products/
-│   ├── product_q050_transparent.png   # Q50 Ultra-Low Power Oscillator (isolated/transparent background)
-│   ├── product_q100_q101.png          # Q100 Disciplined Oscillator hardware module
+│   ├── TimeCubic_Q100.png             # New official Q100 Disciplined Module photo (with logo & RoHS)
+│   ├── TimeCubic_Q50.png              # New official Q50 Ultra-Low Power Oscillator photo (with logo)
+│   ├── TimeCubic_Q52.png              # New official Q52 Precision Oscillator photo (with logo)
 │   ├── product_q200.png               # Q200 Satellite Disciplined Oscillator hardware module
 │   ├── q40l_datasheet_photo.jpg       # High-res photo from Q40L datasheet
 │   ├── q050_datasheet_photo.jpg       # High-res photo from Q50 datasheet
 │   ├── q052_datasheet_photo.jpg       # High-res photo from Q52 datasheet
+│   ├── q52l_datasheet_photo.jpg       # High-res photo from Q52L datasheet
+│   ├── q69_datasheet_photo.jpg        # High-res photo from Q69 datasheet
 │   ├── q100_datasheet_photo_rev_k.jpg # High-res photo from Q100 Rev K datasheet
 │   ├── q100_datasheet_photo_rev_o.jpg # High-res photo from Q100 Rev O datasheet
 │   └── q200_datasheet_photo.jpg       # High-res photo from Q200 datasheet
