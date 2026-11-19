@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Customization Case Study: 35°C Low-Temperature SC-Cut Oven for Ultra-Long OBS Deployments | TimeCubic</title>
+  <meta name="description" content="Technical case study: How TimeCubic customized a 35°C turnover SC-cut crystal and advanced micro-thermal packaging to achieve sub-50 mW power and <1 ms holdover across 6 to 12+ month Ocean Bottom Seismometer (OBS) missions.">
+  <link rel="stylesheet" href="https://use.typekit.net/ece4ods.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"gill-sans-nova"', '"Gill Sans"', '"Gill Sans MT"', '"Cabin"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#0c4a6e',
+              dark: '#0a1526',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ================= TOP NAV / BACK TO SITE ================= -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 min-h-16 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html" class="flex items-center gap-2 text-slate-700 hover:text-blue-600 font-semibold text-sm transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>TimeCubic Engineering Insights</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:inline-block text-xs font-mono text-slate-500 bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Custom Engineering Case Study &bull; OBS</span>
+        <a href="case_study_obn_q100.html" class="px-3 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold font-mono transition-colors">
+          OBN Field Study &rarr;
+        </a>
+        <a href="contact.html" class="px-3 py-1.5 rounded bg-blue-600 text-white hover:bg-blue-700 text-xs font-semibold font-mono shadow-sm transition-colors">
+          Custom Engineering Inquiry &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= ARTICLE HERO ================= -->
+  <section class="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-white pt-16 pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <div class="flex flex-wrap items-center gap-2.5 mb-6">
+        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 font-mono text-xs font-semibold uppercase tracking-wider">
+          Custom Engineering &bull; Application Case Study
+        </span>
+        <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30 font-mono text-xs font-semibold uppercase tracking-wider">
+          Ocean Bottom Seismometer (OBS)
+        </span>
+        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 font-mono text-xs font-semibold uppercase tracking-wider">
+          6 to 12+ Month Mission Target
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+        Custom Low-Temperature SC-Cut Oven Architecture: <br class="hidden md:inline"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-300 to-blue-400">
+          Shattering the 50 mW Power Barrier for 12-Month Deep-Sea OBS Deployments
+        </span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-300 max-w-4xl leading-relaxed mb-10 font-normal">
+        When an oceanographic instrument manufacturer faced an extreme endurance requirement for a multi-season deep-water sensor node, conventional commercial timing solutions proved unviable: atomic clocks consumed too much battery energy, while standard oven-controlled oscillators drained watts of heating power. By tailoring the crystallographic turnover of an ultra-low-aging SC-cut quartz resonator to a low 35°C setpoint and combining it with proprietary micro-thermal isolation, TimeCubic achieved sub-50 mW steady-state power and &lt;1 ms holdover across 6 to 12+ continuous months subsea.
+      </p>
+
+      <!-- KPI Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-slate-700/60">
+        <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 border border-slate-700">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Power Budget</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">&lt; 50 mW</div>
+          <div class="text-xs text-slate-400 mt-1">~28&ndash;32 mW typical steady state</div>
+        </div>
+
+        <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 border border-slate-700">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Thermal Gradient (&Delta;T)</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">-58%</div>
+          <div class="text-xs text-slate-400 mt-1">35°C setpoint vs. 80°C standard</div>
+        </div>
+
+        <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 border border-slate-700">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Mission Holdover</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">&lt; 1.0 ms</div>
+          <div class="text-xs text-slate-400 mt-1">6 months (180 days) compensated</div>
+        </div>
+
+        <div class="bg-slate-800/80 backdrop-blur-sm rounded-xl p-4 border border-slate-700">
+          <div class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-1">Crystal Technology</div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-purple-400 font-mono">SC-Cut</div>
+          <div class="text-xs text-slate-400 mt-1">Bespoke 35°C turnover angle</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-12 lg:py-16 space-y-16">
+
+    <!-- ================= SECTION 1: THE CUSTOMER CHALLENGE ================= -->
+    <section id="the-challenge" class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 font-bold font-mono text-sm">01</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">The Challenge: Annual Deepwater OBS Endurance Under 50 mW</h2>
+      </div>
+
+      <div class="prose prose-slate max-w-none text-slate-700 space-y-4">
+        <p>
+          A premier manufacturer of deep-sea marine sensor systems approached TimeCubic with a challenging design requirement: developing an ultra-endurance <strong>Ocean Bottom Seismometer (OBS)</strong> platform. Unlike standard exploration nodes that are recovered every 30 to 60 days, this high-depth scientific and monitoring observatory is engineered to sit autonomously on the abyss seafloor for <strong>more than 6 months, with mission targets extending to 12 months and beyond (365+ days)</strong>.
+        </p>
+
+        <p>
+          At water depths exceeding 3,000 meters, radiofrequency GPS/GNSS signals are entirely blocked by the highly conductive seawater column. The node operates in total timing isolation from the instant of deck synchronization until shipboard recovery a full year later.
+        </p>
+
+        <!-- Challenge Constraints Box -->
+        <div class="my-6 p-5 bg-slate-50 rounded-xl border-l-4 border-emerald-500 text-slate-800 space-y-3">
+          <div class="font-bold text-emerald-900 flex items-center gap-2">
+            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Customer Technical Specifications &amp; Project Boundaries:</span>
+          </div>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm font-mono">
+            <li class="bg-white p-2.5 rounded border border-slate-200">
+              <span class="text-slate-400 block text-xs">Mission Operating Duration:</span>
+              <strong class="text-slate-800">&gt; 6 Months (180d) up to 12+ Months (365d+)</strong>
+            </li>
+            <li class="bg-white p-2.5 rounded border border-slate-200">
+              <span class="text-slate-400 block text-xs">Total Oscillator Power Ceiling:</span>
+              <strong class="text-emerald-700">Strictly Below 50 mW (&lt; 50 mW)</strong>
+            </li>
+            <li class="bg-white p-2.5 rounded border border-slate-200">
+              <span class="text-slate-400 block text-xs">Ambient Environmental Window:</span>
+              <strong class="text-slate-800">-5°C to +30°C (Deep Sea to Deck)</strong>
+            </li>
+            <li class="bg-white p-2.5 rounded border border-slate-200">
+              <span class="text-slate-400 block text-xs">Timing Drift Requirement:</span>
+              <strong class="text-blue-700">&lt; 1.0 ms across 6 Months (Post-Compensated)</strong>
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          In deepwater OBS stations, battery volume is severely restricted by pressure housing geometry (typically spherical glass or titanium pods rated to 6,000 m). Standard commercial Chip-Scale Atomic Clocks (CSACs), which draw 120 mW to 140 mW, would exhaust the node's power budget within months or require doubling the vessel's battery payload. Conventional Oven-Controlled Crystal Oscillators (OCXOs), drawing 1,000 mW to 2,000 mW, were out of the question. <strong>The manufacturer needed an atomic-grade holdover solution that could operate under 50 mW continuously.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: FIRST-PRINCIPLES THERMAL PHYSICS ================= -->
+    <section id="thermal-physics" class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 font-bold font-mono text-sm">02</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">First-Principles Thermal Physics: The 35°C Setpoint Breakthrough</h2>
+      </div>
+
+      <div class="prose prose-slate max-w-none text-slate-700 space-y-4">
+        <p>
+          To understand why conventional OCXOs consume excessive power, one must examine the foundational equation of steady-state thermal conduction:
+        </p>
+
+        <!-- Equation Card -->
+        <div class="my-6 p-4 bg-slate-900 text-white rounded-xl text-center font-mono text-base sm:text-lg shadow-inner">
+          <span class="text-emerald-400">P<sub>heater</sub></span> = 
+          <span class="text-cyan-300">&Delta;T</span> / <span class="text-amber-300">R<sub>th</sub></span> = 
+          (<span class="text-cyan-300">T<sub>oven</sub> - T<sub>ambient</sub></span>) / <span class="text-amber-300">R<sub>th</sub></span>
+          <div class="text-xs text-slate-400 mt-2 font-sans">
+            Where &Delta;T is the thermal gradient between the core oven and the ambient environment, and R<sub>th</sub> is the effective thermal resistance of the insulation structure.
+          </div>
+        </div>
+
+        <p>
+          Industrial OCXOs are traditionally designed for universal terrestrial applications spanning -40°C to +70°C or +85°C. To ensure that the oven retains thermal control when ambient temperatures spike on a desert oil rig or industrial cabinet, manufacturers fix the internal oven temperature to <strong>75°C to 85°C</strong>.
+        </p>
+
+        <p>
+          However, the deep seabed is an entirely different thermodynamic environment. At water depths of 1,000m to 4,000m, ocean temperatures remain virtually constant year-round, typically hovering between <strong>2°C and 4°C</strong>. Even when accounting for internal electronics dissipating heat inside a sealed node, internal enclosure temperatures rarely exceed <strong>15°C to 20°C</strong>.
+        </p>
+      </div>
+
+      <!-- Comparative Math Breakdown -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        
+        <!-- Standard OCXO Architecture -->
+        <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs font-mono font-bold text-red-600 uppercase">Standard OCXO Architecture</span>
+              <span class="px-2 py-0.5 rounded bg-red-100 text-red-800 font-mono text-xs font-bold">T<sub>oven</sub> = 80°C</span>
+            </div>
+            <p class="text-xs text-slate-600 mb-3">
+              Designed for extreme terrestrial heat (+70°C ambient). In subsea seabed environments (T<sub>amb</sub> = 2°C):
+            </p>
+            <div class="font-mono text-sm space-y-1.5 bg-white p-3 rounded border border-slate-200">
+              <div class="flex justify-between text-slate-700">
+                <span>Thermal Gradient (&Delta;T):</span>
+                <span class="font-bold text-red-600">80°C - 2°C = 78°C</span>
+              </div>
+              <div class="flex justify-between text-slate-700">
+                <span>Thermal Resistance (R<sub>th</sub>):</span>
+                <span>~200 °C/W</span>
+              </div>
+              <div class="flex justify-between text-slate-700 border-t border-slate-100 pt-1 font-bold">
+                <span>Heater Power Required:</span>
+                <span class="text-red-600">390 mW</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 text-[11px] text-red-700 bg-red-50 p-2 rounded">
+            <strong>Outcome:</strong> Total power exceeds 450 mW. Unusable for multi-month battery-operated subsea nodes.
+          </div>
+        </div>
+
+        <!-- TimeCubic Custom 35°C Architecture -->
+        <div class="p-5 rounded-xl bg-emerald-50/70 border border-emerald-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="text-xs font-mono font-bold text-emerald-700 uppercase">TimeCubic Custom 35°C Architecture</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-200 text-emerald-900 font-mono text-xs font-bold">T<sub>oven</sub> = 35°C</span>
+            </div>
+            <p class="text-xs text-emerald-900 mb-3">
+              Optimized for oceanographic boundary (-5°C to +30°C). In subsea seabed environments (T<sub>amb</sub> = 2°C):
+            </p>
+            <div class="font-mono text-sm space-y-1.5 bg-white p-3 rounded border border-emerald-200">
+              <div class="flex justify-between text-slate-700">
+                <span>Thermal Gradient (&Delta;T):</span>
+                <span class="font-bold text-emerald-700">35°C - 2°C = 33°C</span>
+              </div>
+              <div class="flex justify-between text-slate-700">
+                <span>Thermal Gradient Reduction:</span>
+                <span class="font-bold text-emerald-600">-58% Drop</span>
+              </div>
+              <div class="flex justify-between text-slate-700 border-t border-slate-100 pt-1 font-bold">
+                <span>Heater Power Required:</span>
+                <span class="text-emerald-700">~15 &ndash; 18 mW</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 text-[11px] text-emerald-800 bg-emerald-100/80 p-2 rounded">
+            <strong>Outcome:</strong> Total device power drops to <strong>~28&ndash;32 mW</strong>, effortlessly beating the 50 mW ceiling!
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Thermal Gradient SVG Infographic -->
+      <div class="bg-slate-900 rounded-xl p-6 text-white my-6">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">Thermodynamic Gradient Comparison: Seafloor (2°C Ambient)</span>
+          <span class="text-xs font-mono text-slate-400">Fourier Conduction Law</span>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Standard 80C -->
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-1">
+              <span class="text-slate-300">Standard Industrial OCXO (80°C Oven)</span>
+              <span class="text-red-400 font-bold">&Delta;T = 78°C Thermal Delta (Heat Loss: 100%)</span>
+            </div>
+            <div class="w-full bg-slate-800 h-6 rounded-full overflow-hidden p-1 flex">
+              <div class="bg-gradient-to-r from-red-600 to-amber-500 h-full rounded-full transition-all duration-500" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <!-- TimeCubic 35C -->
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-1">
+              <span class="text-emerald-300 font-bold">TimeCubic Custom Seabed Solution (35°C Oven)</span>
+              <span class="text-emerald-400 font-bold">&Delta;T = 33°C Thermal Delta (Heat Loss: 42% &bull; 58% Energy Saved)</span>
+            </div>
+            <div class="w-full bg-slate-800 h-6 rounded-full overflow-hidden p-1 flex">
+              <div class="bg-gradient-to-r from-emerald-500 to-cyan-400 h-full rounded-full transition-all duration-500" style="width: 42.3%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-400 mt-4 leading-relaxed">
+          *Note: At the maximum specified boundary of +30°C (e.g. tropical vessel deck prior to deployment), the 35°C setpoint still preserves a positive 5°C control delta, preventing oven thermal runaway while maintaining tight proportional-integral (PI) regulation.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: SC-CUT CRYSTAL CUSTOMIZATION ================= -->
+    <section id="crystal-customization" class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 font-bold font-mono text-sm">03</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Crystal Customization: SC-Cut Tailored for 35°C Turnover</h2>
+      </div>
+
+      <div class="prose prose-slate max-w-none text-slate-700 space-y-4">
+        <p>
+          While lowering the oven setpoint to 35°C is conceptually elegant on paper, <strong>conventional off-the-shelf crystal resonators cannot simply be operated at 35°C</strong> without catastrophic loss of frequency stability.
+        </p>
+
+        <p>
+          In high-precision quartz resonators, the frequency-versus-temperature curve follows a parabolic or cubic trajectory. The critical operating sweet spot is the <strong>turnover temperature (T<sub>0</sub>)</strong>, the exact inflection point where the first-order temperature coefficient vanishes:
+        </p>
+
+        <div class="my-4 p-3 bg-slate-100 rounded-lg text-center font-mono text-sm text-slate-800">
+          <strong>df / dT = 0 &nbsp;&nbsp;&bull;&nbsp;&nbsp; at T = T<sub>0</sub></strong>
+        </div>
+
+        <p>
+          At T<sub>0</sub>, local micro-fluctuations in oven temperature generate minimum frequency deviation. For decades, the entire quartz manufacturing industry has standard-cut crystal blanks to place T<sub>0</sub> between <strong>75°C and 85°C</strong>. If a standard 80°C crystal is placed into a 35°C oven, it operates on a steep frequency slope of several hundred ppb/°C—magnifying every micro-Kelvin thermal ripple into unacceptable clock jitter.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-900 pt-3">Why SC-Cut Was Essential for Multi-Season OBS Missions</h3>
+        <p>
+          For an Ocean Bottom Seismometer operating up to a full year, aging rate is paramount. TimeCubic selected the <strong>SC-cut (Stress-Compensated)</strong> resonator over traditional AT-cuts for three definitive engineering advantages:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-mono text-xs font-bold text-emerald-700 uppercase mb-1">Ultra-Low Aging Rate</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              SC-cut crystals exhibit an exceptionally stable molecular matrix, delivering intrinsic daily aging rates of <strong>&lt; 5 &times; 10<sup>-11</sup> / day</strong>. This is critical for holding cumulative time drift under 1 ms across 180 to 365 days.
+            </p>
+          </div>
+
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-mono text-xs font-bold text-emerald-700 uppercase mb-1">Thermal Transient Immunity</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Thanks to double-rotation angles (&theta; &approx; 34°, &phi; &approx; 22°), SC-cut resonators possess zero dynamic thermal coefficient (&Delta;f<sub>dyn</sub> &approx; 0), eliminating frequency jumps when seabed currents shift.
+            </p>
+          </div>
+
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-mono text-xs font-bold text-emerald-700 uppercase mb-1">Low Stress Sensitivity</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              SC-cuts are virtually impervious to mechanical mounting stresses and external vessel deformation under 300 bar hydrostatic pressure, ensuring pure acoustic resonance.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-bold text-slate-900 pt-3">The Crystallographic Breakthrough: Shifting T<sub>0</sub> to 35.0°C</h3>
+        <p>
+          To unlock the sub-50 mW power breakthrough, TimeCubic's resonator physicists recalculated the precise crystallographic cut angles. By introducing micron-level angular offsets (&Delta;&theta;, &Delta;&phi;) during precision diamond-blade sawing and angle-lapping, <strong>TimeCubic successfully shifted the zero-temperature coefficient turnover peak directly to 35.0°C &plusmn; 1.0°C</strong>.
+        </p>
+
+        <p>
+          This bespoke crystal fabrication allows the oscillator to operate in its flattest, most stable thermodynamic regime at exactly 35°C, merging <strong>the ultra-low aging of SC-cut quartz</strong> with <strong>unprecedentedly low heater power</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 4: PACKAGING & PACKAGING ARCHITECTURE ================= -->
+    <section id="thermal-packaging" class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 font-bold font-mono text-sm">04</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Proprietary Thermal Isolation &amp; Circuit Packaging</h2>
+      </div>
+
+      <div class="prose prose-slate max-w-none text-slate-700 space-y-4">
+        <p>
+          Reducing thermal gradient (&Delta;T) is only half the battle; the other half is maximizing thermal resistance (R<sub>th</sub>). To protect TimeCubic's intellectual property while providing engineering transparency, the thermal packaging combines three synergistic isolation principles:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 font-mono font-bold flex items-center justify-center mb-3">01</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">High-Vacuum Hermetic Barrier</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              The core resonator cell is sealed within a high-vacuum enclosure, eliminating molecular gas convection and atmospheric conduction heat transfer paths.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 font-mono font-bold flex items-center justify-center mb-3">02</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Micro-Thermal Shielding</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Multi-layer low-emissivity radiant thermal barriers line the inner cavity, reflecting infrared blackbody radiation back into the crystal core with near-unity reflectance.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 font-mono font-bold flex items-center justify-center mb-3">03</div>
+            <h4 class="font-bold text-slate-900 text-sm mb-1">Low-Conductivity Suspension</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              The internal core is mounted via engineered low thermal-conductivity suspension leads, providing high mechanical shock resistance during deployment while choking parasitic conductive heat loss.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          On the electrical side, TimeCubic's ultra-low-power CMOS sustaining oscillator circuit draws less than <strong>12 mW</strong> of active electrical power at 16.384 MHz, and the precision proportional-integral (PI) thermal controller consumes under <strong>3 mW</strong>. 
+          When paired with the 35°C thermal oven drawing ~15 mW at seabed conditions, <strong>the complete module consumes just 28 to 32 mW steady state</strong>—giving the customer a generous 35% safety margin beneath their 50 mW budget ceiling.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: OBS TIMING DRIFT & DATA FIDELITY ================= -->
+    <section id="timing-performance" class="bg-white rounded-2xl p-6 sm:p-10 shadow-sm border border-slate-200">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 font-bold font-mono text-sm">05</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Timing Holdover Performance: &lt;1 ms Over 6 Months for OBS Science</h2>
+      </div>
+
+      <div class="prose prose-slate max-w-none text-slate-700 space-y-4">
+        <p>
+          The primary objective of an Ocean Bottom Seismometer is capturing broadband microseismic waves, P-wave and S-wave arrivals from tectonic fault ruptures, and low-frequency teleseismic signals for planetary mantle tomography.
+        </p>
+
+        <p>
+          Seismic digitizers natively operate on master clocks of <strong>16.384 MHz</strong>, which divide cleanly by 2<sup>n</sup> down to standard sampling rates of 1,000 Hz, 500 Hz, 250 Hz, and 100 Hz. If an oscillator drifts unpredictably, event arrival timing across a 50-node seafloor array cannot be synchronized, creating spatial localization errors of dozens of kilometers in earthquake epicenter inversion.
+        </p>
+
+        <!-- Milestone Holdover Banner -->
+        <div class="my-6 p-5 bg-gradient-to-r from-blue-900 to-slate-900 rounded-xl text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg border border-blue-800">
+          <div>
+            <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block mb-1">Empirical Holdover Target</span>
+            <div class="text-2xl font-bold text-white">Sub-Millisecond Accuracy Across 180 Continuous Days</div>
+            <p class="text-xs text-slate-300 mt-1 max-w-xl">
+              Applying TimeCubic's proprietary mathematical aging and post-compensation model, cumulative timing drift remains bounded within <strong>&plusmn;0.8 ms over 6 months (180 days)</strong>, with projected holdover of &lt;2.5 ms across a full 12-month deployment.
+            </p>
+          </div>
+          <div class="shrink-0 bg-blue-800/80 px-4 py-3 rounded-lg border border-blue-700 font-mono text-center">
+            <span class="text-xs text-cyan-300 block">6-Month Residual Drift</span>
+            <span class="text-2xl font-extrabold text-white">&lt; 1.0 ms</span>
+          </div>
+        </div>
+
+        <p>
+          Because the SC-cut crystal experiences minimal mechanical and thermal hysteresis at its 35°C turnover point, its frequency aging follows an exceptionally clean, monotonic logarithmic trajectory. When the node is retrieved and connected to GPS 1PPS on the survey vessel deck, <strong>TimeCubic's proprietary de-drifting software fits the aging curve with &gt;98% correlation</strong>, restoring perfect trace alignment for deep seismic processing.
+        </p>
+      </div>
+
+      <!-- Battery Energy Impact Table -->
+      <div class="mt-8 pt-6 border-t border-slate-200">
+        <h4 class="text-base font-bold text-slate-900 mb-3">Seafloor Battery Budget: 6-Month vs. 12-Month Total Clock Energy</h4>
+        
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-left text-xs font-mono border border-slate-200 rounded-lg">
+            <thead class="bg-slate-100 text-slate-700 uppercase tracking-wider">
+              <tr>
+                <th class="py-3 px-4 border-b">Mission Timeline</th>
+                <th class="py-3 px-4 border-b bg-emerald-50 text-emerald-900 font-bold">TimeCubic Custom 35°C (~30 mW)</th>
+                <th class="py-3 px-4 border-b">Commercial CSAC (130 mW)</th>
+                <th class="py-3 px-4 border-b">Standard OCXO (1,000 mW)</th>
+                <th class="py-3 px-4 border-b text-emerald-700 font-bold">Energy Saved vs CSAC</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-slate-700">
+              <tr class="bg-emerald-50/30">
+                <td class="py-3 px-4 font-bold">6 Months (180 Days)</td>
+                <td class="py-3 px-4 text-emerald-700 font-bold">129.6 Wh</td>
+                <td class="py-3 px-4">561.6 Wh</td>
+                <td class="py-3 px-4 text-red-600">4,320 Wh</td>
+                <td class="py-3 px-4 text-emerald-700 font-bold">432 Wh (-77%)</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-bold">12 Months (365 Days)</td>
+                <td class="py-3 px-4 text-emerald-700 font-bold">262.8 Wh</td>
+                <td class="py-3 px-4">1,138.8 Wh</td>
+                <td class="py-3 px-4 text-red-600">8,760 Wh</td>
+                <td class="py-3 px-4 text-emerald-700 font-bold">876 Wh (-77%)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-slate-500 mt-2">
+          *Saving 876 Wh over a 12-month mission frees up space for additional geophone preamplifier batteries or reduces the required sphere diameter by 30%, lowering deployment ballasting costs.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 6: CUSTOMIZATION CAPABILITY ================= -->
+    <section id="customization-capability" class="bg-slate-900 text-white rounded-2xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+      <div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-emerald-600/10 blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-3xl">
+        <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest block mb-2">Engineering Capability &amp; Partnership</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight mb-4">
+          Tailored Physics for Mission-Critical Subsea Sensing
+        </h2>
+        
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+          This case study showcases TimeCubic's holistic engineering philosophy: we do not merely sell catalog oscillators; we partner with instrumentation leaders to engineer bespoke frequency solutions tailored to their exact thermal and power envelopes.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 text-xs font-mono">
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <span class="text-emerald-400 block font-bold mb-1">Crystallography</span>
+            Bespoke cut-angle engineering (&theta;, &phi;) to position turnover temperatures (T<sub>0</sub>) anywhere from 30°C to 95°C.
+          </div>
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <span class="text-cyan-400 block font-bold mb-1">Thermal Packaging</span>
+            Custom micro-vacuum isolation, thermal barrier shields, and low-loss mechanical mounting geometries.
+          </div>
+          <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+            <span class="text-purple-400 block font-bold mb-1">Low-Power Electronics</span>
+            Sub-15 mW sustaining oscillators, digital temperature regulation loops, and custom output frequencies (10 to 100 MHz).
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 pt-4 border-t border-slate-800">
+          <a href="contact.html" class="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold font-mono text-xs transition-colors shadow-sm">
+            Discuss Your Custom Subsea Requirements &rarr;
+          </a>
+          <a href="case_study_obn_q100.html" class="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold font-mono text-xs transition-colors">
+            View 60-Day OBN Field Test Data &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-white border-t border-slate-200 py-10 mt-16 text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <strong>TimeCubic Inc.</strong> &bull; 800 Turnpike Street, Suite 300, North Andover, MA 01845, USA
+      </div>
+      <div>
+        &copy; 2026 TimeCubic Inc. Precision Frequency &amp; Timing Solutions. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
