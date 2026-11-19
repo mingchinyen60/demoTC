@@ -54,6 +54,48 @@
       display: flex;
     }
   </style>
+  <link rel="canonical" href="https://timecubic.com/case_study_obn_q100.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OBN Timing Holdover Case Study: Sustaining 60+ Day Seabed Missions at Sub-50 mW | TimeCubic">
+  <meta property="og:url" content="https://timecubic.com/case_study_obn_q100.html">
+  <meta property="og:image" content="https://timecubic.com/assets/brand/timecubic_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "OBN Timing Holdover Case Study: Sustaining 60+ Day Seabed Missions at Sub-50 mW",
+    "url": "https://timecubic.com/case_study_obn_q100.html",
+    "datePublished": "2024-03-15",
+    "dateModified": "2024-11-15",
+    "inLanguage": "en-US",
+    "keywords": [
+      "Ocean Bottom Node timing",
+      "OBN holdover",
+      "subsea clock drift",
+      "Q100 OCXO",
+      "sub-50 mW oscillator",
+      "marine seismic survey"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "TimeCubic Inc.",
+      "url": "https://timecubic.com",
+      "logo": "https://timecubic.com/assets/brand/timecubic_logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "North Andover",
+        "addressRegion": "MA",
+        "addressCountry": "US"
+      }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "TimeCubic Engineering Laboratory",
+      "url": "https://timecubic.com/about.html"
+    }
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
@@ -855,6 +897,56 @@
         </div>
       </div>
     </section>
+
+  
+      <!-- Key Engineering Takeaways & Technical FAQ -->
+      <section class="mt-16 bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm not-prose">
+        <div class="max-w-4xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-mono font-semibold rounded-full border border-blue-200 uppercase tracking-wider mb-3">
+            Technical Briefing &amp; Key Questions
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Key Engineering Takeaways for Systems Designers</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mb-6">
+            Direct technical Q&amp;A compiled by TimeCubic's North Andover, MA engineering team for hardware designers and system architects.
+          </p>
+          <div class="space-y-4">
+            
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>What is the verified power consumption of Model Q100 in deep subsea operations?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Empirical field validation across 645 deployed ocean bottom nodes confirmed Model Q100 steady-state power consumption averaging 49.2 mW at +4 deg C ocean floor ambient, compared to 120-150 mW for legacy atomic clocks.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>How does Q100 achieve sub-millisecond holdover over 60 days?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Through a proprietary high-vacuum micro-ovenized thermal isolation chamber and dynamic thermal compensation algorithm, keeping long-term aging under 0.2 ppb/year.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>What are the economic savings of sub-50 mW timing for OBN operations?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Slashing oscillator power from 150 mW to ~49 mW reduces total battery payload by ~70%, enabling smaller autonomous deployment vehicles, lower ROV handling weights, and longer operational windows between recoveries.
+            </div>
+          </details>
+          </div>
+        </div>
+      </section>
 
   </main>
 

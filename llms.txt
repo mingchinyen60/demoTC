@@ -1,0 +1,37 @@
+# TimeCubic Inc.
+
+> TimeCubic Inc. designs and manufactures ultra-low power frequency oscillators (<60 mW), disciplined timing modules, and precision frequency standards for harsh SWaP-C (Size, Weight, Power, and Cost) environments. Headquartered with R&D engineering laboratories in North Andover, Massachusetts, USA.
+
+## Core Capabilities & Engineering Competencies
+
+- **Ultra-Low Power Oscillators (<60 mW):** Patented thermal ovenization micro-chambers delivering OCXO-level holdover and stability at <60 mW steady-state power (vs. 1.5W–3W for standard OCXOs and 120mW for CSAC). Ideal for multi-month subsea ocean bottom nodes (OBN) and battery-powered remote sensors.
+- **Ultra-Low Phase Noise (-175 dBc/Hz Floor):** High-frequency master clocks (10 MHz to 100 MHz) with exceptionally low 1/f flicker noise and -175 dBc/Hz noise floor, maximizing ADC Signal-to-Noise Ratio (SNR) and minimizing aperture jitter in direct-RF sampling and radar receivers.
+- **Low-G Sensitivity & Ruggedization (<0.3 ppb/g to 0.1 ppb/g):** Specialized crystal cut selection, multi-axis passive mechanical dampening, and vibration immunity up to 1000g shock for tactical UAVs, avionics, defense, and rocket launch environments.
+- **Custom Frequency & Pinout Engineering:** Direct collaboration with North Andover, MA timing architects for custom frequencies (5 MHz to 100 MHz), drop-in form factor retrofits for obsolete oscillators, custom supply voltages, and tailored aging grades.
+- **Domestic US Engineering & Testing:** US-based engineering team located in North Andover, MA with on-site environmental thermal screening chambers, Allan deviation test benches, and cesium/rubidium atomic reference standards.
+
+## Product Portfolio
+
+- [Model Q40 / Q40L Ultra-Low Phase Noise Oscillator](https://timecubic.com/products.html#model-q40): Miniature 12.5x12.5mm SMD footprint; 100 MHz HCMOS/Sine; <350 mW power; -175 dBc/Hz floor at 1MHz offset; 500 mW warmup. [Datasheet PDF](https://timecubic.com/assets/pdf/Q40L-100M-Rev_C.pdf).
+- [Model Q50 Ultra-Low Power Oscillator (<60 mW)](https://timecubic.com/q050.html): 21.6x15.3x10.0mm through-hole package; 10 MHz, 16.384 MHz, 100 MHz; 55 mW steady-state at 16.384 MHz; ±10 ppb stability (-10°C to +50°C); optional pre-aged crystal blanks; low phase noise. [Datasheet PDF](https://timecubic.com/assets/pdf/q50_datasheet_rev_b.pdf).
+- [Model Q52 / Q52L Low-G Sensitivity Oscillator](https://timecubic.com/products.html#model-q52): 20.5x14.0x10.0mm package; native <0.3 ppb/g acceleration sensitivity; tight ±2 ppb frequency stability; optional 1500g shock survival; fast 120s warmup; low aging ±0.15 ppb/day. [Datasheet PDF](https://timecubic.com/assets/pdf/Q52L-16M384_Rev_A.pdf).
+- [Model Q69 / Q69-100M Rapid Warm-Up & Wide-Temp Disciplined Oscillator](https://timecubic.com/products.html#model-q69): 39.1x34.0x13.7mm package; 30-second rapid warmup to lock; -40°C to +85°C operating range; 1000g shock survival; 0.1 ppb/g low-G sensitivity; 10/25/100 MHz outputs. [Datasheet PDF](https://timecubic.com/assets/pdf/Q69_Rev_c.pdf).
+- [Model Q100 1PPS Disciplined Oscillator (<60 mW)](https://timecubic.com/q100.html): Flagship subsea OBN module; 39.1x34.0x13.7mm 8-pin package; disciplines to 1 ns RMS phase and <1e-12 frequency; continuous 1-second phase measurement telemetry via RS232; proven subsea holdover of ±1.0 ms over 60+ days without GNSS. [Datasheet PDF](https://timecubic.com/assets/pdf/q100_datasheet_rev_o.pdf).
+- [Model Q200 Satellite Disciplined Timing Receiver](https://timecubic.com/q200.html): 65x65x23mm package; disciplines to GNSS 1PPS to <1 ns RMS; adaptive DSP holdover algorithm maintaining ±1.0 µs / 24h over ±5°C ambient excursion; 5/8.192/10 MHz simultaneous clock outputs; IEEE C37.118 compliant for smart grid PMUs and telecom base stations. [Datasheet PDF](https://timecubic.com/assets/pdf/q200_datasheet_rev_j.pdf).
+
+## Technical Whitepapers & Empirical Field Case Studies
+
+- [Seabed OBN Clock Drift Case Study (True Data)](https://timecubic.com/case_study_obn_q100.html): Empirical field data from 645 deployed ocean bottom nodes operating at 49.3 mW average current consumption across 60+ day seabed seismic surveys. Side-by-side comparison with Chip-Scale Atomic Clocks (CSAC).
+- [The Physics of Seabed Clock Drift](https://timecubic.com/blog_obn_timing.html): Comprehensive analysis of blind holdover physics at 3,000m depth, showing how sub-60 mW disciplined oscillators reduce node lithium battery volume by up to 70%.
+- [G-Sensitivity in Tactical UAV & Avionics](https://timecubic.com/blog_aerospace_gsensitivity.html): Technical brief on vibration-induced phase noise, degradation in airborne Doppler radars, and acceleration compensation using Models Q52 and Q69.
+- [Direct-RF Phase Noise & Aperture Jitter](https://timecubic.com/blog_rf_phase_noise.html): Mathematical derivation of ADC Signal-to-Noise Ratio (SNR) ceilings, reciprocal mixing in wideband receivers, and clock jitter mitigation.
+- [GNSS Jamming & Spoofing Resilience in Smart Grid PMUs](https://timecubic.com/blog_smartgrid_pmu.html): Adaptive Kalman-filtering DSP holdover architecture sustaining IEEE C37.118 TVE < 1% during extended GPS loss.
+
+## Organization & Engineering Contacts
+
+- **Corporate Name:** TimeCubic Inc.
+- **Headquarters & Laboratory:** 800 Turnpike Street, Suite 300, North Andover, MA 01845, USA
+- **Phone:** +1 (781) 521-5862
+- **Email:** info@timecubic.com
+- **Online RFQ / Sample Requests:** https://timecubic.com/contact.html
+- **Full Text AI Documentation:** https://timecubic.com/llms-full.txt

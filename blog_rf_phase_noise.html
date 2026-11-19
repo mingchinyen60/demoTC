@@ -50,6 +50,48 @@
       padding-bottom: 0.25rem;
     }
   </style>
+  <link rel="canonical" href="https://timecubic.com/blog_rf_phase_noise.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Phase Noise and Aperture Jitter in Direct-RF Sampling: Why Master Clocks Determine ADC SNR & EVM | TimeCubic">
+  <meta property="og:url" content="https://timecubic.com/blog_rf_phase_noise.html">
+  <meta property="og:image" content="https://timecubic.com/assets/brand/timecubic_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Phase Noise and Aperture Jitter in Direct-RF Sampling: Why Master Clocks Determine ADC SNR & EVM",
+    "url": "https://timecubic.com/blog_rf_phase_noise.html",
+    "datePublished": "2024-05-18",
+    "dateModified": "2024-11-15",
+    "inLanguage": "en-US",
+    "keywords": [
+      "phase noise",
+      "aperture jitter",
+      "direct-RF sampling",
+      "ADC clocking",
+      "low phase noise oscillator",
+      "-175 dBc/Hz floor"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "TimeCubic Inc.",
+      "url": "https://timecubic.com",
+      "logo": "https://timecubic.com/assets/brand/timecubic_logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "North Andover",
+        "addressRegion": "MA",
+        "addressCountry": "US"
+      }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "TimeCubic Engineering Laboratory",
+      "url": "https://timecubic.com/about.html"
+    }
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
@@ -435,7 +477,57 @@
       </div>
     </div>
 
-  </article>
+  
+      <!-- Key Engineering Takeaways & Technical FAQ -->
+      <section class="mt-16 bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm not-prose">
+        <div class="max-w-4xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-mono font-semibold rounded-full border border-blue-200 uppercase tracking-wider mb-3">
+            Technical Briefing &amp; Key Questions
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Key Engineering Takeaways for Systems Designers</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mb-6">
+            Direct technical Q&amp;A compiled by TimeCubic's North Andover, MA engineering team for hardware designers and system architects.
+          </p>
+          <div class="space-y-4">
+            
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>How does master clock phase noise limit high-speed ADC performance?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              In direct-RF sampling architectures, clock aperture jitter integrates directly into the digitized signal, establishing an inescapable theoretical SNR ceiling: SNR = -20*log10(2*pi*f_in*t_jitter).
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>What is the phase noise floor of TimeCubic high-frequency OCXOs?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              TimeCubic RF reference oscillators deliver ultra-low phase noise floors of -175 dBc/Hz at 100 kHz offset, with integrated RMS jitter < 50 fs, eliminating clock jitter as the dominant bottleneck in modern direct-RF sampling.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>Are custom RF frequencies available?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Yes. TimeCubic North Andover lab customizes reference frequencies between 10 MHz and 100 MHz (e.g. 19.2 MHz, 25 MHz, 100 MHz) with custom drive levels and CMOS/Sine output configurations.
+            </div>
+          </details>
+          </div>
+        </div>
+      </section>
+
+    </article>
 
   <!-- ================= FOOTER ================= -->
     <!-- Footer -->

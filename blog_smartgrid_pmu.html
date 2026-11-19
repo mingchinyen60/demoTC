@@ -50,6 +50,47 @@
       padding-bottom: 0.25rem;
     }
   </style>
+  <link rel="canonical" href="https://timecubic.com/blog_smartgrid_pmu.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GNSS Jamming & Spoofing Resilience in Smart Grid PMUs: Adaptive DSP Holdover with Model Q200 | TimeCubic">
+  <meta property="og:url" content="https://timecubic.com/blog_smartgrid_pmu.html">
+  <meta property="og:image" content="https://timecubic.com/assets/brand/timecubic_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "GNSS Jamming & Spoofing Resilience in Smart Grid PMUs: Adaptive DSP Holdover with Model Q200",
+    "url": "https://timecubic.com/blog_smartgrid_pmu.html",
+    "datePublished": "2024-06-05",
+    "dateModified": "2024-11-15",
+    "inLanguage": "en-US",
+    "keywords": [
+      "smart grid PMU timing",
+      "GNSS jamming resilience",
+      "adaptive DSP holdover",
+      "IEEE C37.118 TVE",
+      "Q200 disciplined oscillator"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "TimeCubic Inc.",
+      "url": "https://timecubic.com",
+      "logo": "https://timecubic.com/assets/brand/timecubic_logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "North Andover",
+        "addressRegion": "MA",
+        "addressCountry": "US"
+      }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "TimeCubic Engineering Laboratory",
+      "url": "https://timecubic.com/about.html"
+    }
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
@@ -410,7 +451,57 @@
       </div>
     </div>
 
-  </article>
+  
+      <!-- Key Engineering Takeaways & Technical FAQ -->
+      <section class="mt-16 bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm not-prose">
+        <div class="max-w-4xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-mono font-semibold rounded-full border border-blue-200 uppercase tracking-wider mb-3">
+            Technical Briefing &amp; Key Questions
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Key Engineering Takeaways for Systems Designers</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mb-6">
+            Direct technical Q&amp;A compiled by TimeCubic's North Andover, MA engineering team for hardware designers and system architects.
+          </p>
+          <div class="space-y-4">
+            
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>What is the IEEE C37.118 requirement for smart grid PMU timing?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Phasor Measurement Units (PMUs) require synchronization accuracy within +/- 1 microsecond (Total Vector Error < 1%) to detect phase angle discrepancies across high-voltage transmission lines.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>How does Model Q200 protect substations during GNSS outages?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Model Q200 incorporates adaptive Kalman filtering DSP that continuously models local crystal aging and ambient thermal gradients during locked operation. When GNSS jamming or spoofing is detected, Q200 holds microsecond precision for days without external sync.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>What local interaction does TimeCubic provide for utility engineers?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Our North Andover, MA engineering lab works directly with utility protection and automation teams to simulate multi-day GNSS denial profiles and provide custom holdover validation testing.
+            </div>
+          </details>
+          </div>
+        </div>
+      </section>
+
+    </article>
 
   <!-- ================= FOOTER ================= -->
     <!-- Footer -->

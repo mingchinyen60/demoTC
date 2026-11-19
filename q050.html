@@ -55,6 +55,76 @@
       }
     }
   </style>
+  <!-- Canonical & AI / Social Discovery -->
+  <link rel="canonical" href="https://timecubic.com/q050.html">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Model Q50 | Ultra-Low Power Oscillator (<60 mW) | TimeCubic">
+  <meta property="og:description" content="Model Q50 draws <60 mW steady-state power (55 mW @ 16.384 MHz), providing true OCXO frequency stability and low phase noise for subsea OBN seismic exploration.">
+  <meta property="og:url" content="https://timecubic.com/q050.html">
+  <meta property="og:site_name" content="TimeCubic Inc.">
+  <meta property="og:image" content="https://timecubic.com/assets/products/product_q050_transparent.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org Product & FAQ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "https://timecubic.com/q050.html#product",
+        "name": "TimeCubic Model Q50 Ultra-Low Power Oscillator",
+        "model": "Model Q50",
+        "image": "https://timecubic.com/assets/products/product_q050_transparent.png",
+        "description": "Ultra-low power oven-controlled crystal oscillator (OCXO) drawing <60 mW steady-state power (55 mW at 16.384 MHz) for multi-month subsea ocean bottom node (OBN) battery longevity.",
+        "brand": { "@type": "Brand", "name": "TimeCubic" },
+        "manufacturer": { "@type": "Organization", "name": "TimeCubic Inc.", "url": "https://timecubic.com/" },
+        "category": "Ultra-Low Power OCXO",
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "Power Consumption", "value": "<60 mW steady-state (55 mW @ 16.384 MHz)" },
+          { "@type": "PropertyValue", "name": "Supply Voltage", "value": "+3.3V DC or +5.0V DC (±5%)" },
+          { "@type": "PropertyValue", "name": "Standard Frequencies", "value": "10 MHz, 16.384 MHz, 100 MHz HCMOS" },
+          { "@type": "PropertyValue", "name": "Frequency Stability", "value": "±10 ppb (-10°C to +50°C)" },
+          { "@type": "PropertyValue", "name": "Aging Rate", "value": "±0.2 ppb/day (10 MHz), ±0.5 ppb/day (16.384 MHz)" },
+          { "@type": "PropertyValue", "name": "Package Dimensions", "value": "21.6 x 15.3 x 10.0 mm through-hole" }
+        ],
+        "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "url": "https://timecubic.com/contact.html?product=Q50" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://timecubic.com/q050.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Model Q50 achieve sub-60 mW power consumption?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Model Q50 utilizes a proprietary thermal micro-vacuum isolation structure that isolates the quartz crystal blank with high thermodynamic efficiency. This reduces the heated chamber mass, enabling true OCXO frequency stability while drawing only 55 mW at 16.384 MHz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What battery life extension does Model Q50 provide in Ocean Bottom Nodes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Conventional OCXOs consume 1.5W to 3W, depleting typical subsea battery packs in a few days. Model Q50's <60 mW consumption extends autonomous seabed node battery life to 60-120+ days on standard lithium battery packs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the function of the VCON pin on Model Q50?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pin 1 (VCON) provides an analog voltage frequency control input (0 to 2.8V DC) allowing ±1 ppm to ±5 ppm fine tuning. If external voltage pulling is not required, Pin 1 may be left open for free-running operation."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen">
 
@@ -317,6 +387,41 @@
               </tbody>
             </table>
           </div>
+        </div>
+
+                <!-- Model Q50 FAQ Section -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+          <h2 class="text-lg font-bold text-slate-900 mb-2">Model Q50 Engineering FAQ</h2>
+          
+          <details class="border border-slate-200 rounded-xl p-4 group" open>
+            <summary class="font-bold text-xs sm:text-sm text-slate-900 cursor-pointer flex justify-between items-center select-none">
+              <span>How does Model Q50 achieve sub-60 mW power consumption?</span>
+              <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
+            </summary>
+            <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+              Model Q50 utilizes TimeCubic's patented micro-oven thermal vacuum isolation chamber that minimizes thermal dissipation paths. By reducing the effective thermal volume, steady-state power is held to <strong>55 mW at 16.384 MHz</strong> and 150 mW at 10 MHz, cutting power by over 80% compared to standard OCXOs.
+            </div>
+          </details>
+
+          <details class="border border-slate-200 rounded-xl p-4 group">
+            <summary class="font-bold text-xs sm:text-sm text-slate-900 cursor-pointer flex justify-between items-center select-none">
+              <span>What battery life extension does Model Q50 offer for seabed nodes?</span>
+              <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
+            </summary>
+            <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+              In deep subsea ocean bottom nodes (OBN), Model Q50 allows deployments exceeding <strong>60 to 120 days</strong> on compact lithium cell arrays. This eliminates the multi-thousand-dollar cost premium and procurement lead time of atomic CSAC clocks while delivering superior phase noise.
+            </div>
+          </details>
+
+          <details class="border border-slate-200 rounded-xl p-4 group">
+            <summary class="font-bold text-xs sm:text-sm text-slate-900 cursor-pointer flex justify-between items-center select-none">
+              <span>What is the function of the VCON control pin?</span>
+              <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
+            </summary>
+            <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+              Pin 1 (VCON) provides an analog voltage tuning input (0 to +2.8V DC) allowing electronic frequency adjustments. If external electronic steering is not required, Pin 1 may be left disconnected for autonomous free-running operation.
+            </div>
+          </details>
         </div>
 
         <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">

@@ -51,6 +51,47 @@
       padding-bottom: 0.25rem;
     }
   </style>
+  <link rel="canonical" href="https://timecubic.com/blog_obn_timing.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Physics of Seabed Clock Drift: Why <60 mW Disciplined Oscillators Are Reshaping Ocean Bottom Node Economics | TimeCubic">
+  <meta property="og:url" content="https://timecubic.com/blog_obn_timing.html">
+  <meta property="og:image" content="https://timecubic.com/assets/brand/timecubic_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "The Physics of Seabed Clock Drift: Why <60 mW Disciplined Oscillators Are Reshaping Ocean Bottom Node Economics",
+    "url": "https://timecubic.com/blog_obn_timing.html",
+    "datePublished": "2024-02-20",
+    "dateModified": "2024-11-15",
+    "inLanguage": "en-US",
+    "keywords": [
+      "seabed clock drift",
+      "OBN timing",
+      "1PPS disciplined oscillator",
+      "ocean bottom seismology",
+      "low power OCXO"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "TimeCubic Inc.",
+      "url": "https://timecubic.com",
+      "logo": "https://timecubic.com/assets/brand/timecubic_logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "North Andover",
+        "addressRegion": "MA",
+        "addressCountry": "US"
+      }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "TimeCubic Engineering Laboratory",
+      "url": "https://timecubic.com/about.html"
+    }
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
@@ -442,7 +483,57 @@
       </div>
     </div>
 
-  </article>
+  
+      <!-- Key Engineering Takeaways & Technical FAQ -->
+      <section class="mt-16 bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm not-prose">
+        <div class="max-w-4xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-mono font-semibold rounded-full border border-blue-200 uppercase tracking-wider mb-3">
+            Technical Briefing &amp; Key Questions
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Key Engineering Takeaways for Systems Designers</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mb-6">
+            Direct technical Q&amp;A compiled by TimeCubic's North Andover, MA engineering team for hardware designers and system architects.
+          </p>
+          <div class="space-y-4">
+            
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>Why is timing critical in Ocean Bottom Node seismic acquisition?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Seismic nodes are deployed at depths up to 3,000m where GPS/GNSS signals cannot penetrate. Node clocks operate in total blind holdover; drift exceeding 1-2 ms introduces unrecoverable phase errors in 3D/4D seismic imaging.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>What makes TimeCubic oscillators superior to TCXO and standard OCXO for OBNs?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              TCXOs suffer thermal hysteresis and drift (ppm range). Standard OCXOs consume 2W to 3W which drains node batteries in days. TimeCubic sub-60 mW OCXOs provide ppb holdover stability while fitting within tight node battery budgets for multi-month campaigns.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>Can TimeCubic oscillators accept external 1PPS disciplining before deployment?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Yes. TimeCubic modules feature 1PPS input disciplining with fast lock times, allowing operators to synchronize nodes directly to GNSS master clocks on the survey vessel deck prior to deployment.
+            </div>
+          </details>
+          </div>
+        </div>
+      </section>
+
+    </article>
 
   <!-- ================= FOOTER ================= -->
     <!-- Footer -->

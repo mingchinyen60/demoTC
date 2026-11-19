@@ -55,6 +55,67 @@
       }
     }
   </style>
+  <!-- Canonical & AI / Social Discovery -->
+  <link rel="canonical" href="https://timecubic.com/q200.html">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Model Q200 | Satellite Disciplined Timing Receiver | TimeCubic">
+  <meta property="og:description" content="Model Q200 delivers GNSS-disciplined timing with adaptive DSP holdover (±1.0 µs / 24h) and simultaneous multi-frequency outputs for smart grid PMUs and telecom.">
+  <meta property="og:url" content="https://timecubic.com/q200.html">
+  <meta property="og:site_name" content="TimeCubic Inc.">
+  <meta property="og:image" content="https://timecubic.com/assets/products/product_q200.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org Product & FAQ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "https://timecubic.com/q200.html#product",
+        "name": "TimeCubic Model Q200 Satellite Disciplined Timing Receiver",
+        "model": "Model Q200 (Rev J)",
+        "image": "https://timecubic.com/assets/products/product_q200.png",
+        "description": "Satellite-disciplined timing receiver module providing adaptive DSP holdover of ±1.0 µs / 24h, IEEE C37.118 TVE < 1% compliance, and simultaneous 5/8.192/10 MHz clock outputs.",
+        "brand": { "@type": "Brand", "name": "TimeCubic" },
+        "manufacturer": { "@type": "Organization", "name": "TimeCubic Inc.", "url": "https://timecubic.com/" },
+        "category": "Satellite Disciplined Timing Subsystem",
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "Holdover Performance", "value": "±1.0 µs / 24h over ±5°C ambient excursion (Code 10)" },
+          { "@type": "PropertyValue", "name": "Clock Outputs", "value": "10 MHz HCMOS (5 MHz, 8.192 MHz simultaneous outputs available)" },
+          { "@type": "PropertyValue", "name": "Power Consumption", "value": "3.0 W steady-state @ 25°C, 9.0 W warmup" },
+          { "@type": "PropertyValue", "name": "Digital Interface", "value": "RS232 (57600 baud) Time of Day (ToD) & Phase Telemetry" },
+          { "@type": "PropertyValue", "name": "Package Dimensions", "value": "65.0 x 65.0 x 23.0 mm (2.56 x 2.56 x 0.91 in)" }
+        ],
+        "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "url": "https://timecubic.com/contact.html?product=Q200" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://timecubic.com/q200.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Model Q200 maintain timing holdover during GNSS jamming or loss?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Model Q200 continuously models crystal aging and ambient thermal gradients using an internal adaptive Kalman filter algorithm while GNSS is healthy. If satellite signals are jammed, spoofed, or lost, it dynamically compensates the frequency output to maintain ±1.0 µs holdover over 24 hours."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Model Q200 meet smart grid PMU requirements under IEEE C37.118?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. IEEE C37.118 standard for synchrophasor measurements requires Total Vector Error (TVE) below 1%, corresponding to a maximum time error of ±26 µs on 60 Hz grids and ±31 µs on 50 Hz grids. Model Q200's ±1.0 µs 24-hour holdover stays well within this limit."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen">
 
@@ -368,6 +429,31 @@
               </tbody>
             </table>
           </div>
+        </div>
+
+                <!-- Model Q200 FAQ Section -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+          <h2 class="text-lg font-bold text-slate-900 mb-2">Model Q200 Engineering FAQ</h2>
+          
+          <details class="border border-slate-200 rounded-xl p-4 group" open>
+            <summary class="font-bold text-xs sm:text-sm text-slate-900 cursor-pointer flex justify-between items-center select-none">
+              <span>How does Model Q200 protect smart grid PMUs against GNSS jamming?</span>
+              <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
+            </summary>
+            <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+              When GNSS is active, Model Q200 continuously trains an adaptive Kalman filter on internal temperature excursions and crystal aging. During jamming or spoofing attacks, it activates proprietary holdover algorithms, maintaining <strong>&plusmn;1.0 &mu;s timing error over 24 hours</strong> (&plusmn;5&deg;C variation), keeping PMUs fully compliant with IEEE C37.118 TVE &lt; 1%.
+            </div>
+          </details>
+
+          <details class="border border-slate-200 rounded-xl p-4 group">
+            <summary class="font-bold text-xs sm:text-sm text-slate-900 cursor-pointer flex justify-between items-center select-none">
+              <span>What simultaneous frequency outputs are available?</span>
+              <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
+            </summary>
+            <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+              Model Q200 outputs a primary 10 MHz reference clock alongside a synchronized 1PPS pulse (<1 ns RMS jitter). Custom firmware options provide simultaneous 5 MHz and 8.192 MHz auxiliary outputs to drive legacy telecom and power substation architectures.
+            </div>
+          </details>
         </div>
 
         <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">

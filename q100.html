@@ -55,6 +55,67 @@
       }
     }
   </style>
+  <!-- Canonical & AI / Social Discovery -->
+  <link rel="canonical" href="https://timecubic.com/q100.html">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="Model Q100 | 1PPS Disciplined Subsea Oscillator (<60 mW) | TimeCubic">
+  <meta property="og:description" content="Model Q100 is TimeCubic's flagship 1PPS disciplined oscillator for ocean bottom nodes, providing ±1.0 ms holdover over 60+ days at <65 mW power.">
+  <meta property="og:url" content="https://timecubic.com/q100.html">
+  <meta property="og:site_name" content="TimeCubic Inc.">
+  <meta property="og:image" content="https://timecubic.com/assets/products/product_q100_q101.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org Product & FAQ JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "https://timecubic.com/q100.html#product",
+        "name": "TimeCubic Model Q100 1PPS Disciplined Oscillator",
+        "model": "Model Q100 (Rev O)",
+        "image": "https://timecubic.com/assets/products/product_q100_q101.png",
+        "description": "Subsea 1PPS disciplined oscillator module drawing <65 mW steady power with continuous 1-second phase telemetry and ±1.0 ms blind holdover over 60+ days without GNSS.",
+        "brand": { "@type": "Brand", "name": "TimeCubic" },
+        "manufacturer": { "@type": "Organization", "name": "TimeCubic Inc.", "url": "https://timecubic.com/" },
+        "category": "1PPS Disciplined Oscillator Module",
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "Power Consumption", "value": "65 mW typ. (<75 mW max @ 25°C), 220 mW warm-up" },
+          { "@type": "PropertyValue", "name": "1PPS Discipline Accuracy", "value": "1 ns RMS phase error, <1e-12 frequency" },
+          { "@type": "PropertyValue", "name": "Subsea Holdover", "value": "±1.0 ms / 60 days (constant seabed temperature)" },
+          { "@type": "PropertyValue", "name": "Telemetry Interface", "value": "RS232 (57600 baud), 1-sec continuous phase report" },
+          { "@type": "PropertyValue", "name": "Package Dimensions", "value": "39.1 x 34.0 x 13.7 mm (1.54 x 1.34 x 0.54 in)" }
+        ],
+        "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "url": "https://timecubic.com/contact.html?product=Q100" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://timecubic.com/q100.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does Model Q100 discipline to external GNSS before subsea deployment?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prior to submerging an ocean bottom node, Model Q100 locks to a deck GNSS 1PPS reference input via Pin 2 (1PPS_IN). The internal digital signal processing engine steers the quartz oscillator to within 1 ns RMS phase alignment and <1e-12 frequency offset. Once submerged, it maintains continuous holdover."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What empirical holdover accuracy has Model Q100 demonstrated in the field?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Across commercial seabed seismic exploration campaigns comprising 645 deployed nodes, Model Q100 demonstrated an average blind holdover drift of ±1.0 ms after 60+ days at 3,000m ocean depth at 49.3 mW power, closely matching CSAC performance."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen">
 
@@ -341,6 +402,41 @@
         </div>
 
         <!-- RFQ Box -->
+                <!-- Model Q100 FAQ Section -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+          <h2 class="text-lg font-bold text-slate-900 mb-2">Model Q100 Engineering FAQ</h2>
+          
+          <details class="border border-slate-200 rounded-xl p-4 group" open>
+            <summary class="font-bold text-xs sm:text-sm text-slate-900 cursor-pointer flex justify-between items-center select-none">
+              <span>How does Model Q100 synchronize before subsea deployment?</span>
+              <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
+            </summary>
+            <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+              On the ship deck, an external GPS/GNSS 1PPS pulse is connected to Pin 2 (1PPS_IN). Model Q100's internal DSP disciplines the master oscillator to <strong>1 ns RMS phase error and &lt;1&times;10<sup>-12</sup> frequency offset</strong>. When the node is deployed to the seabed, Pin 8 (LOCK_IND) confirms lock, and the node runs autonomously on internal holdover.
+            </div>
+          </details>
+
+          <details class="border border-slate-200 rounded-xl p-4 group">
+            <summary class="font-bold text-xs sm:text-sm text-slate-900 cursor-pointer flex justify-between items-center select-none">
+              <span>What holdover drift is achieved over 60+ day seabed missions?</span>
+              <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
+            </summary>
+            <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+              Empirical trials across 645 operational ocean bottom nodes confirm that Model Q100 sustains <strong>&plusmn;1.0 ms holdover across 60+ days</strong> when combined with TimeCubic's post-mission drift compensation model, providing seismic imaging quality comparable to Chip-Scale Atomic Clocks.
+            </div>
+          </details>
+
+          <details class="border border-slate-200 rounded-xl p-4 group">
+            <summary class="font-bold text-xs sm:text-sm text-slate-900 cursor-pointer flex justify-between items-center select-none">
+              <span>How does the RS232 telemetry engine report phase drift?</span>
+              <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
+            </summary>
+            <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
+              Pins 6 and 7 (RXD/TXD) provide a standard 57600 baud serial telemetry channel. Model Q100 outputs a real-time phase measurement sentence once every second with sub-nanosecond (&le;1 ns) resolution, logging calibration data into 64 bytes of internal non-volatile memory.
+            </div>
+          </details>
+        </div>
+
         <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
             <h4 class="font-bold text-blue-950 text-base">Ordering Evaluation Units for Model Q100</h4>

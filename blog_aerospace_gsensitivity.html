@@ -50,6 +50,48 @@
       padding-bottom: 0.25rem;
     }
   </style>
+  <link rel="canonical" href="https://timecubic.com/blog_aerospace_gsensitivity.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="G-Sensitivity in Tactical UAV & Avionics: Mitigating Vibration-Induced Phase Noise with Q52 & Q101 | TimeCubic">
+  <meta property="og:url" content="https://timecubic.com/blog_aerospace_gsensitivity.html">
+  <meta property="og:image" content="https://timecubic.com/assets/brand/timecubic_logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "G-Sensitivity in Tactical UAV & Avionics: Mitigating Vibration-Induced Phase Noise with Q52 & Q101",
+    "url": "https://timecubic.com/blog_aerospace_gsensitivity.html",
+    "datePublished": "2024-04-10",
+    "dateModified": "2024-11-15",
+    "inLanguage": "en-US",
+    "keywords": [
+      "G-sensitivity",
+      "acceleration sensitivity",
+      "vibration phase noise",
+      "tactical UAV timing",
+      "Q52 OCXO",
+      "low-G oscillator"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "TimeCubic Inc.",
+      "url": "https://timecubic.com",
+      "logo": "https://timecubic.com/assets/brand/timecubic_logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "North Andover",
+        "addressRegion": "MA",
+        "addressCountry": "US"
+      }
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "TimeCubic Engineering Laboratory",
+      "url": "https://timecubic.com/about.html"
+    }
+  }
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
@@ -442,7 +484,57 @@
       </div>
     </div>
 
-  </article>
+  
+      <!-- Key Engineering Takeaways & Technical FAQ -->
+      <section class="mt-16 bg-white border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm not-prose">
+        <div class="max-w-4xl mx-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-700 text-xs font-mono font-semibold rounded-full border border-blue-200 uppercase tracking-wider mb-3">
+            Technical Briefing &amp; Key Questions
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Key Engineering Takeaways for Systems Designers</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mb-6">
+            Direct technical Q&amp;A compiled by TimeCubic's North Andover, MA engineering team for hardware designers and system architects.
+          </p>
+          <div class="space-y-4">
+            
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>What is acceleration sensitivity (Gamma) in crystal oscillators?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Gamma is the fractional frequency shift per unit of gravitational/vibrational acceleration, expressed in ppb/g. Under tactical UAV rotor vibration, high Gamma causes severe sideband phase noise degradation.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>What Gamma rating does TimeCubic achieve?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              TimeCubic models Q52 and Q101 achieve low-G sensitivity of <0.3 ppb/g standard, with premium flight-grade screening reaching 0.1 ppb/g across all orthogonal axes.
+            </div>
+          </details>
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>How does low G-sensitivity preserve radar and communications range?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              Lowering vibration-induced phase noise prevents reciprocal mixing in SDR receivers and preserves Doppler radar target discrimination in high-vibration aerodynamic environments.
+            </div>
+          </details>
+          </div>
+        </div>
+      </section>
+
+    </article>
 
   <!-- ================= FOOTER ================= -->
     <!-- Footer -->

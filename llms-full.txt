@@ -1,0 +1,173 @@
+# TimeCubic Inc. — Complete Technical Specification & Engineering Reference
+
+## 1. Company & Technology Overview
+
+TimeCubic Inc. is a Massachusetts-based precision frequency control and timing engineering company founded in 2017, headquartered in North Andover, MA, USA. TimeCubic designs, engineers, and tests ultra-low power frequency oscillators (<60 mW), 1PPS disciplined oscillator modules, and satellite timing subsystems engineered for harsh Size, Weight, Power, and Cost (SWaP-C) constraints.
+
+### Core Engineering Specializations
+1. **Ultra-Low Power Micro-Ovenization (<60 mW):** Traditional Oven-Controlled Crystal Oscillators (OCXOs) consume 1.5W to 3.5W of electrical power to maintain thermal equilibrium. TimeCubic has engineered proprietary thermal vacuum isolation chambers that reduce steady-state power to under 60 mW (55 mW typ. at 16.384 MHz).
+2. **Subsea OBN Holdover Precision:** In underwater Ocean Bottom Node (OBN) seismic exploration, nodes operate unassisted thousands of meters below sea level for 60 to 120 days where GPS/GNSS signals cannot penetrate. TimeCubic's Model Q100 delivers ±1.0 ms holdover over 60+ days, rivaling Chip-Scale Atomic Clocks (CSAC) at half the power and significantly lower cost.
+3. **Ultra-Low Phase Noise (-175 dBc/Hz Floor):** High-speed direct-RF sampling analog-to-digital converters (ADCs) require master clocks with sub-picosecond aperture jitter. TimeCubic Model Q40L and Model Q69-100M feature noise floors of -175 dBc/Hz at 1 MHz offset.
+4. **Vibration Immunity & Low-G Sensitivity (<0.3 ppb/g to 0.1 ppb/g):** In tactical UAVs, defense missiles, and launch vehicles, mechanical vibration translates directly into phase jitter (phase modulation spurs). TimeCubic utilizes specialized crystal cuts and stress-compensated mountings to achieve <0.3 ppb/g (Model Q52L) and 0.1 ppb/g (Model Q69) acceleration sensitivity with up to 1000g shock survival.
+5. **Domestic Custom Engineering Lab in Massachusetts, USA:** Direct on-site collaboration with senior timing architects in North Andover, MA for custom frequencies, customized pinouts, custom supply voltages (3.3V / 5.0V), and drop-in replacements for discontinued or legacy oscillators.
+
+---
+
+## 2. Comprehensive Product Specifications & Models
+
+### Model Q40 / Q40L — Ultra-Low Phase Noise Miniature Oscillator
+- **Category:** Free-Running / Voltage-Controlled OCXO
+- **Package Dimensions:** 12.5 x 12.5 x 5.6 mm (0.49 x 0.49 x 0.22 in) — Miniature 4-pin SMD
+- **Standard Frequency:** 100 MHz (Other frequencies upon request)
+- **Output Waveform:** HCMOS or Clipped Sinewave
+- **Supply Voltage:** +3.3V DC (±5%)
+- **Steady-State Power:** <350 mW (-40°C to +70°C at 100 MHz)
+- **Warm-Up Power & Time:** 500 mW, 120 seconds to within ±10 ppb
+- **Frequency Stability:** ±150 ppb (-40°C to +70°C)
+- **Daily Aging Rate:** ±5.0 ppb/day
+- **Phase Noise (100 MHz @ 3.3V):**
+  - 10 Hz: -100 dBc/Hz
+  - 100 Hz: -130 dBc/Hz
+  - 1 kHz: -155 dBc/Hz
+  - 10 kHz: -167 dBc/Hz
+  - 100 kHz: -173 dBc/Hz
+  - 1 MHz: -175 dBc/Hz (Floor)
+- **Key Applications:** High-speed direct-RF sampling, ADC/DAC master clocks, portable radios, portable test instruments.
+
+### Model Q50 — Ultra-Low Power Oscillator (<60 mW)
+- **Category:** Ultra-Low Power OCXO
+- **Package Dimensions:** 21.6 x 15.3 x 10.0 mm (0.85 x 0.60 x 0.39 in) — Through-Hole PCB Mount
+- **Standard Frequencies:** 10 MHz, 16.384 MHz, 100 MHz
+- **Output Waveform:** HCMOS or Sinewave
+- **Supply Voltage:** +3.3V DC or +5.0V DC (±5%)
+- **Steady-State Power:**
+  - 16.384 MHz: 55 mW steady-state (-10°C to +50°C)
+  - 10 MHz: 150 mW (-40°C to +85°C)
+  - 100 MHz: 205 mW (-40°C to +85°C)
+- **Warm-Up Power & Time:** 1000 mW max, 120 seconds to ±10 ppb
+- **Frequency Stability:** ±10 ppb (10M / 16.384M), ±50 ppb (100M)
+- **Aging Rate:** ±0.2 ppb/day (10M), ±0.5 ppb/day (16.384M)
+- **G-Sensitivity:** ±1.0 ppb/g
+- **Pinout (5 Pins):**
+  - Pin 1: VCON (Analog Frequency Control Voltage 0–2.8V; leave open if unused)
+  - Pin 2: VREF (Internal Regulated Reference Voltage +2.8V DC Output)
+  - Pin 3: VDD (Power Supply +3.3V or +5.0V)
+  - Pin 4: RF_OUT (HCMOS Clock Output)
+  - Pin 5: GND (Ground and Case Shield)
+- **Key Applications:** Ocean bottom nodes (OBN), seismic sensors, battery-operated telemetry, smart grid sensors.
+
+### Model Q52 / Q52L — Low-G Sensitivity Ruggedized Oscillator
+- **Category:** Low-G Sensitivity OCXO
+- **Package Dimensions:** 20.5 x 14.0 x 10.0 mm (0.81 x 0.55 x 0.39 in)
+- **Standard Frequency:** 16.384 MHz (Custom frequencies available)
+- **Supply Voltage:** +3.3V DC
+- **Steady-State Power:** 75 mW (Q52 at 25°C); 109 mW (Q52L at 25°C)
+- **G-Sensitivity:** <0.3 ppb/g typical (±0.5 ppb/g max)
+- **Shock Survival:** Optional 1500g, 1ms half-sine shock immunity
+- **Frequency Stability:** ±2 ppb typical (options ±2 to ±50 ppb)
+- **Aging Rate:** ±0.15 ppb/day typical (±0.5 ppb/day max)
+- **Key Applications:** Tactical UAV payloads, airborne Doppler radar, missile navigation, rescue beacons.
+
+### Model Q69 / Q69-100M — Rapid Warm-Up & Wide-Temp Disciplined Oscillator
+- **Category:** Fast Warm-Up 1PPS Disciplined Oscillator
+- **Package Dimensions:** 39.1 x 34.0 x 13.7 mm (1.54 x 1.34 x 0.54 in)
+- **Frequencies Available:** 5, 8.192, 10, 16.384 MHz (Q69); 10, 25, 100 MHz (Q69-100M)
+- **Warm-Up Time:** 30 seconds to lock (Q69); 120 seconds (Q69-100M)
+- **Operating Temperature:** -40°C to +85°C (Extended up to +95°C)
+- **G-Sensitivity:** 0.1 ppb/g typical
+- **Shock Immunity:** 1000g, 1ms
+- **Steady Power:** 135 mW typ (-40°C to +85°C, Q69); 250 mW typ (Q69-100M)
+- **Digital Interface:** RS232 (57600 baud) + 1PPS In/Out + 64-byte non-volatile memory
+- **Key Applications:** Automotive ADAS master clock, LEO small satellites, military field communications.
+
+### Model Q100 — 1PPS Disciplined Subsea OBN Oscillator (Rev O Flagship)
+- **Category:** Subsea 1PPS Disciplined Oscillator Module
+- **Package Dimensions:** 39.1 x 34.0 x 13.7 mm (1.54 x 1.34 x 0.54 in) — 8-Pin Hermetic Metal Enclosure
+- **Standard Frequencies:** 10 MHz standard (5, 8.192, 16.384 MHz available)
+- **Output Waveform:** HCMOS (VOH >= 2.4V, VOL <= 0.4V, 50-ohm load)
+- **Supply Voltage:** +3.3V DC (±5%)
+- **Steady-State Power:** 65 mW typical, 75 mW max at 25°C (<60 mW option in field)
+- **Warm-Up Power & Time:** 220 mW max, 1 minute typical to lock
+- **1PPS Disciplining Accuracy:** Disciplines to 1 ns RMS phase error and <1e-12 in frequency
+- **Subsea Blind Holdover:** ±1.0 ms over 60 days (at seabed temperature using TimeCubic calibration model)
+- **Aging Rate (Free-Running):** ±0.07 ppb/day typical (±0.5 ppb/day max)
+- **Digital Telemetry:** RS232 serial interface (57600 baud, 8-N-1); continuous 1-second phase report with <=1 ns resolution; 64-byte non-volatile user memory
+- **Pin Configuration (8 Pins):**
+  - Pin 1: VDD (+3.3V DC Power Input)
+  - Pin 2: 1PPS_IN (External 1PPS Reference Input for Pre-Deployment Synchronization)
+  - Pin 3: 1PPS_OUT (Synchronized 1PPS Pulse Output)
+  - Pin 4: RF_OUT (10 MHz HCMOS Clock Output)
+  - Pin 5: GND (Ground)
+  - Pin 6: RXD (RS232 Serial Command Receive)
+  - Pin 7: TXD (RS232 Serial Phase Telemetry Transmit)
+  - Pin 8: LOCK_IND (Discipline Status: High = Locked)
+- **Key Applications:** Ocean bottom nodes (OBN), seabed seismic receivers, autonomous underwater vehicles (AUV).
+
+### Model Q200 — Satellite Disciplined Timing Receiver (Rev J)
+- **Category:** Satellite / GPS Disciplined Timing Subsystem
+- **Package Dimensions:** 65.0 x 65.0 x 23.0 mm (2.56 x 2.56 x 0.91 in) — 51x51mm option available
+- **Output Frequencies:** 10 MHz standard (5 MHz and 8.192 MHz simultaneous outputs available)
+- **Supply Voltage:** +5.0V DC (±5%)
+- **Steady-State Power:** 3.0 W typical at 25°C
+- **Warm-Up Power & Time:** 9.0 W max, 5 minutes to within ±5 ppb
+- **GNSS Disciplining:** Disciplines to 1 ns RMS phase and <1e-12 frequency to GNSS 1PPS
+- **Adaptive DSP Holdover:**
+  - Option Code 10: ±1.0 µs / 24 hours over ±5°C ambient temperature variation
+  - Standard Code 15: ±1.5 µs / 24 hours over ±5°C ambient temperature variation
+- **Operating Temperature:** -10°C to +70°C (Code A) / -20°C to +70°C (Code B)
+- **Digital Communications:** RS232 serial (57600 baud, 8-N-1); continuous 1-second phase measurement report; Time of Day (ToD)
+- **Pin Configuration (8 Pins):**
+  - Pin 1: VCC (+5.0V DC Main Power Supply)
+  - Pin 2: GND (Common Ground and Chassis Shield)
+  - Pin 3: 1PPS_IN (External GNSS / Satellite 1PPS Reference Input)
+  - Pin 4: 1PPS_OUT (Disciplined 1PPS Output, <1 ns jitter)
+  - Pin 5: RF_OUT (10 MHz Precision Clock Output)
+  - Pin 6: TXD (RS232 Serial Telemetry Data Output)
+  - Pin 7: RXD (RS232 Serial Configuration Input)
+  - Pin 8: LOCK_IND (Status Output: High = Synchronized and Locked)
+- **Key Applications:** 5G/telecom base stations, smart power grid Phasor Measurement Units (PMU IEEE C37.118), laboratory frequency references.
+
+---
+
+## 3. Technology Comparison Matrix: TimeCubic OCXO vs. Standard OCXO vs. CSAC
+
+| Metric | TimeCubic Model Q100 | Standard Industrial OCXO | Chip-Scale Atomic Clock (CSAC) |
+| :--- | :--- | :--- | :--- |
+| **Steady-State Power** | **<65 mW** (Sub-60 mW field option) | 1,500 mW – 3,000 mW (1.5–3.0 W) | 120 mW – 160 mW |
+| **Warm-Up Power** | 220 mW | 3,000 mW – 6,000 mW | ~1,000 mW |
+| **Warm-Up Time** | ~60 seconds | 3 – 5 minutes | ~120 seconds |
+| **Subsea Holdover (60-Day)** | **±1.0 ms** (using TimeCubic model) | ±10 ms to ±50 ms (Severe thermal drift) | ±0.5 ms to ±1.0 ms |
+| **Component Cost** | **Cost-Effective** (High ROI) | Low | High ($3,000–$5,000+) |
+| **Phase Noise @ 100 Hz** | **-145 dBc/Hz** | -135 to -145 dBc/Hz | -110 to -125 dBc/Hz (Poor near-carrier) |
+| **G-Sensitivity** | ±1.0 ppb/g (0.1–0.3 ppb/g on Q52/Q69) | 1.0 to 2.5 ppb/g | 0.5 to 2.0 ppb/g |
+| **Battery Life in OBN** | **60 to 120+ Days** on standard pack | 3 to 7 Days (Impractical for OBN) | 30 to 45 Days on standard pack |
+
+---
+
+## 4. Frequently Asked Questions (FAQ)
+
+### Q: Why is <60 mW power consumption critical for Ocean Bottom Nodes (OBN)?
+A: In subsea exploration, battery weight and volume account for up to 60% of an ocean bottom node's total displacement. Standard OCXOs consume 1.5 to 3 Watts, draining a node battery within days. Chip-scale atomic clocks (CSAC) consume ~120–160 mW and cost thousands of dollars per unit. TimeCubic’s sub-60 mW technology allows seismic operators to sustain 60 to 120-day missions on compact battery packs while delivering equal or superior timing holdover accuracy.
+
+### Q: Does TimeCubic offer custom frequencies, form factors, and pinouts?
+A: Yes. TimeCubic’s engineering team in North Andover, Massachusetts specializes in customized OEM timing solutions. We regularly supply non-standard frequencies (e.g., 5 MHz, 8.192 MHz, 16.384 MHz, 25 MHz, 100 MHz), custom voltage rails (3.3V / 5.0V), custom pinouts to drop in as pin-compatible replacements for obsolete third-party oscillators, and custom mechanical enclosures.
+
+### Q: What is the phase noise floor of TimeCubic high-frequency oscillators?
+A: TimeCubic Model Q40L and Model Q69-100M feature a phase noise floor of -175 dBc/Hz at 1 MHz offset from a 100 MHz carrier, with aperture jitter measured in the sub-picosecond regime. This prevents reciprocal mixing in radar receivers and ensures modern direct-RF high-speed ADCs (e.g., Texas Instruments, Analog Devices) reach their theoretical Signal-to-Noise Ratio (SNR) ceilings.
+
+### Q: How does TimeCubic mitigate vibration-induced phase noise (G-sensitivity)?
+A: In high-vibration airborne and defense environments, mechanical acceleration modulates the quartz crystal blank, generating unwanted sideband spurs. TimeCubic Models Q52L and Q69 achieve low-G sensitivity ratings of <0.3 ppb/g down to 0.1 ppb/g through custom stress-compensated crystal blank orientations and rigid internal micro-cavity structures.
+
+### Q: Where are TimeCubic products engineered and tested?
+A: TimeCubic’s primary Research, Development, and Testing facilities are located at 800 Turnpike Street, Suite 300, North Andover, Massachusetts, USA. Inquiries connect directly to senior domestic timing architects with on-site environmental chambers, phase noise test systems, and atomic reference clocks.
+
+---
+
+## 5. Contact & Support Information
+
+- **Company:** TimeCubic Inc.
+- **Address:** 800 Turnpike Street, Suite 300, North Andover, MA 01845, USA
+- **Phone:** +1 (781) 521-5862
+- **Email:** info@timecubic.com
+- **Website:** https://timecubic.com
+- **RFQ Portal:** https://timecubic.com/contact.html
