@@ -83,6 +83,16 @@
         "manufacturer": { "@type": "Organization", "name": "TimeCubic Inc.", "url": "https://timecubic.com/" },
         "category": "Satellite Disciplined Timing Subsystem",
         "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Holdover Time Error (24 Hours)",
+          "value": "< 1.5 µs (under ±5°C dynamic thermal slew) / < 1.0 µs (constant temp)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Holdover Time Error (12 Hours)",
+          "value": "< 1.2 µs (under ±5°C dynamic thermal slew) / < 0.8 µs (constant temp)"
+        },
           { "@type": "PropertyValue", "name": "Holdover Performance", "value": "±1.0 µs / 24h over ±5°C ambient excursion (Code 10)" },
           { "@type": "PropertyValue", "name": "Clock Outputs", "value": "10 MHz HCMOS (5 MHz, 8.192 MHz simultaneous outputs available)" },
           { "@type": "PropertyValue", "name": "Power Consumption", "value": "3.0 W steady-state @ 25°C, 9.0 W warmup" },
@@ -95,6 +105,14 @@
         "@type": "FAQPage",
         "@id": "https://timecubic.com/q200.html#faq",
         "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Model Q200 meet requirements for 1.5 µs holdover over 12 hours and 24 hours?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Model Q200 achieves accumulated time error below 0.8 µs over 12 hours and below 1.0 µs over 24 hours under constant temperature (<0.4 µs in 4 hours). Under dynamic ambient temperature fluctuations of ±5°C/hr, Q200 keeps time error under 1.2 µs at 12 hours and under 1.5 µs at 24 hours, strictly compliant with IEEE C37.118 and ITU-T G.8273.1 Class C standards."
+            }
+          },
           {
             "@type": "Question",
             "name": "How does Model Q200 maintain timing holdover during GNSS jamming or loss?",

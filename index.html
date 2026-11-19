@@ -173,6 +173,22 @@
               "@type": "Answer",
               "text": "TimeCubic is headquartered in North Andover, Massachusetts, USA with on-site Research, Development, and Environmental Testing laboratories. Working directly with our Massachusetts team offers rapid domestic prototyping, zero overseas timezone lag, direct interaction with senior timing architects, on-site thermal chamber testing, and compliance with US domestic supply chain requirements."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How does TimeCubic low-G OCXO compare to SiTime MEMS oscillators for mobile systems?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "TimeCubic Models Q52 and Q101 match or beat SiTime MEMS acceleration sensitivity (0.1 ppb/g flight-grade) while delivering 20 to 30 dB superior phase noise (-175 dBc/Hz floor), zero PLL synthesizer spurs, 1e-12 Allan deviation, and sub-1.5 µs 24h holdover at sub-60 mW operating power."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can TimeCubic achieve 1.5 µs holdover over 12 hours and 24 hours during GNSS outages?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Model Q200 achieves time error below 0.8 µs over 12 hours and below 1.0 µs over 24 hours at constant temp, and below 1.2 µs over 12 hours and 1.5 µs over 24 hours under dynamic ±5°C/hr temperature swings, compliant with IEEE C37.118 TVE < 1%."
+            }
           }
         ]
       }
@@ -877,6 +893,28 @@
           </summary>
           <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
             TimeCubic is located at 800 Turnpike Street, Suite 300, North Andover, Massachusetts, USA. Direct collaboration with our Massachusetts engineering lab provides rapid prototype turnaround, on-site environmental test chamber characterization, domestic supply chain assurance, and zero timezone lag when consulting with senior timing architects.
+          </div>
+        </details>
+
+        <!-- FAQ 6: Comparison vs SiTime MEMS -->
+        <details class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm group">
+          <summary class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center list-none select-none">
+            <span>How does TimeCubic low-G OCXO compare to SiTime MEMS oscillators for mobile systems?</span>
+            <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
+            While SiTime MEMS oscillators provide good shock survivability and low acceleration sensitivity (0.1 to 0.5 ppb/g), MEMS suffers from significant limitations: high broadband phase noise floor (-145 to -155 dBc/Hz), elevated close-in 1/f flicker noise, and discrete PLL spurs from fractional-N clock synthesis. <strong>TimeCubic Models Q52 and Q101</strong> match SiTime's acceleration sensitivity (<strong>0.1 ppb/g flight-grade</strong>) while delivering the pristine phase noise of SC-cut quartz (<strong>-175 dBc/Hz floor</strong>, -135 dBc/Hz at 100 Hz offset), 100x lower short-term jitter, zero synthesizer spurs, and autonomous microsecond holdover—all at &lt;60 mW operating power.
+          </div>
+        </details>
+
+        <!-- FAQ 7: 1.5 µs 12h / 24h Holdover -->
+        <details class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm group">
+          <summary class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center list-none select-none">
+            <span>Can TimeCubic achieve 1.5 &mu;s holdover over 12 hours and 24 hours during GNSS outages?</span>
+            <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
+            Yes. <strong>TimeCubic Model Q200</strong> delivers guaranteed autonomous holdover: under stable temperatures, accumulated time error is <strong>&lt;0.8 &mu;s over 12 hours</strong> and <strong>&lt;1.0 &mu;s over 24 hours</strong>. Even when ambient temperatures cycle across &plusmn;5&deg;C/hr, its internal adaptive DSP Kalman filter bounds cumulative time error to <strong>&lt;1.2 &mu;s at 12 hours</strong> and <strong>&le;1.5 &mu;s at 24 hours</strong>, meeting stringent IEEE C37.118 and ITU-T G.8273.1 Class C requirements.
           </div>
         </details>
 

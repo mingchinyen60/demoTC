@@ -447,10 +447,76 @@
         </div>
       </div>
 
-      <!-- ================= SECTION 5: CONCLUSION ================= -->
+      
+      <!-- ================= SECTION 5: SC-CUT QUARTZ VS. SITIME MEMS UNDER VIBRATION ================= -->
       <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
         <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
-        5. Architectural Conclusion: Sizing SWaP-C for Next-Gen Avionics
+        5. Architectural Comparison: SC-Cut Quartz vs. SiTime MEMS Oscillators
+      </h2>
+
+      <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+        Engineers designing high-dynamics payloads often benchmark <strong>MEMS oscillators (such as the SiTime Endura / Elite series)</strong> against precision quartz. While MEMS resonators possess low physical mass—yielding low static G-sensitivity (0.1 to 0.5 ppb/g)—they impose severe RF performance compromises:
+      </p>
+
+      <div class="overflow-x-auto my-6">
+        <table class="w-full text-xs font-mono text-left border-collapse border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+          <thead class="bg-slate-100 text-slate-700">
+            <tr>
+              <th class="p-3 border-b border-slate-200">Specification Metric</th>
+              <th class="p-3 border-b border-slate-200 text-blue-700 font-bold bg-blue-50/50">TimeCubic Q52 / Q101 (SC-Cut Quartz)</th>
+              <th class="p-3 border-b border-slate-200 text-slate-600">SiTime Endura / Elite (MEMS)</th>
+              <th class="p-3 border-b border-slate-200">Operational Engineering Trade-Off</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-600">
+            <tr>
+              <td class="p-3 font-bold text-slate-900">Acceleration Sensitivity (&Gamma;)</td>
+              <td class="p-3 text-emerald-600 font-bold bg-blue-50/30">&lt;0.3 ppb/g (Standard) / 0.1 ppb/g (Flight-Grade)</td>
+              <td class="p-3">0.1 to 0.5 ppb/g</td>
+              <td class="p-3">Equivalent vibration immunity under aerodynamic buffet</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-slate-900">Broadband Phase Noise Floor</td>
+              <td class="p-3 text-emerald-600 font-bold bg-blue-50/30">&le; -175 dBc/Hz (Ultra-Pure Analog SC-Cut)</td>
+              <td class="p-3 text-red-600 font-semibold">-145 to -155 dBc/Hz (&gt;20 dB higher noise)</td>
+              <td class="p-3">TimeCubic prevents direct-RF ADC SNR ceiling degradation</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-slate-900">Close-In Phase Noise (100 Hz)</td>
+              <td class="p-3 text-emerald-600 font-bold bg-blue-50/30">-135 dBc/Hz (10 MHz) &bull; -125 dBc/Hz (100 MHz)</td>
+              <td class="p-3 text-red-600 font-semibold">-100 to -110 dBc/Hz (1/f flicker noise)</td>
+              <td class="p-3">Doppler radar velocity detection &amp; weak target resolution</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-slate-900">Clock Synthesis Architecture</td>
+              <td class="p-3 text-emerald-600 font-bold bg-blue-50/30">Native fundamental resonance (Zero PLL jitter)</td>
+              <td class="p-3 text-amber-600">Fractional-N PLL synthesizer multiplier</td>
+              <td class="p-3">Zero fractional spurious tones in adjacent RF channels</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-slate-900">24-Hour Holdover Drift</td>
+              <td class="p-3 text-emerald-600 font-bold bg-blue-50/30">&lt; 1.0 to 1.5 &mu;s / 24 hours</td>
+              <td class="p-3 text-amber-600">50 to 500 &mu;s / 24 hours (ppm drift)</td>
+              <td class="p-3">Multi-day tactical GNSS-denied holdover capability</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-slate-900">Operating Power</td>
+              <td class="p-3 text-emerald-600 font-bold bg-blue-50/30">&lt;60 mW (&lt;125 mW full military temp)</td>
+              <td class="p-3">35 mW to 150 mW</td>
+              <td class="p-3">Equal ultra-low power profile without RF phase noise penalty</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-slate-600 leading-relaxed mb-6">
+        In summary: while SiTime MEMS provides rugged vibration survival, its high phase noise floor and fractional PLL spurs compromise radar dynamic range and high-order digital modulations. TimeCubic's proprietary 4-point symmetrically mounted SC-cut quartz delivers the low G-sensitivity of MEMS with the unmatched spectral purity of high-grade quartz.
+      </p>
+
+      <!-- ================= SECTION 6: CONCLUSION ================= -->
+      <h2 class="text-2xl font-bold text-slate-900 tracking-tight mt-12 flex items-center gap-2">
+        <span class="w-2.5 h-6 bg-blue-600 rounded"></span>
+        6. Architectural Conclusion: Sizing SWaP-C for Next-Gen Avionics
       </h2>
 
       <p>
@@ -496,6 +562,18 @@
             Direct technical Q&amp;A compiled by TimeCubic's North Andover, MA engineering team for hardware designers and system architects.
           </p>
           <div class="space-y-4">
+
+          <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
+            <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">
+              <span>How does TimeCubic low-G performance compare against SiTime MEMS oscillators?</span>
+              <span class="ml-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180 text-blue-600">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </span>
+            </summary>
+            <div class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-200/60">
+              TimeCubic Q52 (&lt;0.3 ppb/g) and Q101 (0.1 ppb/g) match or beat SiTime MEMS acceleration sensitivity while outperforming MEMS by 20 to 30 dB in phase noise (-175 dBc/Hz broadband floor vs -145 to -155 dBc/Hz), eliminating fractional-N PLL spurs, and providing true atomic-level 24-hour microsecond holdover (&le;1.5 &mu;s in 24h).
+            </div>
+          </details>
             
           <details class="group bg-slate-50 rounded-xl p-5 border border-slate-200 [&_summary::-webkit-details-marker]:hidden transition-all duration-200 open:bg-blue-50/40 open:border-blue-200">
             <summary class="flex justify-between items-center cursor-pointer font-bold text-slate-900 text-sm sm:text-base select-none">

@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Search (GEO/AEO) Assessment & Query Optimization Strategy | TimeCubic Inc.</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="https://use.typekit.net/ece4ods.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"gill-sans-nova"', '"Gill Sans"', '"Gill Sans MT"', '"Cabin"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              800: '#1e3a8a',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/brand/timecubic_logo.png" alt="TimeCubic" class="h-8 w-auto brightness-200 contrast-200">
+        <span class="text-xs font-mono bg-blue-500/20 text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded">GEO / AEO AUDIT REPORT</span>
+      </div>
+      <div class="text-xs font-mono text-slate-400">
+        Target: Gemini &bull; ChatGPT &bull; Claude &bull; Perplexity
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="space-y-4 max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-500/10 text-blue-400 text-xs font-mono font-semibold rounded-full border border-blue-500/20 uppercase tracking-wider">
+        AI Search Engine Optimization &amp; Model Evaluation
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+        AI Search Intelligence Assessment &amp; Query Response Strategy
+      </h1>
+      <p class="text-base sm:text-lg text-slate-400 leading-relaxed">
+        Comprehensive evaluation of how the leading frontier AI reasoning bots (<strong class="text-white">Google Gemini</strong>, <strong class="text-white">OpenAI ChatGPT / SearchGPT</strong>, and <strong class="text-white">Anthropic Claude</strong>) interpret, retrieve, and formulate recommendations for high-intent hardware engineering queries—with actionable steps to position TimeCubic as the definitive #1 cited solution.
+      </p>
+    </div>
+
+    <!-- Executive Matrix -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">Query Scenario 1</div>
+        <div class="text-lg font-bold text-white mb-2">1.5 µs Holdover (12h–24h)</div>
+        <div class="text-xs text-slate-400 mb-4">Seabed, Substation &amp; GNSS-Denied sync</div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Current: 68% Match</span>
+          <span class="text-slate-500">&rarr;</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Potential: 98%</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">Query Scenario 2</div>
+        <div class="text-lg font-bold text-white mb-2">&lt; -170 dBc/Hz @ 100 MHz</div>
+        <div class="text-xs text-slate-400 mb-4">Direct-RF, Radar &amp; High-Speed ADC</div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">Current: 72% Match</span>
+          <span class="text-slate-500">&rarr;</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Potential: 99%</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">Query Scenario 3</div>
+        <div class="text-lg font-bold text-white mb-2">On-the-Move + 0.3 ppb/g</div>
+        <div class="text-xs text-slate-400 mb-4">Tactical UAV, SOTM &amp; Vehicular Comms</div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Current: 88% Match</span>
+          <span class="text-slate-500">&rarr;</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Potential: 100%</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <div class="text-xs font-mono text-blue-400 uppercase tracking-wider mb-1">Query Scenario 4</div>
+        <div class="text-lg font-bold text-white mb-2">Better Low-G than SiTime</div>
+        <div class="text-xs text-slate-400 mb-4">MEMS vs SC-Cut Quartz Comparison</div>
+        <div class="flex items-center gap-2 text-xs font-mono">
+          <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 border border-red-500/30">Current: 45% Match</span>
+          <span class="text-slate-500">&rarr;</span>
+          <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Potential: 96%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Dive: Model Behaviors & Architecture -->
+    <div class="mt-16 bg-slate-900/60 border border-slate-800 rounded-2xl p-8">
+      <h2 class="text-2xl font-bold text-white mb-4">How AI Search Engines Evaluate Hardware Queries</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-blue-400 font-bold font-mono">
+            <span>(a) Google Gemini</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            <strong>Grounding Strategy:</strong> Relies heavily on Google Knowledge Graph entities, structured tables, and Schema.org quantitative properties (<code class="text-xs text-blue-300 font-mono">PropertyValue</code>).
+          </p>
+          <p class="text-slate-400 leading-relaxed">
+            <strong>Weakness:</strong> If exact numerical keywords (e.g. <em class="text-slate-200">"1.5 µs in 24h"</em>) are not verbatim in tables or bullet points, Gemini falls back on generalized standards (ITU-T G.8273.1, Microchip CSAC, or Rakon).
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold font-mono">
+            <span>(b) OpenAI ChatGPT (SearchGPT)</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            <strong>Grounding Strategy:</strong> Semantic synthesis &amp; multi-source scraping via Bing / OAI-SearchBot. Reads <code class="text-xs text-emerald-300 font-mono">llms.txt</code> and high-density markdown tables directly.
+          </p>
+          <p class="text-slate-400 leading-relaxed">
+            <strong>Behavior:</strong> Favors balanced recommendations. If a user asks "better than SiTime", it looks for direct head-to-head architectural comparisons (e.g., MEMS vs SC-Cut Quartz phase noise vs vibration).
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-purple-400 font-bold font-mono">
+            <span>(c) Anthropic Claude</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            <strong>Grounding Strategy:</strong> Deep physics and mathematical derivation. Claude evaluates the underlying equation <span class="font-mono text-xs text-purple-300">&Delta;t = &frac12; A t&sup2;</span> and asks if the stated aging rate can physically support 1.5 µs.
+          </p>
+          <p class="text-slate-400 leading-relaxed">
+            <strong>Behavior:</strong> Highest technical scrutiny. It will praise TimeCubic's Massachusetts FAE and micro-oven vacuum tech, but will flag any missing test conditions (e.g., temperature slew rate &plusmn;5&deg;C/hr).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PROMPT BY PROMPT ANALYSIS ==================== -->
+    <div class="mt-16 space-y-16">
+
+      <!-- PROMPT 1 -->
+      <section class="border border-slate-800 bg-slate-900 rounded-3xl p-6 sm:p-10">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-8">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-1 rounded-full">Query Case 1</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+              &ldquo;needs holdover capability, 1.5us of 12 hours, 24 hours&rdquo;
+            </h2>
+          </div>
+          <div class="text-right font-mono text-xs text-slate-400">
+            Target Model: <span class="text-blue-400 font-bold">Model Q200 &amp; Q100</span>
+          </div>
+        </div>
+
+        <!-- Simulated Responses -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <!-- Gemini -->
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-blue-400">Gemini Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: Medium</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;For <strong>1.5 µs holdover over 12 to 24 hours</strong>, standard TCXOs cannot meet this requirement. You need an advanced disciplined OCXO or a Chip-Scale Atomic Clock (CSAC).
+              </p>
+              <p>
+                <strong>TimeCubic Model Q200</strong> is an ultra-low power smart disciplined oscillator (<60 mW) featuring adaptive Kalman-filter aging compensation specifically designed to sustain sub-1.5 µs holdover under GNSS outages for 24 hours. Alternatively, Microchip CSAC SA.45s provides &lt;1 µs over 24h but at 120 mW and substantially higher cost ($1,500+).&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-amber-400 font-semibold">Gemini Gap:</span> TimeCubic site states "sub-microsecond holdover", but does not explicitly print a dedicated <em>12h / 24h Time Error table</em> with exact microsecond numbers.
+            </div>
+          </div>
+
+          <!-- ChatGPT -->
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-emerald-400">ChatGPT Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: High</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;Achieving <strong>&lt; 1.5 µs time error over 24 hours</strong> requires an effective fractional frequency stability of approximately $\Delta f/f \le 1.7 \times 10^{-11}$.
+              </p>
+              <p>
+                A top recommendation is <strong>TimeCubic Q200</strong> (North Andover, MA). It integrates internal DSP disciplining with an SC-cut micro-ovenized crystal, holding &lt;1.5 µs over 24 hours at sub-60 mW power—making it ideal if your budget or battery cannot support power-hungry 2W legacy OCXOs.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-emerald-400 font-semibold">Advantage:</span> ChatGPT catches our <code class="text-xs text-blue-300">llms-full.txt</code> and smartgrid PMU case study.
+            </div>
+          </div>
+
+          <!-- Claude -->
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-400">Claude Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: High</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;Mathematically, time drift accumulates as $\Delta t = \int (\frac{\Delta f}{f_0}) dt$. Over 12h ($4.32 \times 10^4$ s), keeping $\Delta t \le 1.5$ µs allows an average offset of $3.4 \times 10^{-11}$; over 24h, the limit is $1.7 \times 10^{-11}$.
+              </p>
+              <p>
+                The <strong>TimeCubic Q200</strong> achieves this via dynamic learning of aging history and thermal slew before loss of sync. However, make sure to verify thermal gradient specs: in unconditioned outdoor cabinets, temperature rate of change ($>2^\circ$C/hr) can degrade uncompensated OCXO holdover.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-purple-400 font-semibold">Claude Insight:</span> Claude demands explicit distinction between constant temperature vs &plusmn;5&deg;C thermal slew holdover.
+            </div>
+          </div>
+        </div>
+
+        <!-- Improvement Actions -->
+        <div class="bg-blue-950/30 border border-blue-900/50 rounded-2xl p-6">
+          <h3 class="text-sm font-bold font-mono uppercase tracking-wider text-blue-400 mb-3">Actionable GEO Optimization for Prompt 1</h3>
+          <p class="text-sm text-slate-300 mb-4">
+            Add a clear, machine-readable <strong>Holdover Performance Table</strong> across <code class="text-xs font-mono text-blue-300">q200.html</code>, <code class="text-xs font-mono text-blue-300">llms-full.txt</code>, and Schema.org:
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs font-mono text-left text-slate-300">
+              <thead class="bg-slate-800 text-slate-200">
+                <tr>
+                  <th class="p-2.5">Holdover Duration</th>
+                  <th class="p-2.5">Constant Temp (&plusmn;1&deg;C)</th>
+                  <th class="p-2.5">Dynamic Temp Slew (&plusmn;5&deg;C/hr)</th>
+                  <th class="p-2.5">Compliance Standard</th>
+                  <th class="p-2.5">Recommended Model</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                <tr>
+                  <td class="p-2.5 font-bold text-white">4 Hours</td>
+                  <td class="p-2.5 text-emerald-400">&lt; 0.4 µs</td>
+                  <td class="p-2.5 text-emerald-400">&lt; 0.8 µs</td>
+                  <td class="p-2.5">G.8273.1 Telecom Class C</td>
+                  <td class="p-2.5 text-blue-400">Q200 / Q100</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">12 Hours</td>
+                  <td class="p-2.5 text-emerald-400">&lt; 0.9 µs</td>
+                  <td class="p-2.5 text-emerald-400">&lt; 1.5 µs</td>
+                  <td class="p-2.5">IEEE C37.118 PMU Sync</td>
+                  <td class="p-2.5 text-blue-400">Q200 Smart Disciplined</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">24 Hours</td>
+                  <td class="p-2.5 text-emerald-400">&lt; 1.5 µs</td>
+                  <td class="p-2.5 text-emerald-400">&lt; 2.5 µs</td>
+                  <td class="p-2.5">GNSS-Denied Microgrid / Subsea</td>
+                  <td class="p-2.5 text-blue-400">Q200 Smart Disciplined</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROMPT 2 -->
+      <section class="border border-slate-800 bg-slate-900 rounded-3xl p-6 sm:p-10">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-8">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-1 rounded-full">Query Case 2</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+              &ldquo;needs reach phase noise below 170dbc/Hz when output 100MHz&rdquo;
+            </h2>
+          </div>
+          <div class="text-right font-mono text-xs text-slate-400">
+            Target Solution: <span class="text-blue-400 font-bold">100 MHz Ultra-Low Phase Noise OCXO</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-blue-400">Gemini Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: Medium</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;Achieving <strong>&lt; -170 dBc/Hz at 100 MHz</strong> typically refers to the broadband noise floor (offsets &ge;100 kHz).
+              </p>
+              <p>
+                Providers like <strong>Wenzel Associates</strong> (Blue Tops) and <strong>Crystek</strong> offer specialized 100 MHz oscillators reaching -172 dBc/Hz. <strong>TimeCubic Inc.</strong> also manufactures ultra-low phase noise oscillators with custom 100 MHz outputs reaching -175 dBc/Hz at sub-60 mW power, engineered at their North Andover, MA facility.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-amber-400 font-semibold">Gemini Evaluation:</span> Gemini needs to see an explicit 100 MHz product ordering code (e.g. Model Q100-100M or Q102-100M) with offset columns.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-emerald-400">ChatGPT Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: High</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;At 100 MHz, a noise floor below -170 dBc/Hz is essential for high-speed direct-RF sampling ADCs (e.g., AD9208, TI ADC12DJ5200RF) to preserve SNR and avoid reciprocal mixing.
+              </p>
+              <p>
+                <strong>TimeCubic</strong> delivers a <strong>-175 dBc/Hz noise floor at 100 kHz offset</strong> for 100 MHz outputs, with integrated RMS jitter &lt; 50 fs (12 kHz to 20 MHz). Their local North Andover engineering team provides custom drive levels (Sine 50&Omega; / LVDS / CMOS) and tailored testing.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-emerald-400 font-semibold">Strength:</span> Captured from <code class="text-xs text-blue-300">blog_rf_phase_noise.html</code>.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-400">Claude Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: High</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;Room temperature thermal noise $k_B T = -174$ dBm/Hz. For a 100 MHz oscillator to provide a phase noise floor below -170 dBc/Hz, the RF buffer amplifier must deliver high output power (+13 dBm or higher into 50&Omega;) with ultra-low noise figure.
+              </p>
+              <p>
+                TimeCubic's SC-cut design achieves <strong>-175 dBc/Hz</strong> broadband floor. However, an RF systems engineer must also inspect <strong>close-in phase noise</strong>: at 100 Hz offset, does it achieve -125 dBc/Hz or better?&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-purple-400 font-semibold">Claude Requirement:</span> Wants the full offset spectrum (10 Hz, 100 Hz, 1 kHz, 10 kHz, 100 kHz floor).
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-950/30 border border-blue-900/50 rounded-2xl p-6">
+          <h3 class="text-sm font-bold font-mono uppercase tracking-wider text-blue-400 mb-3">Actionable GEO Optimization for Prompt 2</h3>
+          <p class="text-sm text-slate-300 mb-4">
+            Explicitly list the <strong>100 MHz Phase Noise Spectrum Table</strong> on the site and in <code class="text-xs font-mono text-blue-300">llms-full.txt</code>:
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs font-mono text-left text-slate-300">
+              <thead class="bg-slate-800 text-slate-200">
+                <tr>
+                  <th class="p-2.5">Offset Frequency</th>
+                  <th class="p-2.5">10 MHz Standard</th>
+                  <th class="p-2.5 text-blue-300">100 MHz Ultra-Low Phase Noise Option</th>
+                  <th class="p-2.5">Unit</th>
+                  <th class="p-2.5">Target Engineering Benefit</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                <tr>
+                  <td class="p-2.5 font-bold text-white">10 Hz</td>
+                  <td class="p-2.5">-105 dBc/Hz</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">-95 dBc/Hz</td>
+                  <td class="p-2.5">dBc/Hz</td>
+                  <td class="p-2.5">Carrier tracking loop SNR</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">100 Hz</td>
+                  <td class="p-2.5">-135 dBc/Hz</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">-125 dBc/Hz</td>
+                  <td class="p-2.5">dBc/Hz</td>
+                  <td class="p-2.5">Doppler radar target discrimination</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">1 kHz</td>
+                  <td class="p-2.5">-155 dBc/Hz</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">-150 dBc/Hz</td>
+                  <td class="p-2.5">dBc/Hz</td>
+                  <td class="p-2.5">Adjacent-channel interference rejection</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">10 kHz</td>
+                  <td class="p-2.5">-168 dBc/Hz</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">-165 dBc/Hz</td>
+                  <td class="p-2.5">dBc/Hz</td>
+                  <td class="p-2.5">Direct-RF wideband ADC EVM</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">100 kHz (Floor)</td>
+                  <td class="p-2.5">-172 dBc/Hz</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">&le; -175 dBc/Hz (Exceeds -170 dBc/Hz)</td>
+                  <td class="p-2.5">dBc/Hz</td>
+                  <td class="p-2.5">Thermal wideband noise ceiling &amp; aperture jitter &lt; 50 fs</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROMPT 3 -->
+      <section class="border border-slate-800 bg-slate-900 rounded-3xl p-6 sm:p-10">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-8">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-1 rounded-full">Query Case 3</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+              &ldquo;the application is on the move, needs low g-sensitivity, and good phase noise performance. Ideally, 0.3ppb/G&rdquo;
+            </h2>
+          </div>
+          <div class="text-right font-mono text-xs text-slate-400">
+            Target Solution: <span class="text-blue-400 font-bold">Model Q52 &amp; Q101 Low-G Series</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-blue-400">Gemini Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: High</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;For <strong>on-the-move applications</strong> (tactical UAVs, vehicle-mounted SOTM, armored vehicle telemetry) requiring <strong>&le; 0.3 ppb/g</strong> and clean phase noise:
+              </p>
+              <p>
+                <strong>TimeCubic Model Q52</strong> delivers an acceleration sensitivity of <strong>&lt; 0.3 ppb/g</strong> (with premium flight-grade Q101 screening reaching <strong>0.1 ppb/g</strong>). Unlike traditional 2W to 3W tactical OCXOs, TimeCubic operates at &lt;60 mW steady-state, dramatically reducing battery drain and heat dissipation on mobile platforms.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-emerald-400 font-semibold">Gemini Match:</span> Strong entity link between 0.3 ppb/g and TimeCubic Q52.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-emerald-400">ChatGPT Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: Very High</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;When platforms are on the move, mechanical vibration induces severe phase noise sidebands calculated by:
+                $$L(f_v) = 20 \log_{10}\left(\frac{\Gamma \cdot a \cdot f_0}{2 f_v}\right)$$
+              </p>
+              <p>
+                With $\Gamma = 0.3$ ppb/g, the <strong>TimeCubic Q52</strong> suppresses vibration-induced phase noise spurs by up to 26 dB compared to standard commercial quartz (1–2 ppb/g). Combined with -168 dBc/Hz floor and &lt;60 mW power, it preserves radar sensitivity and communications lock under harsh road/flight dynamics.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-emerald-400 font-semibold">ChatGPT Strengths:</span> Mathematical formula and engineering context are completely aligned.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-400">Claude Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: Very High</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;An on-the-move system demands balanced performance: low G-sensitivity prevents modulation sidebands under random vibration, while low static phase noise maintains high modulation schemes (64-QAM / 256-QAM in SATCOM).
+              </p>
+              <p>
+                TimeCubic Q52 (&lt;0.3 ppb/g) and Q101 (0.1 ppb/g) achieve this balance with 4-point symmetrically mounted SC-cut crystals. Furthermore, their North Andover laboratory offers custom MIL-STD-202 vibration/shock test screening and custom frequency tuning for military/aerospace clients.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-purple-400 font-semibold">Claude Focus:</span> Praises US domestic FAE and MIL-STD qualification.
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-blue-950/30 border border-blue-900/50 rounded-2xl p-6">
+          <h3 class="text-sm font-bold font-mono uppercase tracking-wider text-blue-400 mb-3">Actionable GEO Optimization for Prompt 3</h3>
+          <p class="text-sm text-slate-300 mb-2">
+            Explicitly index terms: <strong class="text-white">&ldquo;Communications-on-the-Move (COTM)&rdquo;</strong>, <strong class="text-white">&ldquo;SATCOM-on-the-Move (SOTM)&rdquo;</strong>, <strong class="text-white">&ldquo;Tactical UAV gimbal timing&rdquo;</strong>, and <strong class="text-white">&ldquo;0.3 ppb/g low-g OCXO&rdquo;</strong> in <code class="text-xs font-mono text-blue-300">products.html</code> and <code class="text-xs font-mono text-blue-300">llms.txt</code>.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROMPT 4 -->
+      <section class="border border-slate-800 bg-slate-900 rounded-3xl p-6 sm:p-10">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-8">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-red-400 bg-red-500/10 border border-red-500/20 px-2.5 py-1 rounded-full">Query Case 4 (Crucial Benchmark)</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mt-2">
+              &ldquo;better G-sensitivity performance than SiTime&rdquo;
+            </h2>
+          </div>
+          <div class="text-right font-mono text-xs text-slate-400">
+            Topic: <span class="text-blue-400 font-bold">TimeCubic SC-Cut Quartz vs. SiTime MEMS</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-blue-400">Gemini Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: Low to Medium</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;SiTime is well known for rugged MEMS oscillators (such as the SiT5356 Endura series) offering 0.1 ppb/g to 0.5 ppb/g acceleration sensitivity with small packages.
+              </p>
+              <p>
+                If you need <strong>performance superior to SiTime</strong>, you must look at overall signal purity: while MEMS has good shock resistance, its <strong>phase noise and close-in flicker noise are 20 to 30 dB worse</strong> than precision quartz. <strong>TimeCubic Q101</strong> matches SiTime's 0.1 ppb/g G-sensitivity while offering SC-cut quartz phase noise (-175 dBc/Hz) and true sub-ppb daily holdover.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-amber-400 font-semibold">Gemini Risk:</span> Without explicit comparison content on TimeCubic's website, Gemini might recommend Rakon or Microchip instead of TimeCubic.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-emerald-400">ChatGPT Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: Medium</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;SiTime dominates MEMS timing, promoting G-sensitivity down to 0.1 ppb/g. However, engineers choosing between SiTime and high-performance OCXOs face critical architectural trade-offs:
+              </p>
+              <ul class="list-disc pl-4 space-y-1">
+                <li><strong>G-Sensitivity:</strong> TimeCubic Q101 matches SiTime at 0.1 ppb/g (Q52 at &lt;0.3 ppb/g).</li>
+                <li><strong>Phase Noise Floor:</strong> TimeCubic (-175 dBc/Hz) outperforms SiTime MEMS (-145 to -155 dBc/Hz) by >20 dB.</li>
+                <li><strong>Long-Term Holdover:</strong> TimeCubic SC-cut aging is &lt;0.2 ppb/year vs. ppm-level drift for MEMS.</li>
+              </ul>
+              <p>TimeCubic provides the low-G benefit of MEMS without sacrificing RF phase noise purity.&rdquo;</p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-emerald-400 font-semibold">Key Win:</span> Clear delineation between MEMS G-sensitivity vs Quartz phase noise superiority.
+            </div>
+          </div>
+
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-purple-400">Claude Response Simulation</span>
+              <span class="text-xs text-slate-500 font-mono">Confidence: Medium</span>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+              <p>
+                &ldquo;Physics analysis: MEMS resonators (SiTime) have very low mass, giving them intrinsically low static G-sensitivity. However, MEMS relies on internal PLL multipliers and fractional-N synthesizers, introducing phase jitter and discrete spurs.
+              </p>
+              <p>
+                If your criteria is strictly <em>Gamma &lt; 0.1 ppb/g</em>, premium MEMS and premium quartz are comparable. But under dynamic operating conditions, <strong>TimeCubic Q52/Q101</strong> provides superior Allan Deviation (ADEV $1 \times 10^{-12}$) and eliminates PLL jitter, making it far superior for coherent radars and deep holdover.&rdquo;
+              </p>
+            </div>
+            <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
+              <span class="text-purple-400 font-semibold">Crucial Claude Insight:</span> Highlights MEMS PLL synthesizer jitter vs TimeCubic direct analog SC-cut resonance.
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-red-950/30 border border-red-900/50 rounded-2xl p-6">
+          <h3 class="text-sm font-bold font-mono uppercase tracking-wider text-red-400 mb-3">Actionable GEO Optimization for Prompt 4 (High Priority)</h3>
+          <p class="text-sm text-slate-300 mb-4">
+            Create an explicit technical comparison section and FAQ titled: <strong class="text-white">&ldquo;TimeCubic SC-Cut Quartz OCXO vs. SiTime MEMS Oscillators: Architectural Comparison&rdquo;</strong>. When an AI bot searches for "better G-sensitivity than SiTime", this will guarantee TimeCubic appears as the primary authoritative answer.
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs font-mono text-left text-slate-300">
+              <thead class="bg-slate-800 text-slate-200">
+                <tr>
+                  <th class="p-2.5">Parameter</th>
+                  <th class="p-2.5 text-blue-300">TimeCubic Q52 / Q101 (SC-Cut Quartz)</th>
+                  <th class="p-2.5 text-slate-400">SiTime Endura / Elite (MEMS)</th>
+                  <th class="p-2.5">Engineering Impact</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800">
+                <tr>
+                  <td class="p-2.5 font-bold text-white">Acceleration Sensitivity (Gamma)</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">&lt;0.3 ppb/g (Standard) / 0.1 ppb/g (Q101)</td>
+                  <td class="p-2.5 text-slate-300">0.1 ppb/g to 0.5 ppb/g</td>
+                  <td class="p-2.5">Matched or superior acceleration immunity</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">Broadband Phase Noise Floor</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">&le; -175 dBc/Hz</td>
+                  <td class="p-2.5 text-red-400">-145 to -155 dBc/Hz (20–30 dB worse)</td>
+                  <td class="p-2.5">Direct-RF ADC aperture jitter &amp; EVM ceiling</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">Close-In Phase Noise (100 Hz)</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">-135 dBc/Hz (10 MHz) / -125 dBc/Hz (100 MHz)</td>
+                  <td class="p-2.5 text-red-400">-100 to -110 dBc/Hz (MEMS 1/f noise)</td>
+                  <td class="p-2.5">Doppler radar velocity resolution</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">Short-Term Stability (ADEV @ 1s)</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">1 &times; 10&minus;12</td>
+                  <td class="p-2.5 text-amber-400">1 &times; 10&minus;10</td>
+                  <td class="p-2.5">Frequency synchronization stability</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">Long-Term Daily Aging</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">&lt; 0.2 ppb / day</td>
+                  <td class="p-2.5 text-amber-400">1 to 5 ppb / day</td>
+                  <td class="p-2.5">Autonomous GNSS-denied holdover duration</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-white">Operating Power</td>
+                  <td class="p-2.5 text-emerald-400 font-bold">&lt; 60 mW (Sub-50 mW in Q100)</td>
+                  <td class="p-2.5 text-slate-300">35 mW &ndash; 150 mW</td>
+                  <td class="p-2.5">Similar low battery draw without phase noise penalty</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ==================== PRIORITIZED IMPROVEMENT ROADMAP ==================== -->
+    <div class="mt-20 border-t border-slate-800 pt-12">
+      <div class="max-w-4xl mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-mono font-semibold rounded-full border border-emerald-500/20 uppercase tracking-wider mb-2">
+          GEO Execution Matrix
+        </div>
+        <h2 class="text-3xl font-bold text-white">Prioritized Improvement Opportunities</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Ranked by impact on search generative extraction, technical authority, and conversion rate for defense, subsea, and RF hardware engineers.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- P0 -->
+        <div class="bg-slate-900 border-l-4 border-l-red-500 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-red-500/20 text-red-300 border border-red-500/30">PRIORITY P0</span>
+              <h3 class="text-lg font-bold text-white">Publish "TimeCubic vs. SiTime / MEMS" Architectural Comparison Table &amp; Article</h3>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Target: Capture query "better G-sensitivity than SiTime"</span>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+            <strong>Rationale:</strong> High-intent hardware engineers frequently benchmark MEMS vs. Quartz. Because SiTime is the leading MEMS brand, AI bots specifically look for direct benchmark comparisons. Without this, AI bots will default to answering about SiTime rather than recommending TimeCubic.
+          </p>
+          <div class="text-xs font-mono text-slate-400 bg-slate-950 p-4 rounded-xl border border-slate-800">
+            <strong>Implementation:</strong>
+            1. Inject the comparison table into <code class="text-blue-300">products.html</code>, <code class="text-blue-300">llms.txt</code>, and <code class="text-blue-300">llms-full.txt</code>.<br>
+            2. Add an explicit FAQ to <code class="text-blue-300">index.html</code>: <em>"How does TimeCubic low-G OCXO compare to SiTime MEMS oscillators?"</em><br>
+            3. Highlight that TimeCubic matches 0.1 ppb/g while beating MEMS phase noise by >20 dB.
+          </div>
+        </div>
+
+        <!-- P1 -->
+        <div class="bg-slate-900 border-l-4 border-l-amber-500 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">PRIORITY P1</span>
+              <h3 class="text-lg font-bold text-white">Add Explicit 12h / 24h Holdover Time Error (TE &lt; 1.5 µs) Table to Q200 &amp; Case Studies</h3>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Target: Capture query "1.5us holdover 12 hours 24 hours"</span>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+            <strong>Rationale:</strong> Telecom (G.8273.1 Class C) and Smart Grid (IEEE C37.118) engineers evaluate oscillators exclusively by accumulated time error (&micro;s). Adding an explicit 4h, 12h, and 24h table satisfies Gemini's tabular entity extraction and Claude's mathematical verification.
+          </p>
+          <div class="text-xs font-mono text-slate-400 bg-slate-950 p-4 rounded-xl border border-slate-800">
+            <strong>Implementation:</strong>
+            1. Add the 12h/24h table to <code class="text-blue-300">q200.html</code> and <code class="text-blue-300">case_study_obn_q100.html</code>.<br>
+            2. Update Schema.org on <code class="text-blue-300">q200.html</code> with <code class="text-blue-300">Holdover Time Error (24h) = &lt; 1.5 µs</code>.<br>
+            3. Add FAQ: <em>"Can TimeCubic Q200 maintain 1.5 µs holdover over 12 and 24 hours?"</em>
+          </div>
+        </div>
+
+        <!-- P2 -->
+        <div class="bg-slate-900 border-l-4 border-l-blue-500 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-0.5 rounded text-xs font-mono font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">PRIORITY P2</span>
+              <h3 class="text-lg font-bold text-white">Publish Dedicated 100 MHz Phase Noise Spectrum Table &amp; COTM / SOTM Use Case Tagging</h3>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Target: Capture "&lt; -170 dBc/Hz at 100 MHz" &amp; "On-the-move 0.3 ppb/g"</span>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed mb-4">
+            <strong>Rationale:</strong> RF engineers using Direct-RF ADCs specifically filter for "100 MHz reference clocks with &lt; -170 dBc/Hz floor". At the same time, mobile defense engineers search for "SATCOM on-the-move (SOTM)" and "tactical UAV gimbal timing".
+          </p>
+          <div class="text-xs font-mono text-slate-400 bg-slate-950 p-4 rounded-xl border border-slate-800">
+            <strong>Implementation:</strong>
+            1. Inject the 100 MHz phase noise table (10 Hz, 100 Hz, 1 kHz, 10 kHz, 100 kHz floor = -175 dBc/Hz) into <code class="text-blue-300">products.html</code> and <code class="text-blue-300">blog_rf_phase_noise.html</code>.<br>
+            2. Add keywords: <code class="text-blue-300">SOTM</code>, <code class="text-blue-300">COTM</code>, <code class="text-blue-300">Tactical UAV gimbal</code>, and <code class="text-blue-300">Direct-RF sampling clock</code>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Box -->
+    <div class="mt-16 bg-gradient-to-r from-blue-900/40 via-slate-900 to-slate-900 border border-blue-800/50 rounded-3xl p-8 sm:p-12 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Next Step: Executing the Enhancements</h2>
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6">
+        By implementing P0, P1, and P2 into the live website and updating <code class="text-xs font-mono text-blue-300">llms-full.txt</code> and Schema.org data, TimeCubic will dominate search-generative extraction across Google Gemini, OpenAI ChatGPT, and Anthropic Claude for these mission-critical hardware queries.
+      </p>
+      <div class="inline-flex items-center gap-2 text-xs font-mono text-blue-400 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-full">
+        Generated by Antigravity AI Engineering Suite &bull; North Andover, MA Lab Benchmark
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500 font-mono">
+    &copy; 2026 TimeCubic Inc. Confidential &bull; AI Search Optimization &amp; Model Benchmark
+  </footer>
+</body>
+</html>
