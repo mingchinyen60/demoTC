@@ -1,4 +1,4 @@
-# robots.txt for https://timecubic.com
+# robots.txt for https://www.timecubic.com
 # Open to all search engines and AI bots for indexing, search, and RAG retrieval
 
 User-agent: *
@@ -42,7 +42,7 @@ User-agent: Meta-ExternalAgent
 Allow: /
 
 # Sitemap & LLM Specification
-Sitemap: https://timecubic.com/sitemap.xml
+Sitemap: https://www.timecubic.com/sitemap.xml
 # LLM Context Document
 # See: https://llmstxt.org/
-LLM-Context: https://timecubic.com/llms.txt
+LLM-Context: https://www.timecubic.com/llms.txt
