@@ -1,0 +1,9 @@
+{
+  "name": "timecubic",
+  "version": "1.0.0",
+  "description": "TimeCubic Precision Timing Website",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

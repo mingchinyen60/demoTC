@@ -11,3 +11,8 @@ assest/
 .idea/
 *.tmp
 *.log
+
+# Environment variables & secrets (NEVER commit to version control)
+.env
+.env.*
+.dev.vars
