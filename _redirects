@@ -1,20 +1,15 @@
-# Cloudflare Pages 301 Redirect Rules
+# Cloudflare Pages Redirect Rules
+# Note: Cloudflare Pages automatically handles Clean URLs / Pretty URLs (e.g. /about serves about.html).
+# DO NOT add 200 rewrites from /path to /path.html as that creates an infinite 308 redirect loop.
 
-# Canonical product pages
-/product.html     /products.html    301
-/product          /products.html    301
+# Legacy aliases
+/product          /products         301
+/product.html     /products         301
+/q50              /q050             301
+/q50.html         /q050             301
 
-# Clean URL aliases
-/products         /products.html    200
-/about            /about.html       200
-/contact          /contact.html     200
-/q050             /q050.html        200
-/q50              /q050.html        200
-/q100             /q100.html        200
-/q200             /q200.html        200
-
-# Legacy Weebly paths
-/uploads/1/3/8/8/138843707/q050.rev_b.pdf    /assets/pdf/q050_datasheet_rev_b.pdf    301
+# Legacy Weebly PDF upload links to modern asset paths
+/uploads/1/3/8/8/138843707/q050.rev_b.pdf    /assets/pdf/q50_datasheet_rev_b.pdf    301
 /uploads/1/3/8/8/138843707/q052_rev._c.pdf   /assets/pdf/q52_datasheet_rev_c.pdf     301
 /uploads/1/3/8/8/138843707/q100.rev_o.pdf    /assets/pdf/q100_datasheet_rev_o.pdf    301
 /uploads/1/3/8/8/138843707/q100.rev_k.pdf    /assets/pdf/q100_datasheet_rev_k.pdf    301
