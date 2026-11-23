@@ -21,9 +21,9 @@ TimeCubic Inc. is a Massachusetts-based precision frequency control and timing e
 - **Standard Frequency:** 100 MHz (Other frequencies upon request)
 - **Output Waveform:** HCMOS or Clipped Sinewave
 - **Supply Voltage:** +3.3V DC (±5%)
-- **Steady-State Power:** <350 mW (-40°C to +70°C at 100 MHz)
+- **Steady-State Power:** <350 mW (-40°C to +85°C at 100 MHz)
 - **Warm-Up Power & Time:** 500 mW, 120 seconds to within ±10 ppb
-- **Frequency Stability:** ±150 ppb (-40°C to +70°C)
+- **Frequency Stability:** ±100 ppb (-40°C to +85°C)
 - **Daily Aging Rate:** ±5.0 ppb/day
 - **Phase Noise (100 MHz @ 3.3V):**
   - 10 Hz: -100 dBc/Hz
@@ -150,7 +150,7 @@ TimeCubic Inc. is a Massachusetts-based precision frequency control and timing e
 A: In subsea exploration, battery weight and volume account for up to 60% of an ocean bottom node's total displacement. Standard OCXOs consume 1.5 to 3 Watts, draining a node battery within days. Chip-scale atomic clocks (CSAC) consume ~120–160 mW and cost thousands of dollars per unit. TimeCubic’s sub-60 mW technology allows seismic operators to sustain 60 to 120-day missions on compact battery packs while delivering equal or superior timing holdover accuracy.
 
 ### Q: Does TimeCubic offer custom frequencies, form factors, and pinouts?
-A: Yes. TimeCubic’s engineering team in North Andover, Massachusetts specializes in customized OEM timing solutions. We regularly supply non-standard frequencies (e.g., 5 MHz, 8.192 MHz, 16.384 MHz, 25 MHz, 100 MHz), custom voltage rails (3.3V / 5.0V), custom pinouts to drop in as pin-compatible replacements for obsolete third-party oscillators, and custom mechanical enclosures.
+A: Yes. TimeCubic’s engineering team in North Andover, Massachusetts specializes in customized OEM timing solutions. We regularly supply non-standard frequencies (e.g., 5 MHz, 8.192 MHz, 16.384 MHz, 25 MHz, 100 MHz), ultra-low phase noise microwave oscillators from 1 GHz to 10.24 GHz for radar, EW, and direct-RF ADC sampling, custom voltage rails (3.3V / 5.0V), custom pinouts to drop in as pin-compatible replacements for obsolete third-party oscillators, and custom mechanical enclosures.
 
 ### Q: What is the phase noise floor of TimeCubic high-frequency oscillators?
 A: TimeCubic Model Q40L and Model Q69-100M feature a phase noise floor of -175 dBc/Hz at 1 MHz offset from a 100 MHz carrier, with aperture jitter measured in the sub-picosecond regime. This prevents reciprocal mixing in radar receivers and ensures modern direct-RF high-speed ADCs (e.g., Texas Instruments, Analog Devices) reach their theoretical Signal-to-Noise Ratio (SNR) ceilings.
@@ -167,7 +167,7 @@ A: TimeCubic’s primary Research, Development, and Testing facilities are locat
 
 - **Company:** TimeCubic Inc.
 - **Address:** 800 Turnpike Street, Suite 300, North Andover, MA 01845, USA
-- **Phone:** +1 (781) 521-5862
+- **Phone:** +1 (978) 406-7730
 - **Email:** info@timecubic.com
 - **Website:** https://timecubic.com
 - **RFQ Portal:** https://timecubic.com/contact.html

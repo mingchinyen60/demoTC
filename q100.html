@@ -77,7 +77,7 @@
         "@type": "Product",
         "@id": "https://timecubic.com/q100.html#product",
         "name": "TimeCubic Model Q100 1PPS Disciplined Oscillator",
-        "model": "Model Q100 (Rev O)",
+        "model": "Model Q100 (Rev K)",
         "image": "https://timecubic.com/assets/products/product_q100_q101.png",
         "description": "Subsea 1PPS disciplined oscillator module drawing <65 mW steady power with continuous 1-second phase telemetry and ±1.0 ms blind holdover over 60+ days without GNSS.",
         "brand": { "@type": "Brand", "name": "TimeCubic" },
@@ -109,7 +109,7 @@
             "name": "What empirical holdover accuracy has Model Q100 demonstrated in the field?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Across commercial seabed seismic exploration campaigns comprising 645 deployed nodes, Model Q100 demonstrated an average blind holdover drift of ±1.0 ms after 60+ days at 3,000m ocean depth at 49.3 mW power, closely matching CSAC performance."
+              "text": "Across commercial seabed seismic exploration campaigns comprising volume deployed nodes, Model Q100 demonstrated an average blind holdover drift of ±1.0 ms after 60+ days at 3,000m ocean depth at 49.3 mW power, closely matching CSAC performance."
             }
           }
         ]
@@ -133,7 +133,7 @@
       <div class="flex items-center gap-4 text-slate-400 font-mono text-[11px]">
         <span>North Andover, MA USA</span>
         <span class="hidden md:inline">|</span>
-        <a href="tel:781-521-5862" class="hover:text-white transition-colors">Tel: +1 (781) 521-5862</a>
+        <a href="tel:978-406-7730" class="hover:text-white transition-colors">Tel: +1 (978) 406-7730</a>
         <span class="hidden md:inline">|</span>
         <a href="mailto:info@timecubic.com" class="hover:text-white transition-colors">info@timecubic.com</a>
       </div>
@@ -168,7 +168,7 @@
               <span class="w-6 h-6 rounded bg-emerald-100 text-emerald-800 font-mono font-bold text-xs flex items-center justify-center shrink-0">CS</span>
               <div>
                 <div class="text-xs font-bold text-slate-900">Field Case Study: 60+ Day OBN Holdover</div>
-                <div class="text-[11px] text-slate-500">645 units @ 49.3 mW &bull; Q50 Power &amp; Q100 Field Data</div>
+                <div class="text-[11px] text-slate-500">Volume production @ 49.3 mW &bull; Q50 Power &amp; Q100 Field Data</div>
               </div>
             </a>
             <a href="blog_obn_timing.html" class="flex items-start gap-3 p-2.5 rounded-lg hover:bg-blue-50/70 transition-colors">
@@ -245,7 +245,7 @@
           <p class="text-slate-300 text-xs sm:text-sm mt-1 font-mono">&lt;60 mW Low Power OCXO &bull; 1 ns RMS Phase Discipline &bull; &lt;1&times;10<sup>-12</sup> Frequency &bull; OBN &amp; On-The-Move Defense</p>
         </div>
         <div class="flex items-center gap-3">
-          <a href="assets/pdf/q100_datasheet_rev_o.pdf" target="_blank" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-colors flex items-center gap-2">
+          <a href="assets/pdf/q100_datasheet_rev_k.pdf" target="_blank" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-md transition-colors flex items-center gap-2">
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg>
             <span>Download Q100 PDF (Rev O)</span>
           </a>
@@ -413,7 +413,7 @@
               <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
             </summary>
             <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
-              On the ship deck, an external GPS/GNSS 1PPS pulse is connected to Pin 2 (1PPS_IN). Model Q100's internal DSP disciplines the master oscillator to <strong>1 ns RMS phase error and &lt;1&times;10<sup>-12</sup> frequency offset</strong>. When the node is deployed to the seabed, Pin 8 (LOCK_IND) confirms lock, and the node runs autonomously on internal holdover.
+              On the ship deck, an external GPS/GNSS 1PPS pulse is connected to Pin 2 (1PPS_IN). Model Q100's internal DSP disciplines the master oscillator to <strong>1 ns RMS phase error and &lt;1&times;10<sup>-12</sup> frequency offset</strong>. Before the node is deployed to the seabed, Pin 8 (LOCK_IND) confirms lock, and the node runs autonomously on internal holdover.
             </div>
           </details>
 
@@ -423,7 +423,7 @@
               <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
             </summary>
             <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
-              Empirical trials across 645 operational ocean bottom nodes confirm that Model Q100 sustains <strong>&plusmn;1.0 ms holdover across 60+ days</strong> when combined with TimeCubic's post-mission drift compensation model, providing seismic imaging quality comparable to Chip-Scale Atomic Clocks.
+              Empirical trials across volume operational ocean bottom nodes confirm that Model Q100 sustains <strong>&plusmn;1.0 ms holdover across 60+ days</strong> when combined with TimeCubic's post-mission drift compensation model, providing seismic imaging quality comparable to Chip-Scale Atomic Clocks.
             </div>
           </details>
 
@@ -433,7 +433,7 @@
               <span class="text-blue-600 font-mono text-base transition-transform group-open:rotate-180">&darr;</span>
             </summary>
             <div class="mt-2.5 pt-2.5 border-t border-slate-100 text-xs text-slate-600 leading-relaxed">
-              Pins 6 and 7 (RXD/TXD) provide a standard 57600 baud serial telemetry channel. Model Q100 outputs a real-time phase measurement sentence once every second with sub-nanosecond (&le;1 ns) resolution, logging calibration data into 64 bytes of internal non-volatile memory.
+              Pins 6 and 7 (RXD/TXD) provide a standard 57600 baud serial telemetry channel. Model Q100 outputs a real-time phase measurement sentence once every second with nanosecond (1 ns) resolution.
             </div>
           </details>
         </div>
@@ -487,10 +487,10 @@
           <h4 class="text-sm sm:text-base font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Official Datasheets</h4>
           <ul class="space-y-2.5 text-sm">
             <li><a href="assets/pdf/Q40L-100M-Rev_C.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q40L Datasheet (PDF)</span></a></li>
-            <li><a href="assets/pdf/q50_datasheet_rev_b.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q50 Datasheet (PDF)</span></a></li>
+            <li><a href="assets/pdf/Q50L-100M-Rev_C.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q50-100M Datasheet (PDF)</span></a></li>
             <li><a href="assets/pdf/Q52L-16M384_Rev_A.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q52 / Q52L Datasheet (PDF)</span></a></li>
-            <li><a href="assets/pdf/Q69_Rev_c.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q69 / Q69-100M Datasheet</span></a></li>
-            <li><a href="assets/pdf/q100_datasheet_rev_o.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q100 Datasheet (PDF)</span></a></li>
+            <li><a href="assets/pdf/Q69-100M-rev_C.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q69-100M Datasheet (PDF)</span></a></li>
+            <li><a href="assets/pdf/q100_datasheet_rev_k.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q100 Datasheet (PDF)</span></a></li>
             <li><a href="assets/pdf/q200_datasheet_rev_j.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q200 Datasheet (PDF)</span></a></li>
           </ul>
         </div>
@@ -503,7 +503,7 @@
             <p>800 Turnpike Street</p>
             <p>Suite 300</p>
             <p>North Andover, MA 01845, USA</p>
-            <p class="pt-2"><a href="tel:781-521-5862" class="hover:text-white font-mono">+1 (781) 521-5862</a></p>
+            <p class="pt-2"><a href="tel:978-406-7730" class="hover:text-white font-mono">+1 (978) 406-7730</a></p>
             <p><a href="mailto:info@timecubic.com" class="hover:text-white font-mono">info@timecubic.com</a></p>
           </address>
         </div>

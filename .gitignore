@@ -11,6 +11,7 @@ assest/
 .idea/
 *.tmp
 *.log
+scratch/
 
 # Environment variables & secrets (NEVER commit to version control)
 .env
