@@ -284,11 +284,11 @@
       </h2>
 
       <p>
-        In an AC electrical power system operating at nominal grid frequency $f_0$ (50 Hz or 60 Hz), an instantaneous sinusoidal voltage is represented by a rotating phasor with magnitude $|X|$ and phase angle $\phi(t) = 2\pi f_0 t + \delta$. Synchrophasors are time-stamped using Coordinated Universal Time (UTC) to allow direct comparison of phase angles between substations separated by thousands of kilometers.
+        In an AC electrical power system operating at nominal grid frequency <i>f</i><sub>0</sub> (50 Hz or 60 Hz), an instantaneous sinusoidal voltage is represented by a rotating phasor with magnitude |<i>X</i>| and phase angle &phi;(<i>t</i>) = 2&pi; <i>f</i><sub>0</sub><i>t</i> + &delta;. Synchrophasors are time-stamped using Coordinated Universal Time (UTC) to allow direct comparison of phase angles between substations separated by thousands of kilometers.
       </p>
 
       <p>
-        The IEEE Standard C37.118.1 defines Total Vector Error (TVE) as the normalized vector difference between the estimated synchrophasor $\hat{X}$ and the theoretical true phasor $X$:
+        The IEEE Standard C37.118.1 defines Total Vector Error (TVE) as the normalized vector difference between the estimated synchrophasor &Hat;X and the theoretical true phasor <i>X</i>:
       </p>
 
       <div class="math-callout p-5 rounded-xl text-white my-6 text-xs sm:text-sm space-y-3">
@@ -318,12 +318,12 @@
       </h2>
 
       <p>
-        Most conventional substation clocks use simple static holdover: when the GNSS 1PPS signal is lost, the clock freezes its last control voltage ($V_{\text{ctrl}}$) and runs open-loop. In an actual outdoor substation control building, however, conditions are far from static:
+        Most conventional substation clocks use simple static holdover: when the GNSS 1PPS signal is lost, the clock freezes its last control voltage (<i>V</i><sub>ctrl</sub>) and runs open-loop. In an actual outdoor substation control building, however, conditions are far from static:
       </p>
 
       <ul class="list-disc pl-6 space-y-2 text-sm">
-        <li><strong>HVAC Cycling:</strong> Equipment shelters undergo daily diurnal temperature swings of &plusmn;5&deg;C to &plusmn;15&deg;C as air conditioning systems cycle. Static oscillators suffer thermal frequency pulling ($df/dT$), accelerating phase error accumulation.</li>
-        <li><strong>Resonator Aging Curvature:</strong> Quartz crystal aging ($D$) follows a logarithmic/polynomial decay. A static voltage that was correct at the moment of loss quickly drifts as the crystal continues its natural molecular aging curve.</li>
+        <li><strong>HVAC Cycling:</strong> Equipment shelters undergo daily diurnal temperature swings of &plusmn;5&deg;C to &plusmn;15&deg;C as air conditioning systems cycle. Static oscillators suffer thermal frequency pulling (<i>df/dT</i>), accelerating phase error accumulation.</li>
+        <li><strong>Resonator Aging Curvature:</strong> Quartz crystal aging (<i>D</i>) follows a logarithmic/polynomial decay. A static voltage that was correct at the moment of loss quickly drifts as the crystal continues its natural molecular aging curve.</li>
       </ul>
 
       <!-- Holdover Drift Table -->
@@ -394,7 +394,7 @@
       <div class="p-4 rounded-xl bg-slate-100 border border-slate-300 text-xs text-slate-700 my-4 space-y-1.5">
         <div class="font-mono font-bold text-slate-900 uppercase">Anti-Spoofing Innovation Sequence Heuristics:</div>
         <p class="leading-relaxed">
-          Malicious GPS spoofing frequently attempts to inject subtle, gradual phase-slew to manipulate synchrophasor measurements undetected. The Q200 continuously tracks the <strong>Kalman measurement innovation residual</strong> ($\tilde{y}_k = z_k - H \hat{x}_{k|k-1}$). If an incoming GNSS signal exhibits phase-velocity shifts exceeding statistical thresholds ($>3\sigma$ or slew rates $>1 \times 10^{-10}/\text{s}$), the Q200 flags a spoofing security event, automatically rejects the contaminated satellite reference, and transitions to predictive holdover <em>before</em> the IEEE C37.118 TVE threshold is compromised.
+          Malicious GPS spoofing frequently attempts to inject subtle, gradual phase-slew to manipulate synchrophasor measurements undetected. The Q200 continuously tracks the <strong>Kalman measurement innovation residual</strong> (<i>y&#771;</i><sub><i>k</i></sub> = <i>z</i><sub><i>k</i></sub> &minus; <i>H</i> &Hat;<i>x</i><sub><i>k</i>|<i>k</i>&minus;1</sub>). If an incoming GNSS signal exhibits phase-velocity shifts exceeding statistical thresholds (&gt;3&sigma; or slew rates &gt;1 &times; 10<sup>&minus;10</sup>/s), the Q200 flags a spoofing security event, automatically rejects the contaminated satellite reference, and transitions to predictive holdover <em>before</em> the IEEE C37.118 TVE threshold is compromised.
         </p>
       </div>
 
