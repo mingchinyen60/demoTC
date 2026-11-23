@@ -199,7 +199,7 @@
             </div>
             <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
               <p>
-                &ldquo;Achieving <strong>&lt; 1.5 µs time error over 24 hours</strong> requires an effective fractional frequency stability of approximately $\Delta f/f \le 1.7 \times 10^{-11}$.
+                &ldquo;Achieving <strong>&lt; 1.5 µs time error over 24 hours</strong> requires an effective fractional frequency stability of approximately &Delta;<i>f</i> / <i>f</i> &le; 1.7 &times; 10<sup>&minus;11</sup>.
               </p>
               <p>
                 A top recommendation is <strong>TimeCubic Q200</strong> (North Andover, MA). It integrates internal DSP disciplining with an SC-cut micro-ovenized crystal, holding &lt;1.5 µs over 24 hours at sub-60 mW power—making it ideal if your budget or battery cannot support power-hungry 2W legacy OCXOs.&rdquo;
@@ -218,10 +218,10 @@
             </div>
             <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
               <p>
-                &ldquo;Mathematically, time drift accumulates as $\Delta t = \int (\frac{\Delta f}{f_0}) dt$. Over 12h ($4.32 \times 10^4$ s), keeping $\Delta t \le 1.5$ µs allows an average offset of $3.4 \times 10^{-11}$; over 24h, the limit is $1.7 \times 10^{-11}$.
+                &ldquo;Mathematically, time drift accumulates as &Delta;<i>t</i> = &int; (&Delta;<i>f</i> / <i>f</i><sub>0</sub>) <i>dt</i>. Over 12h (4.32 &times; 10<sup>4</sup> s), keeping &Delta;<i>t</i> &le; 1.5 µs allows an average offset of 3.4 &times; 10<sup>&minus;11</sup>; over 24h, the limit is 1.7 &times; 10<sup>&minus;11</sup>.
               </p>
               <p>
-                The <strong>TimeCubic Q200</strong> achieves this via dynamic learning of aging history and thermal slew before loss of sync. However, make sure to verify thermal gradient specs: in unconditioned outdoor cabinets, temperature rate of change ($>2^\circ$C/hr) can degrade uncompensated OCXO holdover.&rdquo;
+                The <strong>TimeCubic Q200</strong> achieves this via dynamic learning of aging history and thermal slew before loss of sync. However, make sure to verify thermal gradient specs: in unconditioned outdoor cabinets, temperature rate of change (&gt;2&deg;C/hr) can degrade uncompensated OCXO holdover.&rdquo;
               </p>
             </div>
             <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
@@ -333,7 +333,7 @@
             </div>
             <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
               <p>
-                &ldquo;Room temperature thermal noise $k_B T = -174$ dBm/Hz. For a 100 MHz oscillator to provide a phase noise floor below -170 dBc/Hz, the RF buffer amplifier must deliver high output power (+13 dBm or higher into 50&Omega;) with ultra-low noise figure.
+                &ldquo;Room temperature thermal noise <i>k</i><sub>B</sub><i>T</i> = &minus;174 dBm/Hz. For a 100 MHz oscillator to provide a phase noise floor below -170 dBc/Hz, the RF buffer amplifier must deliver high output power (+13 dBm or higher into 50&Omega;) with ultra-low noise figure.
               </p>
               <p>
                 TimeCubic's SC-cut design achieves <strong>-175 dBc/Hz</strong> broadband floor. However, an RF systems engineer must also inspect <strong>close-in phase noise</strong>: at 100 Hz offset, does it achieve -125 dBc/Hz or better?&rdquo;
@@ -444,10 +444,10 @@
             <div class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
               <p>
                 &ldquo;When platforms are on the move, mechanical vibration induces severe phase noise sidebands calculated by:
-                $$L(f_v) = 20 \log_{10}\left(\frac{\Gamma \cdot a \cdot f_0}{2 f_v}\right)$$
+                <span class="block text-center my-1 font-mono text-xs sm:text-sm text-blue-300"><i>L</i>(<i>f</i><sub>v</sub>) = 20 log<sub>10</sub>((&Gamma; &middot; <i>a</i> &middot; <i>f</i><sub>0</sub>) / (2 <i>f</i><sub>v</sub>))</span>
               </p>
               <p>
-                With $\Gamma = 0.3$ ppb/g, the <strong>TimeCubic Q52</strong> suppresses vibration-induced phase noise spurs by up to 26 dB compared to standard commercial quartz (1–2 ppb/g). Combined with -168 dBc/Hz floor and &lt;60 mW power, it preserves radar sensitivity and communications lock under harsh road/flight dynamics.&rdquo;
+                With &Gamma; = 0.3 ppb/g, the <strong>TimeCubic Q52</strong> suppresses vibration-induced phase noise spurs by up to 26 dB compared to standard commercial quartz (1–2 ppb/g). Combined with -168 dBc/Hz floor and &lt;60 mW power, it preserves radar sensitivity and communications lock under harsh road/flight dynamics.&rdquo;
               </p>
             </div>
             <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
@@ -546,7 +546,7 @@
                 &ldquo;Physics analysis: MEMS resonators (SiTime) have very low mass, giving them intrinsically low static G-sensitivity. However, MEMS relies on internal PLL multipliers and fractional-N synthesizers, introducing phase jitter and discrete spurs.
               </p>
               <p>
-                If your criteria is strictly <em>Gamma &lt; 0.1 ppb/g</em>, premium MEMS and premium quartz are comparable. But under dynamic operating conditions, <strong>TimeCubic Q52/Q101</strong> provides superior Allan Deviation (ADEV $1 \times 10^{-12}$) and eliminates PLL jitter, making it far superior for coherent radars and deep holdover.&rdquo;
+                If your criteria is strictly <em>Gamma &lt; 0.1 ppb/g</em>, premium MEMS and premium quartz are comparable. But under dynamic operating conditions, <strong>TimeCubic Q52/Q101</strong> provides superior Allan Deviation (ADEV 1 &times; 10<sup>&minus;12</sup>) and eliminates PLL jitter, making it far superior for coherent radars and deep holdover.&rdquo;
               </p>
             </div>
             <div class="text-xs border-t border-slate-800 pt-2 text-slate-400">
