@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Products Catalog | Low Power OCXO, Low G-Sensitivity Oscillator &amp; High Precision Timing | TimeCubic</title>
-  <meta name="description" content="TimeCubic precision timing product catalog: low power OCXO (<60 mW), low g-sensitivity oscillator for C-UAS &amp; Radar, low phase noise OCXO with low jitter, and 1PPS disciplined modules for OBN and defense on the move.">
-  <meta name="keywords" content="low power OCXO, low power oscillator, low g-sensitivity OCXO, low g-sensitivity oscillator, high precision OCXO, low phase noise OCXO, low jitter, OBN, ocean bottom node, on the move, COTM, C-UAS, Radar, disciplined oscillator, timing modules">
+  <meta name="description" content="TimeCubic precision timing product catalog: Model Q100z ultra-low power OCXO (<70 mW), low power OCXO (<60 mW), low g-sensitivity oscillator for C-UAS &amp; Radar, low phase noise OCXO with low jitter, and 1PPS disciplined modules for OBN and defense on the move.">
+  <meta name="keywords" content="Q100z, Q100z OCXO, ultra-low power OCXO, 16.384 MHz OCXO, subsea OCXO, low power OCXO, low power oscillator, low g-sensitivity OCXO, low g-sensitivity oscillator, high precision OCXO, low phase noise OCXO, low jitter, OBN, ocean bottom node, on the move, COTM, C-UAS, Radar, disciplined oscillator, timing modules">
   <link rel="icon" type="image/png" href="assets/brand/timecubic_logo.png">
   
   <!-- Fonts: Gill Sans Nova Typekit + Fallback -->
@@ -163,6 +163,20 @@
               "image": "https://timecubic.com/assets/products/product_q200.png",
               "category": "Satellite Disciplined Timing Subsystem",
               "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "url": "https://timecubic.com/contact.html?product=Q200" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "Product",
+              "@id": "https://timecubic.com/products.html#model-q100z",
+              "name": "TimeCubic Model Q100z Ultra-Low Power OCXO",
+              "model": "Q100z",
+              "description": "5-pin hermetic DIP ultra-low power OCXO drawing <70 mW typical at 16.384 MHz with up to <±2 ppb stability, <±0.05 ppb/day aging, and 1000g shock survival for subsea sensor networks and seismic exploration.",
+              "image": "https://timecubic.com/assets/products/TimeCubic_Q100z.png",
+              "category": "Ultra-Low Power OCXO",
+              "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "priceCurrency": "USD", "url": "https://timecubic.com/contact.html?product=Q100z" }
             }
           }
         ]
@@ -467,6 +481,28 @@
               </td>
             </tr>
 
+
+            <!-- Q100z Series -->
+            <tr id="row-q100z" class="hover:bg-blue-50/50 transition-colors bg-sky-50/30">
+              <td class="p-4 font-bold text-sm sm:text-base text-blue-600">
+                <a href="#model-q100z" class="hover:underline flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span>
+                  <span>Model Q100z</span>
+                </a>
+              </td>
+              <td class="p-4 text-sm text-slate-800 font-medium">Ultra-Low Power OCXO</td>
+              <td class="p-4 font-mono text-sm text-slate-700">36.3 &times; 27.2 &times; 16.0</td>
+              <td class="p-4 font-mono font-bold text-sm text-emerald-600">&lt;70 mW <span class="text-[11px] font-normal text-slate-500">(&lt;85 mW max @ 25&deg;C)</span></td>
+              <td class="p-4 font-mono text-sm text-slate-700">&plusmn;2 to &plusmn;5 ppb &bull; <strong class="text-slate-800">&lt;&plusmn;0.05 ppb/d</strong></td>
+              <td class="p-4 font-mono text-sm text-slate-700">16.384 MHz <span class="text-xs text-slate-500 font-normal">(8.192M opt.)</span></td>
+              <td class="p-4 text-sm text-slate-700">Analog Vc (0&ndash;2.8V) &bull; 1000g shock</td>
+              <td class="p-4 text-right">
+                <a href="assets/pdf/q100z_datasheet_rev_h.pdf" target="_blank" class="px-2.5 py-1 rounded bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs inline-flex items-center gap-1 font-bold">
+                  <span>Rev H</span> &darr;
+                </a>
+              </td>
+            </tr>
+
             <!-- Q100 Series -->
             <tr id="row-q100" class="hover:bg-blue-50/50 transition-colors bg-blue-50/20">
               <td class="p-4 font-bold text-sm sm:text-base text-blue-600">
@@ -519,7 +555,7 @@
       <div class="flex items-center justify-between border-b border-slate-200 pb-4">
         <div>
           <h2 class="text-2xl font-bold text-slate-900">Featured Hardware Architecture &amp; Specifications</h2>
-          <p class="text-xs text-slate-500 mt-1">Deep-dive technical overview for each of the 6 released TimeCubic product series.</p>
+          <p class="text-xs text-slate-500 mt-1">Deep-dive technical overview for each of the 7 released TimeCubic product series.</p>
         </div>
         <span class="text-xs font-mono text-slate-500 hidden sm:inline">Datasheet PDFs available for each model</span>
       </div>
@@ -684,6 +720,39 @@
             </a>
             <a href="assets/pdf/q100_datasheet_rev_k.pdf" target="_blank" class="px-4 py-2.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-700 font-mono text-xs transition-colors">
               Download Q100 Rev K PDF
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- CARD 5b: Q100z -->
+      <div id="model-q100z" class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm grid grid-cols-1 md:grid-cols-12 gap-8 items-center scroll-mt-24">
+        <div class="md:col-span-4 bg-slate-50 rounded-xl p-6 border border-slate-100 flex items-center justify-center">
+          <img src="assets/products/TimeCubic_Q100z.png" alt="Model Q100z Ultra-Low Power OCXO" class="max-h-48 w-auto object-contain">
+        </div>
+        <div class="md:col-span-8 space-y-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-sky-100 text-sky-800 font-mono text-xs font-bold">MODEL Q100z SERIES</span>
+            <span class="text-xs font-mono text-blue-600 font-bold">ULTRA-LOW POWER OCXO &bull; &lt;70 mW</span>
+            <span class="text-xs font-mono text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">&lt;&plusmn;2 ppb STABILITY &bull; 1000g SHOCK</span>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900">Q100z Ultra-Low Power OCXO for Subsea Sensors &amp; Seismic Exploration</h3>
+          <p class="text-base sm:text-lg text-slate-700 leading-relaxed">
+            Housed in a 5-pin hermetic DIP metal can package (36.32 &times; 27.18 &times; 16.0 mm), Model Q100z is purpose-built for underwater sensor networks, ocean bottom nodes (OBN), seismic surveys, and oil &amp; gas exploration. Drawing <strong>&lt;70 mW typical</strong> steady-state power (&lt;85 mW max @ +25&deg;C) with fast 220 mW warm-up (1&ndash;4 min), it delivers industry-leading temperature stability up to <strong>&lt;&plusmn;2 ppb</strong> (0 to +50&deg;C), low daily aging (&lt;&plusmn;0.05 ppb/day), 1000g shock survival, and analog frequency control (0&ndash;2.8V, &plusmn;0.7 ppm).
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <div><span class="text-slate-400 block">STEADY POWER</span> &lt;70 mW @ 25&deg;C</div>
+            <div><span class="text-slate-400 block">TEMP STABILITY</span> Up to &lt;&plusmn;2 ppb</div>
+            <div><span class="text-slate-400 block">DAILY AGING</span> &lt;&plusmn;0.05 ppb / day</div>
+            <div><span class="text-slate-400 block">SHOCK SURVIVAL</span> 1000g, 1 ms typical</div>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="contact.html?product=Q100z" class="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs transition-colors">
+              Request Q100z Sample / RFQ &rarr;
+            </a>
+            <a href="assets/pdf/q100z_datasheet_rev_h.pdf" target="_blank" class="px-4 py-2.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-700 font-mono text-xs transition-colors">
+              Download Q100z Rev H PDF &darr;
             </a>
           </div>
         </div>
@@ -924,6 +993,7 @@
             <li><a href="products.html#model-q52" class="hover:text-blue-400 transition-colors">Model Q52 / Q52L Low-G</a></li>
             <li><a href="products.html#model-q69" class="hover:text-blue-400 transition-colors">Model Q69 Rapid Warm-Up (30s)</a></li>
             <li><a href="q100.html" class="hover:text-blue-400 transition-colors">Model Q100 1PPS Disciplined</a></li>
+            <li><a href="products.html#model-q100z" class="hover:text-blue-400 transition-colors">Model Q100z Ultra-Low Power OCXO</a></li>
             <li><a href="q200.html" class="hover:text-blue-400 transition-colors">Model Q200 Satellite Disciplined</a></li>
           </ul>
         </div>
@@ -937,6 +1007,7 @@
             <li><a href="assets/pdf/Q52L-16M384_Rev_A.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q52 / Q52L Datasheet (PDF)</span></a></li>
             <li><a href="assets/pdf/Q69-100M-rev_C.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q69-100M Datasheet (PDF)</span></a></li>
             <li><a href="assets/pdf/q100_datasheet_rev_k.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q100 Datasheet (PDF)</span></a></li>
+            <li><a href="assets/pdf/q100z_datasheet_rev_h.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q100z Datasheet (PDF)</span></a></li>
             <li><a href="assets/pdf/q200_datasheet_rev_j.pdf" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-red-400" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"/></svg><span>Q200 Datasheet (PDF)</span></a></li>
           </ul>
         </div>
