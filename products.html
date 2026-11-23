@@ -910,56 +910,56 @@
       <!-- FAQ Accordion -->
       <div class="text-center mb-10">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Product Selection &amp; Technical FAQ</h2>
-        <p class="text-xs sm:text-sm text-slate-500 mt-2 font-mono">Answers to common engineering questions regarding model selection, holdover, and phase noise.</p>
+        <p class="text-sm sm:text-base text-slate-500 mt-2 font-mono">Answers to common engineering questions regarding model selection, holdover, and phase noise.</p>
       </div>
 
       <div class="space-y-4">
         <details class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm group" open>
-          <summary class="font-bold text-slate-900 text-base cursor-pointer flex justify-between items-center list-none select-none">
+          <summary class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center list-none select-none">
             <span>Which model is recommended for subsea Ocean Bottom Nodes (OBN)?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <div class="mt-3 pt-3 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             For free-running nodes where power is the single critical metric, <strong>Model Q50</strong> (&lt;60 mW) provides unmatched battery life. For nodes requiring GNSS synchronization prior to immersion and extended 60-day blind holdover (&plusmn;1.0 ms), <strong>Model Q100</strong> is our flagship product, proven in active field deployments across volume subsea nodes.
           </div>
         </details>
 
         <details class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm group">
-          <summary class="font-bold text-slate-900 text-base cursor-pointer flex justify-between items-center list-none select-none">
+          <summary class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center list-none select-none">
             <span>How does Model Q52 differ from Model Q50?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <div class="mt-3 pt-3 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             While Model Q50 is optimized for ultra-low power (&lt;60 mW) in static seabed environments, <strong>Model Q52 / Q52L</strong> is designed specifically for dynamic airborne environments, incorporating low acceleration sensitivity (<strong>&lt;0.3 ppb/g</strong>) and high shock survival (1500g) to prevent vibration-induced phase noise spurs in tactical UAVs and avionics.
           </div>
         </details>
 
         <details class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm group">
-          <summary class="font-bold text-slate-900 text-base cursor-pointer flex justify-between items-center list-none select-none">
+          <summary class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center list-none select-none">
             <span>Can TimeCubic oscillators be supplied with custom frequencies?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <div class="mt-3 pt-3 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             Yes. Beyond standard frequencies (10 MHz, 16.384 MHz, 100 MHz), our North Andover, MA laboratory routinely designs custom crystal cuts from <strong>5 MHz to 100 MHz</strong> (including 5M, 8.192M, 20M, 25M, and 50M) with tailored supply voltages and custom pinouts.
           </div>
         </details>
 
         <details class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm group">
-          <summary class="font-bold text-slate-900 text-base cursor-pointer flex justify-between items-center list-none select-none">
+          <summary class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center list-none select-none">
             <span>How does TimeCubic low-G OCXO compare to SiTime MEMS oscillators?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
-            While SiTime MEMS oscillators achieve low G-sensitivity (0.1 to 0.5 ppb/g) due to their small physical resonator mass, MEMS oscillators suffer from <strong>20 to 30 dB worse phase noise</strong> (-145 to -155 dBc/Hz broadband floor vs. <strong>-175 dBc/Hz</strong> for TimeCubic), high close-in 1/f flicker noise, and spurious phase jitter from internal fractional-N PLL synthesizers. <strong>TimeCubic Models Q52 and Q101</strong> match or exceed SiTime's acceleration immunity (<strong>0.1 ppb/g flight-grade</strong>) while delivering the pristine phase noise purity, 1e-12 Allan deviation, and sub-microsecond holdover of SC-cut quartz—all within a micro-power (<60 mW) envelope.
+          <div class="mt-3 pt-3 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
+            While SiTime MEMS oscillators achieve low G-sensitivity (0.1 to 0.5 ppb/g) due to their small physical resonator mass, MEMS oscillators suffer from <strong>20 to 30 dB worse phase noise</strong> (-145 to -155 dBc/Hz broadband floor vs. <strong>-175 dBc/Hz</strong> for TimeCubic), high close-in 1/f flicker noise, and spurious phase jitter from internal fractional-N PLL synthesizers. <strong>TimeCubic Models Q52 / Q52L and Q69</strong> match or exceed SiTime's acceleration immunity (<strong>0.1 ppb/g flight-grade</strong>) while delivering the pristine phase noise purity, 1e-12 Allan deviation, and sub-microsecond holdover of SC-cut quartz—all within a micro-power (<60 mW) envelope.
           </div>
         </details>
 
         <details class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm group">
-          <summary class="font-bold text-slate-900 text-base cursor-pointer flex justify-between items-center list-none select-none">
+          <summary class="font-bold text-slate-900 text-base sm:text-lg cursor-pointer flex justify-between items-center list-none select-none">
             <span>Can TimeCubic oscillators maintain 1.5 &mu;s holdover over 12 hours and 24 hours?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-3 pt-3 border-t border-slate-100 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <div class="mt-3 pt-3 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             Yes. <strong>Model Q200</strong> is specifically engineered for precision holdover during GNSS jamming or outages. Under constant ambient temperature, Q200 maintains <strong>&lt;0.8 &mu;s over 12 hours</strong> and <strong>&lt;1.0 &mu;s over 24 hours</strong>. Under dynamic temperature swings of &plusmn;5&deg;C/hr, its adaptive Kalman DSP aging algorithm keeps accumulated time drift strictly below <strong>1.2 &mu;s at 12 hours</strong> and <strong>1.5 &mu;s at 24 hours</strong>, fully compliant with IEEE C37.118 and ITU-T G.8273.1 Class C standards.
           </div>
         </details>

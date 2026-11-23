@@ -877,21 +877,21 @@
 
         <div class="lg:col-span-5 bg-slate-950 p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-4">
           <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-slate-400">Domestic Engineering Advantages</h3>
-          <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+          <ul class="space-y-3.5 text-sm sm:text-base text-slate-300">
             <li class="flex items-start gap-2.5">
-              <span class="text-blue-400 font-bold">&bull;</span>
+              <span class="text-blue-400 font-bold text-base leading-none mt-0.5">&bull;</span>
               <span><strong>Local Technical Collaboration:</strong> Real-time hardware review with Massachusetts physicists and RF engineers.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="text-blue-400 font-bold">&bull;</span>
+              <span class="text-blue-400 font-bold text-base leading-none mt-0.5">&bull;</span>
               <span><strong>Pre-Deployment Blank Aging:</strong> Specialized pre-aging cycles tailored to your mission holdover requirements.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="text-blue-400 font-bold">&bull;</span>
+              <span class="text-blue-400 font-bold text-base leading-none mt-0.5">&bull;</span>
               <span><strong>Full Phase Noise Characterization:</strong> Laboratory test reports down to -175 dBc/Hz floor supplied with evaluation units.</span>
             </li>
             <li class="flex items-start gap-2.5">
-              <span class="text-blue-400 font-bold">&bull;</span>
+              <span class="text-blue-400 font-bold text-base leading-none mt-0.5">&bull;</span>
               <span><strong>SWaP-C Optimization:</strong> Squeezing OCXO holdover into ultra-compact battery budgets (&lt;60 mW).</span>
             </li>
           </ul>
@@ -910,7 +910,7 @@
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
           Precision Timing Engineering FAQ
         </h2>
-        <p class="text-slate-600 text-sm sm:text-base mt-2">
+        <p class="text-slate-600 text-base mt-2">
           Technical answers regarding ultra-low power consumption, phase noise ceilings, G-sensitivity, and custom oscillator engineering.
         </p>
       </div>
@@ -923,7 +923,7 @@
             <span>How does TimeCubic achieve &lt;60 mW power consumption in an OCXO?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             Standard commercial OCXOs consume 1.5 to 3.5 Watts to maintain internal oven temperatures, making multi-month battery operation impossible. TimeCubic uses patented thermodynamic micro-isolation chambers that minimize thermal loss and reduce the required heated volume. As a result, Models Q50 and Q100 draw only <strong>55 mW to 65 mW steady-state power</strong> while delivering true oven-controlled frequency stability (&plusmn;10 ppb) and subsea holdover (&plusmn;1.0 ms over 60+ days).
           </div>
         </details>
@@ -934,7 +934,7 @@
             <span>Can TimeCubic provide custom frequencies, supply voltages, and drop-in pinouts?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             Yes. Our R&amp;D engineering lab in North Andover, Massachusetts specializes in tailored OEM timing solutions. We deliver custom frequency cuts between <strong>5 MHz and 100 MHz</strong> (e.g. 10 MHz, 16.384 MHz, 25 MHz, 100 MHz), supply voltages of +3.3V or +5.0V DC, and mechanical/pinout adaptations designed to serve as pin-compatible drop-in replacements for obsolete or hard-to-source oscillators from legacy manufacturers.
           </div>
         </details>
@@ -945,7 +945,7 @@
             <span>What phase noise floor is available for high-speed direct-RF ADC sampling?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             TimeCubic Model Q40L and Model Q69-100M feature an ultra-low phase noise floor of <strong>-175 dBc/Hz at 1 MHz offset</strong> from a 100 MHz carrier, with total integrated aperture jitter measured below 100 femtoseconds. This prevents reciprocal mixing in wideband radar receivers and ensures modern direct-RF ADCs and DACs reach their theoretical Signal-to-Noise Ratio (SNR) ceilings.
           </div>
         </details>
@@ -956,7 +956,7 @@
             <span>How does TimeCubic mitigate vibration-induced phase noise (low G-sensitivity)?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             In tactical UAVs, defense missiles, and launch vehicles, mechanical vibration modulates the crystal blank and creates harmful sideband phase noise spurs. TimeCubic Model Q52L and Model Q69 achieve low-G acceleration sensitivity ratings of <strong>&lt;0.3 ppb/g down to 0.1 ppb/g</strong> using stress-compensated crystal orientations and multi-axis rigid internal mounting, surviving up to 1000g launch shocks.
           </div>
         </details>
@@ -967,7 +967,7 @@
             <span>Where is TimeCubic located and what are the advantages of local US engineering?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             TimeCubic is located at 800 Turnpike Street, Suite 300, North Andover, Massachusetts, USA. Direct collaboration with our Massachusetts engineering lab provides rapid prototype turnaround, on-site environmental test chamber characterization, domestic supply chain assurance, and zero timezone lag when consulting with senior timing architects.
           </div>
         </details>
@@ -978,8 +978,8 @@
             <span>How does TimeCubic low-G OCXO compare to SiTime MEMS oscillators for mobile systems?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
-            While SiTime MEMS oscillators provide good shock survivability and low acceleration sensitivity (0.1 to 0.5 ppb/g), MEMS suffers from significant limitations: high broadband phase noise floor (-145 to -155 dBc/Hz), elevated close-in 1/f flicker noise, and discrete PLL spurs from fractional-N clock synthesis. <strong>TimeCubic Models Q52 and Q101</strong> match SiTime's acceleration sensitivity (<strong>0.1 ppb/g flight-grade</strong>) while delivering the pristine phase noise of SC-cut quartz (<strong>-175 dBc/Hz floor</strong>, -135 dBc/Hz at 100 Hz offset), 100x lower short-term jitter, zero synthesizer spurs, and autonomous microsecond holdover—all at &lt;60 mW operating power.
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
+            While SiTime MEMS oscillators provide good shock survivability and low acceleration sensitivity (0.1 to 0.5 ppb/g), MEMS suffers from significant limitations: high broadband phase noise floor (-145 to -155 dBc/Hz), elevated close-in 1/f flicker noise, and discrete PLL spurs from fractional-N clock synthesis. <strong>TimeCubic Models Q52 / Q52L and Q69</strong> match SiTime's acceleration sensitivity (<strong>0.1 ppb/g flight-grade</strong>) while delivering the pristine phase noise of SC-cut quartz (<strong>-175 dBc/Hz floor</strong>, -135 dBc/Hz at 100 Hz offset), 100x lower short-term jitter, zero synthesizer spurs, and autonomous microsecond holdover—all at &lt;60 mW operating power.
           </div>
         </details>
 
@@ -989,7 +989,7 @@
             <span>Can TimeCubic achieve 1.5 &mu;s holdover over 12 hours and 24 hours during GNSS outages?</span>
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
-          <div class="mt-4 pt-4 border-t border-slate-100 text-sm text-slate-600 leading-relaxed">
+          <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
             Yes. <strong>TimeCubic Model Q200</strong> delivers guaranteed autonomous holdover: under stable temperatures, accumulated time error is <strong>&lt;0.8 &mu;s over 12 hours</strong> and <strong>&lt;1.0 &mu;s over 24 hours</strong>. Even when ambient temperatures cycle across &plusmn;5&deg;C/hr, its internal adaptive DSP Kalman filter bounds cumulative time error to <strong>&lt;1.2 &mu;s at 12 hours</strong> and <strong>&le;1.5 &mu;s at 24 hours</strong>, meeting stringent IEEE C37.118 and ITU-T G.8273.1 Class C requirements.
           </div>
         </details>
