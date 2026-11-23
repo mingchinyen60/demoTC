@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phase Noise and Aperture Jitter in Direct-RF Sampling: Why Master Clocks Determine ADC SNR & EVM | TimeCubic Technical Brief</title>
-  <meta name="description" content="An RF engineering deep dive into master reference clock phase noise, RMS aperture jitter integration, reciprocal mixing in SDR, and SNR ceiling calculations for high-speed ADCs.">
+  <title>Low Phase Noise OCXO &amp; Low Jitter Master Clocks for Radar, Direct-RF &amp; SDR | TimeCubic Technical Brief</title>
+  <meta name="description" content="Engineering analysis of low phase noise OCXO clocking, sub-picosecond low jitter integration, reciprocal mixing elimination, and Radar/SDR ADC SNR ceiling formulas.">
+  <meta name="keywords" content="low phase noise OCXO, low jitter, low jitter OCXO, low phase noise oscillator, Radar, C-UAS, high precision OCXO, direct-RF sampling, ADC clocking, master clock">
   <link rel="stylesheet" href="https://use.typekit.net/ece4ods.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,6 +67,12 @@
     "dateModified": "2024-11-15",
     "inLanguage": "en-US",
     "keywords": [
+      "low phase noise OCXO",
+      "low jitter",
+      "low jitter OCXO",
+      "Radar",
+      "C-UAS",
+      "high precision OCXO",
       "phase noise",
       "aperture jitter",
       "direct-RF sampling",
@@ -227,23 +234,23 @@
     <!-- Meta / Categories -->
     <div class="flex flex-wrap items-center gap-2 mb-4">
       <span class="px-2.5 py-1 rounded bg-indigo-100 text-indigo-800 font-mono text-xs font-bold uppercase tracking-wider">
-        RF &amp; Software-Defined Radio
+        Radar &bull; Direct-RF &bull; SDR
       </span>
       <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-mono text-xs font-bold uppercase tracking-wider">
-        Phase Noise &amp; Jitter
+        Low Phase Noise OCXO &bull; Low Jitter
       </span>
       <span class="text-xs font-mono text-slate-400">
-        Published: November 2026 &bull; 8 min read &bull; Target Audience: RF System Engineers &amp; DSP Architects
+        Published: November 2026 &bull; 8 min read &bull; Target Audience: RF System Engineers, Radar &amp; DSP Architects
       </span>
     </div>
 
     <!-- Title -->
     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.18]">
-      Phase Noise and Aperture Jitter in Direct-RF Sampling: Why the Master Clock Dictates SNR and EVM in Modern Transceivers
+      Low Phase Noise OCXO &amp; Low Jitter Master Clocks in Direct-RF: Dictating SNR and EVM in Modern Radar &amp; SDR
     </h1>
 
     <p class="mt-6 text-lg sm:text-xl text-slate-600 leading-relaxed font-normal">
-      A quantitative hardware analysis of how master reference clock phase noise propagates through direct-RF converters, establishes the mathematical ceiling on ADC SNR, and prevents reciprocal mixing in dense radar and SDR spectrums.
+      A quantitative hardware analysis of how high precision low phase noise OCXO master clocks and sub-picosecond low jitter clocking propagate through direct-RF converters, establish the mathematical ceiling on ADC SNR, and eliminate reciprocal mixing in dense Radar, C-UAS, and software-defined radio (SDR) spectrums.
     </p>
 
     <!-- Author & Fact Checked Bar -->
