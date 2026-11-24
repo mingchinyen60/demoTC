@@ -1,0 +1,102 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2873 >>
+stream
+0.06 0.15 0.29 rg 0 680 612 112 re f
+BT /F2 11 Tf 0.75 0.85 0.98 rg 1 0 0 1 42 755 Tm (TIMECUBIC  /  WEBSITE REVIEW) Tj ET
+BT /F2 24 Tf 1 1 1 rg 1 0 0 1 42 719 Tm (Homepage consistency review) Tj ET
+BT /F1 10 Tf 0.9 0.94 1 rg 1 0 0 1 42 694 Tm (Findings from the live homepage, November 24, 2026) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 650 Tm (01  HIGH | Power consumption) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 632 Tm (The homepage advertises <60 mW, while its FAQ gives 55-65 mW for the Q50 and Q100.) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 617 Tm (Verify the actual specifications and distinguish typical from maximum power.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 589 Tm (02  HIGH | Product model names) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 571 Tm (Q50/Q50L and Q52/Q52L appear in different sections. Verify whether these are distinct) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 556 Tm (variants and match the names on the official datasheets.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 528 Tm (03  HIGH | Peer-reviewed claims) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 510 Tm (The site calls four technical briefs peer-reviewed. Confirm external peer review;) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 495 Tm (otherwise describe them as technical briefs or engineering articles.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 467 Tm (04  MEDIUM | Typographical corrections) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 449 Tm (Remove the incorrect dollar sign in "$120-140 mW". Standardize SWaP-C throughout.) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 434 Tm (Write frequencies as 10 MHz, 16.384 MHz, 25 MHz and 100 MHz.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 406 Tm (05  MEDIUM | Company experience) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 388 Tm (TimeCubic was founded in 2017. Attribute the 30+ years of frequency and timing) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 373 Tm (heritage to the engineering team consistently.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 345 Tm (06  LOW | Navigation and formatting) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 327 Tm (Rename "Application & Blog" to "Applications & Blog". Standardize unit spacing,) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 312 Tm (capitalization and hyphenation.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 284 Tm (Scope) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 266 Tm (This review covers the live homepage. Cross-check individual product pages and) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 251 Tm (downloadable datasheets before publishing specification changes.) Tj ET
+0.82 0.86 0.91 RG 42 46 m 570 46 l S
+BT /F1 9 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 28 Tm (timecubic.com  |  November 24, 2026) Tj ET
+BT /F1 9 Tf 0.12 0.17 0.24 rg 1 0 0 1 540 28 Tm (1 / 2) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 3127 >>
+stream
+0.06 0.15 0.29 rg 0 680 612 112 re f
+BT /F2 11 Tf 0.75 0.85 0.98 rg 1 0 0 1 42 755 Tm (TIMECUBIC  /  WEBSITE REVIEW) Tj ET
+BT /F2 24 Tf 1 1 1 rg 1 0 0 1 42 719 Tm (Inquiry form delivery) Tj ET
+BT /F1 10 Tf 0.9 0.94 1 rg 1 0 0 1 42 694 Tm (Contact page / Request Specification or Quotation) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 650 Tm (01  HIGH | Restore inquiry email delivery) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 632 Tm (External email reception has been restored, according to the owner. The quotation form) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 617 Tm (reportedly still fails to deliver inquiries to info@timecubic.com. Diagnose its) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 602 Tm (submission handler and email delivery integration.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 574 Tm (02  Implement a reliable delivery service) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 556 Tm (Connect the form to a server-side handler, such as a Cloudflare Worker and a) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 541 Tm (transactional email provider \(e.g., Resend\). Keep service credentials in server-side) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 526 Tm (secrets. Use an authorized sender address and set Reply-To to the visitor email.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 498 Tm (03  Preserve all form information) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 480 Tm (Include name, company, work email, phone, product model, application sector, project) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 465 Tm (specifications and quantities in the delivered message. Validate required inputs and) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 450 Tm (apply spam protection.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 422 Tm (04  Confirmation and failure handling) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 404 Tm (Show success only after the backend accepts the inquiry for delivery. Provide a clear) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 389 Tm (error and retry option if submission fails. Record delivery errors for diagnosis.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 361 Tm (05  Acceptance test) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 343 Tm (Submit a labeled test inquiry from the live site. Confirm that info@timecubic.com) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 328 Tm (receives the complete message, Reply-To works, and the form confirms submission. Test) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 313 Tm (required-field validation and a failed submission as well.) Tj ET
+BT /F2 12 Tf 0.06 0.25 0.47 rg 1 0 0 1 42 285 Tm (Completion criteria) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 267 Tm (The developer should verify end-to-end delivery and report the results. The exact root) Tj ET
+BT /F1 11 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 252 Tm (cause of the form failure has not yet been confirmed.) Tj ET
+0.82 0.86 0.91 RG 42 46 m 570 46 l S
+BT /F1 9 Tf 0.12 0.17 0.24 rg 1 0 0 1 42 28 Tm (timecubic.com  |  November 24, 2026) Tj ET
+BT /F1 9 Tf 0.12 0.17 0.24 rg 1 0 0 1 540 28 Tm (2 / 2) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000000402 00000 n 
+0000003327 00000 n 
+0000003463 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+6642
+%%EOF

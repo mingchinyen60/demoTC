@@ -146,7 +146,7 @@
             "name": "How does TimeCubic achieve <60 mW power consumption in its OCXOs?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "TimeCubic achieves sub-60 mW steady-state power consumption through proprietary micro-oven thermal vacuum isolation chambers. By minimizing the heated thermal mass and optimizing internal thermodynamic dissipation, Model Q50 and Model Q100 deliver true OCXO stability and sub-ppb aging at 55 mW to 65 mW, cutting power consumption by 80% compared to conventional 1.5W–3W OCXOs and by over 50% compared to Chip-Scale Atomic Clocks (CSAC)."
+              "text": "TimeCubic achieves sub-60 mW steady-state power consumption through proprietary micro-oven thermal vacuum isolation chambers. By minimizing the heated thermal mass and optimizing internal thermodynamic dissipation, Model Q50 and Model Q100 deliver true OCXO stability and sub-ppb aging at <60 mW typical steady-state power (55 mW typical at 25°C, <65 mW maximum over operational temperature), cutting power consumption by 80% compared to conventional 1.5W–3W OCXOs and by over 50% compared to Chip-Scale Atomic Clocks (CSAC)."
             }
           },
           {
@@ -235,16 +235,16 @@
         </div>
       </a>
 
-      <!-- Desktop Nav: Home | About Us | Products | Application & Blog | Contact -->
+      <!-- Desktop Nav: Home | About Us | Products | Applications & Blog | Contact -->
       <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-[15px] font-semibold">
         <a href="index.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Home</a>
         <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
         <a href="products.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Products</a>
         
-        <!-- Application & Blog Dropdown -->
+        <!-- Applications & Blog Dropdown -->
         <div class="relative group">
           <a href="#applications-blog" class="text-slate-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-1.5 py-1">
-            <span>Application &amp; Blog</span>
+            <span>Applications &amp; Blog</span>
             <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </a>
           <div class="absolute top-full -left-6 w-96 bg-white border border-slate-200 rounded-xl shadow-2xl p-3 hidden group-hover:block z-50">
@@ -318,7 +318,7 @@
       <a href="index.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-blue-600 font-bold bg-blue-50/60 text-base">Home</a>
       <a href="about.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">About Us</a>
       <a href="products.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Products</a>
-      <a href="#applications-blog" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Application &amp; Blog</a>
+      <a href="#applications-blog" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Applications &amp; Blog</a>
       <a href="contact.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Contact</a>
       <a href="contact.html" class="block w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-center font-bold text-base mt-3 shadow-md shadow-blue-500/20 transition-colors">Request Quote</a>
     </div>
@@ -345,11 +345,15 @@
         <!-- Left Column: Core Narrative & Mission -->
         <div class="lg:col-span-7 space-y-8">
           <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 font-mono text-xs font-semibold mb-3">
+              <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+              ESTABLISHED ENGINEERING LEADERSHIP &bull; FOUNDED 2017
+            </div>
             <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">
-              Over 30 Years of Frequency &amp; Timing Heritage
+              Engineering Leadership with Over 30 Years of Frequency &amp; Timing Heritage
             </h2>
             <p class="text-slate-700 text-base sm:text-lg leading-relaxed mt-4">
-              TimeCubic Inc. engineers industry-leading high precision low power OCXO modules, low g-sensitivity oscillators, and 1PPS disciplined timing receivers. Founded by seasoned physicists and RF timing experts, our proprietary thermal architecture, precision ovenization, and advanced digital signal processing solve the critical trade-off between power consumption, vibration sensitivity, and holdover accuracy.
+              TimeCubic Inc. was founded in 2017 by senior frequency control physicists and timing architects bringing over three decades of engineering pedigree in precision frequency synthesis, atomic clocks, and SC-cut quartz ovenization. Our proprietary thermal architecture, micro-vacuum isolation, and advanced digital disciplining solve the critical trade-off between power consumption, vibration sensitivity, and holdover accuracy.
             </p>
           </div>
 
@@ -455,18 +459,18 @@
               <img src="assets/products/TimeCubic_Q50.png" alt="Model Q50 Low Power OCXO" class="max-h-36 w-auto object-contain group-hover:scale-105 transition-transform">
             </div>
             <div class="flex items-center justify-between text-xs sm:text-sm font-mono mb-2">
-              <span class="text-blue-600 font-bold">MODEL Q50</span>
-              <span class="text-slate-500 font-semibold">&lt;60 mW &bull; 100 MHz</span>
+              <span class="text-blue-600 font-bold">MODEL Q50 / Q50L</span>
+              <span class="text-slate-500 font-semibold">&lt;60 mW Typ. &bull; 100 MHz Opt.</span>
             </div>
-            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Ultra-Low Power OCXO</h3>
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Ultra-Low Power OCXO &amp; Oscillator</h3>
             <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
-              Industry benchmark &lt;60 mW low power OCXO engineered for seabed Ocean Bottom Nodes (OBN), battery payloads, and low phase noise RF systems up to 100 MHz (-176 dBc/Hz floor).
+              Industry benchmark &lt;60 mW typical low power OCXO engineered for seabed Ocean Bottom Nodes (OBN), battery payloads, and low phase noise RF systems up to 100 MHz (-176 dBc/Hz floor).
             </p>
           </div>
           <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
             <a href="q050.html" class="text-sm font-bold text-blue-600 hover:text-blue-800">Learn More &rarr;</a>
             <a href="assets/pdf/Q50L-100M-Rev_C.pdf" target="_blank" class="text-xs sm:text-sm font-mono font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1">
-              <span>PDF</span> &darr;
+              <span>Q50L-100M PDF</span> &darr;
             </a>
           </div>
         </div>
@@ -478,8 +482,8 @@
               <img src="assets/products/TimeCubic_Q52.png" alt="Model Q52L Low-G Sensitivity OCXO" class="max-h-36 w-auto object-contain group-hover:scale-105 transition-transform">
             </div>
             <div class="flex items-center justify-between text-xs sm:text-sm font-mono mb-2">
-              <span class="text-blue-600 font-bold">MODEL Q52L</span>
-              <span class="text-slate-500 font-semibold">&lt;0.3 ppb/g &bull; &lt;60 mW</span>
+              <span class="text-blue-600 font-bold">MODEL Q52 / Q52L</span>
+              <span class="text-slate-500 font-semibold">&lt;0.3 ppb/g &bull; &lt;60 mW Typ.</span>
             </div>
             <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Low-G Sensitivity OCXO</h3>
             <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
@@ -489,7 +493,7 @@
           <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
             <a href="products.html#model-q52" class="text-sm font-bold text-blue-600 hover:text-blue-800">Learn More &rarr;</a>
             <a href="assets/pdf/Q52L-16M384_Rev_A.pdf" target="_blank" class="text-xs sm:text-sm font-mono font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1">
-              <span>PDF</span> &darr;
+              <span>Q52L-16M384 PDF</span> &darr;
             </a>
           </div>
         </div>
@@ -502,7 +506,7 @@
             </div>
             <div class="flex items-center justify-between text-xs sm:text-sm font-mono mb-2">
               <span class="text-blue-600 font-bold">MODEL Q100</span>
-              <span class="text-slate-500 font-semibold">&lt;60 mW &bull; 1PPS Disciplined</span>
+              <span class="text-slate-500 font-semibold">&lt;60 mW Typ. &bull; 1PPS Disciplined</span>
             </div>
             <h3 class="text-xl sm:text-2xl font-bold text-slate-900">1PPS Disciplined Low Power OCXO</h3>
             <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
@@ -512,7 +516,7 @@
           <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
             <a href="q100.html" class="text-sm font-bold text-blue-600 hover:text-blue-800">Learn More &rarr;</a>
             <a href="assets/pdf/q100_datasheet_rev_k.pdf" target="_blank" class="text-xs sm:text-sm font-mono font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1">
-              <span>PDF</span> &darr;
+              <span>Q100 Rev K PDF</span> &darr;
             </a>
           </div>
         </div>
@@ -535,7 +539,7 @@
           <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
             <a href="q200.html" class="text-sm font-bold text-blue-600 hover:text-blue-800">Learn More &rarr;</a>
             <a href="assets/pdf/q200_datasheet_rev_j.pdf" target="_blank" class="text-xs sm:text-sm font-mono font-semibold text-slate-600 hover:text-slate-900 flex items-center gap-1">
-              <span>PDF</span> &darr;
+              <span>Q200 Rev J PDF</span> &darr;
             </a>
           </div>
         </div>
@@ -560,7 +564,7 @@
         <div>
           <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 font-mono text-xs font-bold uppercase tracking-wider mb-3">
             <span class="w-2 h-2 rounded-full bg-blue-600"></span>
-            Application &amp; Blog &bull; Technical Whitepapers
+            Applications &amp; Blog &bull; Technical Whitepapers
           </span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Engineering Insights &amp; Application Case Studies
@@ -571,7 +575,7 @@
         </div>
         <div>
           <span class="text-xs sm:text-sm font-mono font-semibold text-slate-600 bg-white px-3.5 py-2 rounded-lg border border-slate-200 shadow-sm">
-            4 Peer-Reviewed Briefs
+            4 Technical Whitepapers
           </span>
         </div>
       </div>
@@ -631,7 +635,7 @@
             </h3>
 
             <p class="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-              An engineering deep dive into blind holdover at 3,000 meters depth, seismic two-way travel time (TWT) migration error (&Delta;x = v &bull; &Delta;t), cold battery derating, and why &lt;60 mW Q100 slashes lithium battery mass by 70% compared to CSAC ($120&ndash;140 mW) and conventional OCXOs.
+              An engineering deep dive into blind holdover at 3,000 meters depth, seismic two-way travel time (TWT) migration error (&Delta;x = v &bull; &Delta;t), cold battery derating, and why &lt;60 mW Q100 slashes lithium battery mass by 70% compared to CSAC (120&ndash;140 mW) and conventional OCXOs.
             </p>
 
             <div class="mt-4 pt-4 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] font-mono">
@@ -924,7 +928,7 @@
             <span class="text-blue-600 font-mono text-xl transition-transform group-open:rotate-180">&darr;</span>
           </summary>
           <div class="mt-4 pt-4 border-t border-slate-100 text-sm sm:text-base text-slate-700 leading-relaxed">
-            Standard commercial OCXOs consume 1.5 to 3.5 Watts to maintain internal oven temperatures, making multi-month battery operation impossible. TimeCubic uses patented thermodynamic micro-isolation chambers that minimize thermal loss and reduce the required heated volume. As a result, Models Q50 and Q100 draw only <strong>55 mW to 65 mW steady-state power</strong> while delivering true oven-controlled frequency stability (&plusmn;10 ppb) and subsea holdover (&plusmn;1.0 ms over 60+ days).
+            Standard commercial OCXOs consume 1.5 to 3.5 Watts to maintain internal oven temperatures, making multi-month battery operation impossible. TimeCubic uses patented thermodynamic micro-isolation chambers that minimize thermal loss and reduce the required heated volume. As a result, Models Q50 and Q100 draw only <strong>&lt;60 mW typical steady-state power</strong> (specifically <strong>55 mW typical at 25&deg;C</strong>, and &lt;65 mW maximum across the full operating temperature range), while delivering true oven-controlled frequency stability (&plusmn;10 ppb) and subsea holdover (&plusmn;1.0 ms over 60+ days, with volume field deployments verified at 49.3 mW average consumption).
           </div>
         </details>
 
@@ -1028,9 +1032,9 @@
           </ul>
         </div>
 
-        <!-- Col: Application & Blog -->
+        <!-- Col: Applications & Blog -->
         <div>
-          <h4 class="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Application &amp; Blog</h4>
+          <h4 class="text-xs sm:text-sm font-mono font-bold uppercase text-slate-200 tracking-wider mb-4">Applications &amp; Blog</h4>
           <ul class="space-y-2.5 text-sm">
             <li><a href="case_study_obs_custom_35c_oven.html" class="hover:text-teal-300 text-teal-300 font-semibold transition-colors flex items-center gap-1.5"><span>OBS 12-Month Customization Case</span> <span class="text-[10px] bg-teal-500/20 text-teal-300 px-1.5 py-0.5 rounded font-mono">&lt;50 mW</span></a></li>
             <li><a href="case_study_obn_q100.html" class="hover:text-emerald-400 text-emerald-400 font-semibold transition-colors flex items-center gap-1.5"><span>OBN 60+ Day Field Case Study</span> <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded font-mono">True Data</span></a></li>

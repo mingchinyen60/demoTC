@@ -134,16 +134,16 @@
         </div>
       </a>
 
-      <!-- Desktop Nav: Home | About Us | Products | Application & Blog | Contact -->
+      <!-- Desktop Nav: Home | About Us | Products | Applications & Blog | Contact -->
       <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-[15px] font-semibold">
         <a href="index.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
         <a href="about.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
         <a href="products.html" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Products</a>
         
-        <!-- Application & Blog Dropdown -->
+        <!-- Applications & Blog Dropdown -->
         <div class="relative group">
           <a href="index.html#applications-blog" class="text-slate-600 hover:text-blue-600 font-medium transition-colors flex items-center gap-1.5 py-1">
-            <span>Application &amp; Blog</span>
+            <span>Applications &amp; Blog</span>
             <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </a>
           <div class="absolute top-full -left-6 w-96 bg-white border border-slate-200 rounded-xl shadow-2xl p-3 hidden group-hover:block z-50">
@@ -210,7 +210,7 @@
       <a href="index.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Home</a>
       <a href="about.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">About Us</a>
       <a href="products.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Products</a>
-      <a href="index.html#applications-blog" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Application &amp; Blog</a>
+      <a href="index.html#applications-blog" class="mobile-nav-item block py-3 px-3 rounded-lg text-slate-700 font-semibold hover:bg-slate-50 hover:text-blue-600 text-base transition-colors">Applications &amp; Blog</a>
       <a href="contact.html" class="mobile-nav-item block py-3 px-3 rounded-lg text-blue-600 font-bold bg-blue-50/60 text-base">Contact</a>
       <a href="contact.html" class="block w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-center font-bold text-base mt-3 shadow-md shadow-blue-500/20 transition-colors">Request Quote</a>
     </div>
@@ -300,6 +300,7 @@
                   <option value="Q52">Model Q52 / Q52L (Low-G Vibration Hardened)</option>
                   <option value="Q69">Model Q69 / Q69-100M (Rapid Warm-Up &bull; 30s)</option>
                   <option value="Q100">Model Q100 (1PPS Disciplined Module &bull; &lt;60 mW)</option>
+                  <option value="Q100z">Model Q100z (Ultra-Low Power &lt;70 mW, &plusmn;2 ppb Stability)</option>
                   <option value="Q200">Model Q200 (Satellite Disciplined Timing Receiver)</option>
                   <option value="Custom">Custom OEM Specification / Pinout</option>
                 </select>
@@ -320,6 +321,12 @@
             <div>
               <label for="details" class="block text-sm font-semibold text-slate-800 mb-1.5">Project Specification &amp; Quantities</label>
               <textarea id="details" name="details" rows="4" placeholder="Please specify target frequency (e.g. 10 MHz), supply voltage, expected deployment duration, temperature requirements, or evaluation unit request..." class="w-full text-base p-3.5 rounded-xl border border-slate-300 focus:outline-none focus:border-blue-500"></textarea>
+            </div>
+
+            <!-- Anti-Spam Honeypot Field (invisible to humans) -->
+            <div class="hidden" style="display:none !important;" aria-hidden="true">
+              <label for="website_hp">Leave this field blank</label>
+              <input type="text" name="website_hp" id="website_hp" tabindex="-1" autocomplete="off">
             </div>
 
             <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center justify-center gap-2">
@@ -445,6 +452,7 @@
         'q52': 'Q52', 'q052': 'Q52', 'q52l': 'Q52',
         'q69': 'Q69', 'q69-100m': 'Q69',
         'q100': 'Q100', 'q101': 'Q100',
+        'q100z': 'Q100z',
         'q200': 'Q200', 'a100': 'Q100',
         'custom': 'Custom', 'oem': 'Custom'
       };
@@ -480,6 +488,7 @@
           product: document.getElementById('product-select').value,
           sector: document.getElementById('sector-select').value,
           details: document.getElementById('details').value.trim(),
+          website_hp: document.getElementById('website_hp') ? document.getElementById('website_hp').value.trim() : '',
           timestamp: new Date().toISOString()
         };
 
@@ -501,7 +510,7 @@
           `Phone: ${payload.phone || 'N/A'}\n` +
           `Target Product: ${payload.product}\n` +
           `Application Sector: ${payload.sector}\n\n` +
-          `Project Specifications:\n${payload.details || 'Evaluation inquiry'}\n`
+          `Project Specifications & Quantities:\n${payload.details || 'Evaluation inquiry'}\n`
         );
         const mailtoUrl = `mailto:info@timecubic.com?subject=${mailtoSubject}&body=${mailtoBody}`;
         document.getElementById('mailto-fallback-link').href = mailtoUrl;
@@ -529,7 +538,12 @@
           if (resp.ok) {
             const result = await resp.json();
             if (result.inquiryId) inquiryRef = result.inquiryId;
-            transmitted = true;
+            if (result.emailSent) {
+              transmitted = true;
+            } else {
+              transmitted = false;
+              errorMessage = result.error || "Email delivery service rejected dispatch.";
+            }
           } else {
             const errResult = await resp.json().catch(() => ({}));
             errorMessage = errResult.error || `Server responded with status ${resp.status}`;
